@@ -2,7 +2,7 @@ name: GitHub Search Script
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/15 * * * *"  # Executa a cada 15 minutos
 
   workflow_dispatch:
 
@@ -19,16 +19,41 @@ jobs:
         with:
           node-version: '20.x'
 
+      - name: Restore cache for processed_users.txt and repos_found.txt
+        uses: actions/cache@v3
+        with:
+          # Caminho dos arquivos que precisam ser persistidos
+          path: |
+            processed_users.txt
+            repos_found.txt
+          key: github-search-cache
+          restore-keys: github-search-cache
+
       - name: Install dependencies
         run: npm install
 
       - name: Run the GitHub Search script
-
         env:
           GITHUB_TOKEN1: ${{ secrets.TOKEN1 }}
           GITHUB_TOKEN2: ${{ secrets.TOKEN2 }}
           GITHUB_TOKEN3: ${{ secrets.TOKEN3 }}
           GITHUB_TOKEN4: ${{ secrets.TOKEN4 }}
           GITHUB_TOKEN5: ${{ secrets.TOKEN5 }}
-      
         run: node script.js
+
+      - name: Update cache for processed_users.txt and repos_found.txt
+        uses: actions/cache@v3
+        with:
+          path: |
+            processed_users.txt
+            repos_found.txt
+          key: github-search-cache
+
+      # Opcional: Upload os arquivos como artefatos (caso queira acessá-los manualmente)
+      - name: Upload processed_users.txt and repos_found.txt as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: processed-and-repos
+          path: |
+            processed_users.txt
+            repos_found.txt
