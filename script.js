@@ -56,6 +56,23 @@ function saveRepoAndFileToFile(repoFullName, filePath) {
   });
 }
 
+// Função para salvar usuários já verificados
+function saveProcessedUser(user) {
+  const processedUsersFile = 'processed_users.txt';
+  fs.appendFileSync(processedUsersFile, `${user}\n`, 'utf-8');
+}
+
+// Função para verificar se o usuário já foi processado
+function isUserProcessed(user) {
+  const processedUsersFile = 'processed_users.txt';
+  if (!fs.existsSync(processedUsersFile)) {
+    return false;  // Se o arquivo não existe, nenhum usuário foi processado ainda
+  }
+
+  const processedUsers = fs.readFileSync(processedUsersFile, 'utf-8').split('\n');
+  return processedUsers.includes(user);
+}
+
 // Função para verificar os limites após a execução
 async function checkRateLimit() {
   const rateLimit = await octokit.rateLimit.get();
@@ -91,7 +108,7 @@ async function searchTopReposByStars(username, keyword) {
       q: `user:${username}`,  // Buscar pelos repositórios do usuário
       sort: 'stars',  // Ordenar pelos repositórios com mais estrelas
       order: 'desc',  // Ordem decrescente (maior para menor)
-      per_page: 10  // Limitar para os 10 primeiros resultados
+      per_page: 7  // Limitar para os 7 primeiros resultados
     });
 
     // Verificar se o usuário tem repositórios
@@ -128,7 +145,7 @@ async function searchTopReposByStars(username, keyword) {
   }
 }
 
-// Função para buscar perfis com mais de 10.000 seguidores, começando de uma página aleatória
+// Função para buscar perfis com mais de 10.000 seguidores, verificando se já foram processados
 async function getRandomUsersAndSearchWithLimiter(keyword) {
   try {
     const totalPages = 100; // Número máximo de páginas que a busca pode ter (ajustar conforme necessário)
@@ -144,8 +161,13 @@ async function getRandomUsersAndSearchWithLimiter(keyword) {
 
     // Para cada usuário encontrado, usar o limitador para buscar repositórios
     await Promise.all(users.data.items.map(async (user) => {
-      console.log(`Verificando usuário: ${user.login}`);
-      await fetchReposWithLimiter(user.login, keyword); // Limitar as requisições
+      if (!isUserProcessed(user.login)) {  // Verifica se o usuário já foi processado
+        console.log(`Verificando usuário: ${user.login}`);
+        await fetchReposWithLimiter(user.login, keyword); // Limitar as requisições
+        saveProcessedUser(user.login);  // Salva o usuário como processado
+      } else {
+        console.log(`Usuário ${user.login} já foi processado anteriormente. Pulando...`);
+      }
     }));
   } catch (error) {
     console.error("Erro ao buscar usuários:", error);
@@ -166,4 +188,3 @@ async function main() {
 
 // Chamar a função principal
 main().catch(console.error);
-
