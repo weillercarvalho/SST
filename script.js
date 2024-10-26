@@ -160,6 +160,7 @@ async function searchTopReposByStars(octokit, username, keyword) {
 
       await checkAndHandleCodeSearchRateLimit(octokit);
 
+      // Construção da query para a busca de código, usando corretamente o operador OR
       const codeSearch = await octokit.search.code({
         q: `${keyword} in:file repo:${repoFullName}`,
       });
@@ -212,8 +213,19 @@ async function getRandomUsersAndSearchWithLimiter(keyword) {
 
 // Função principal para rodar o script
 async function main() {
-  const keyword = "API_KEY OR API_SECRET OR ACCESS_KEY OR PASSWORD OR ACCESS_TOKEN OR SECRET_KEY OR DB_PASSWORD OR DB_USER OR DATABASE_URL OR PROD_DB_PASSWORD OR PRODUCTION_API_KEY OR PRIVATE_KEY OR SSL_CERT OR TLS_KEY OR AWS_ACCESS_KEY_ID OR AWS_SECRET_ACCESS_KEY OR AWS_SESSION_TOKEN OR AZURE_CLIENT_ID OR AZURE_SECRET OR GCP_CREDENTIALS OR GCP_API_KEY OR ADMIN_PASSWORD OR EMAIL_PASSWORD OR MYSQL_PASSWORD OR PG_PASSWORD OR BEARER_TOKEN OR AUTH_TOKEN";
-  await getRandomUsersAndSearchWithLimiter(keyword);
+  const keywords = [
+    "API_KEY", "API_SECRET", "ACCESS_KEY", "PASSWORD", "ACCESS_TOKEN", "SECRET_KEY",
+    "DB_PASSWORD", "DB_USER", "DATABASE_URL", "PROD_DB_PASSWORD", "PRODUCTION_API_KEY",
+    "PRIVATE_KEY", "SSL_CERT", "TLS_KEY", "AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY",
+    "AWS_SESSION_TOKEN", "AZURE_CLIENT_ID", "AZURE_SECRET", "GCP_CREDENTIALS",
+    "GCP_API_KEY", "ADMIN_PASSWORD", "EMAIL_PASSWORD", "MYSQL_PASSWORD", "PG_PASSWORD",
+    "BEARER_TOKEN", "AUTH_TOKEN"
+  ];
+
+  // Construindo a query com o operador OR entre cada palavra-chave
+  const keywordQuery = keywords.join(" OR ");
+  
+  await getRandomUsersAndSearchWithLimiter(keywordQuery);
 
   const octokit = getOctokitInstance();
   await checkRateLimit(octokit);
