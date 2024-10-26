@@ -1,0 +1,34 @@
+name: GitHub Search Script
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run the GitHub Search script
+
+        env:
+          GITHUB_TOKEN1: ${{ secrets.TOKEN1 }}
+          GITHUB_TOKEN2: ${{ secrets.TOKEN2 }}
+          GITHUB_TOKEN3: ${{ secrets.TOKEN3 }}
+          GITHUB_TOKEN4: ${{ secrets.TOKEN4 }}
+          GITHUB_TOKEN5: ${{ secrets.TOKEN5 }}
+      
+        run: node /mnt/c/Users/weill/Desktop/Search/script.js
