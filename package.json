@@ -1,0 +1,22 @@
+{
+  "name": "search",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "script",
+    "search",
+    "token"
+  ],
+  "author": "Weiller Carvalho",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@octokit/rest": "^21.0.2",
+    "bottleneck": "^2.19.5",
+    "dotenv": "^16.4.5"
+  }
+}
