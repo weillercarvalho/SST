@@ -31,4 +31,4 @@ jobs:
           GITHUB_TOKEN4: ${{ secrets.TOKEN4 }}
           GITHUB_TOKEN5: ${{ secrets.TOKEN5 }}
       
-        run: node /mnt/c/Users/weill/Desktop/Search/script.js
+        run: node script.js
