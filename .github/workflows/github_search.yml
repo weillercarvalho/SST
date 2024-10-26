@@ -3,13 +3,12 @@ name: GitHub Search Script
 on:
   schedule:
     - cron: "*/30 * * * *"  # Executa a cada 30 minutos
-
   workflow_dispatch:
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
@@ -21,13 +20,19 @@ jobs:
 
       - name: Restore cache for processed_users.txt and repos_found.txt
         uses: actions/cache@v3
+        id: cache-users-repos
         with:
-          # Caminho dos arquivos que precisam ser persistidos
           path: |
             processed_users.txt
             repos_found.txt
           key: github-search-cache
           restore-keys: github-search-cache
+
+      # Certifique-se de criar os arquivos se eles não existirem
+      - name: Create files if not exists
+        run: |
+          touch processed_users.txt
+          touch repos_found.txt
 
       - name: Install dependencies
         run: npm install
@@ -41,13 +46,20 @@ jobs:
           GITHUB_TOKEN5: ${{ secrets.TOKEN5 }}
         run: node script.js
 
+      - name: Show processed_users.txt content (debugging)
+        run: cat processed_users.txt
+
+      - name: Show repos_found.txt content (debugging)
+        run: cat repos_found.txt
+
       - name: Update cache for processed_users.txt and repos_found.txt
+        if: steps.cache-users-repos.outputs.cache-hit != 'true'
         uses: actions/cache@v3
         with:
           path: |
             processed_users.txt
             repos_found.txt
-          key: github-search-cache
+          key: github-search-cache-${{ github.run_id }}
 
       # Opcional: Upload os arquivos como artefatos (caso queira acessá-los manualmente)
       - name: Upload processed_users.txt and repos_found.txt as artifacts
