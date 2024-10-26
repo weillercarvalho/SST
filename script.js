@@ -91,7 +91,7 @@ async function searchTopReposByStars(username, keyword) {
       q: `user:${username}`,  // Buscar pelos repositórios do usuário
       sort: 'stars',  // Ordenar pelos repositórios com mais estrelas
       order: 'desc',  // Ordem decrescente (maior para menor)
-      per_page: 7  // Limitar para os 7 primeiros resultados
+      per_page: 10  // Limitar para os 10 primeiros resultados
     });
 
     // Verificar se o usuário tem repositórios
@@ -128,13 +128,16 @@ async function searchTopReposByStars(username, keyword) {
   }
 }
 
-
-// Função para buscar perfis com mais de 10.000 seguidores
+// Função para buscar perfis com mais de 10.000 seguidores, começando de uma página aleatória
 async function getRandomUsersAndSearchWithLimiter(keyword) {
   try {
+    const totalPages = 100; // Número máximo de páginas que a busca pode ter (ajustar conforme necessário)
+    const randomPage = Math.floor(Math.random() * totalPages) + 1; // Escolher uma página aleatória entre 1 e totalPages
+
     const users = await octokit.search.users({
       q: 'followers:>10000',  // Procurar por usuários com mais de 10.000 seguidores
       per_page: 5,
+      page: randomPage,       // Começar da página aleatória
       sort: 'followers',      // Ordena os usuários pelo número de seguidores
       order: 'desc',          // Ordem decrescente (usuários com mais seguidores primeiro)
     });
@@ -149,11 +152,18 @@ async function getRandomUsersAndSearchWithLimiter(keyword) {
   }
 }
 
-// Palavra a ser buscada (múltiplas palavras-chave)
-const keyword = "API_KEY OR API_SECRET OR ACCESS_KEY OR PASSWORD OR ACCESS_TOKEN OR SECRET_KEY OR DB_PASSWORD OR DB_USER OR DATABASE_URL OR PROD_DB_PASSWORD OR PRODUCTION_API_KEY OR PRIVATE_KEY OR SSL_CERT OR TLS_KEY OR AWS_ACCESS_KEY_ID OR AWS_SECRET_ACCESS_KEY OR AWS_SESSION_TOKEN OR AZURE_CLIENT_ID OR AZURE_SECRET OR GCP_CREDENTIALS OR GCP_API_KEY OR ADMIN_PASSWORD OR EMAIL_PASSWORD OR MYSQL_PASSWORD OR PG_PASSWORD OR BEARER_TOKEN OR AUTH_TOKEN";
+// Função principal para rodar o script
+async function main() {
+  // Palavra a ser buscada (múltiplas palavras-chave)
+  const keyword = "API_KEY OR API_SECRET OR ACCESS_KEY OR PASSWORD OR ACCESS_TOKEN OR SECRET_KEY OR DB_PASSWORD OR DB_USER OR DATABASE_URL OR PROD_DB_PASSWORD OR PRODUCTION_API_KEY OR PRIVATE_KEY OR SSL_CERT OR TLS_KEY OR AWS_ACCESS_KEY_ID OR AWS_SECRET_ACCESS_KEY OR AWS_SESSION_TOKEN OR AZURE_CLIENT_ID OR AZURE_SECRET OR GCP_CREDENTIALS OR GCP_API_KEY OR ADMIN_PASSWORD OR EMAIL_PASSWORD OR MYSQL_PASSWORD OR PG_PASSWORD OR BEARER_TOKEN OR AUTH_TOKEN";
 
-// Iniciar busca por perfis com mais de 10.000 seguidores e procurar a palavra, com limite de requisições
-await getRandomUsersAndSearchWithLimiter(keyword);
+  // Iniciar busca por perfis com mais de 10.000 seguidores e procurar a palavra, com limite de requisições
+  await getRandomUsersAndSearchWithLimiter(keyword);
 
-// Checar limites de requisições após a execução (opcional)
-await checkRateLimit();
+  // Checar limites de requisições após a execução (opcional)
+  await checkRateLimit();
+}
+
+// Chamar a função principal
+main().catch(console.error);
+
