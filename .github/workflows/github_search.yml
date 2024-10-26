@@ -52,16 +52,16 @@ jobs:
       - name: Show repos_found.txt content (debugging)
         run: cat repos_found.txt
 
-      - name: Update cache for processed_users.txt and repos_found.txt
-        if: steps.cache-users-repos.outputs.cache-hit != 'true'
+      - name: Save the processed users and repos as artifacts
+        if: always()  # Sempre atualiza o cache independentemente de ser hit ou não
         uses: actions/cache@v3
         with:
           path: |
             processed_users.txt
             repos_found.txt
           key: github-search-cache-${{ github.run_id }}
+          restore-keys: github-search-cache
 
-      # Opcional: Upload os arquivos como artefatos (caso queira acessá-los manualmente)
       - name: Upload processed_users.txt and repos_found.txt as artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -69,3 +69,4 @@ jobs:
           path: |
             processed_users.txt
             repos_found.txt
+
