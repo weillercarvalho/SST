@@ -88,3 +88,13 @@ taniarascia
 in28minutes
 CyC2018
 feross
+BYVoid
+developit
+aws-samples
+OracleBrain
+evanw
+btholt
+miguelgrinberg
+hakimel
+mattn
+vbuterin
