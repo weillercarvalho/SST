@@ -189,7 +189,7 @@ async function getRandomUsersAndSearchWithLimiter(keyword) {
     let octokit = getOctokitInstance();
 
     const users = await octokit.search.users({
-      q: 'followers:>5000',
+      q: 'followers:>3000',
       per_page: 10,
       page: randomPage,
       sort: 'followers',
