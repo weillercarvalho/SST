@@ -78,3 +78,13 @@ necolas
 GoogleCloudPlatform
 QianMo
 shadcn
+PremChapagain
+sorrycc
+ahejlsberg
+alibaba
+lllyasviel
+goodfeli
+taniarascia
+in28minutes
+CyC2018
+feross
