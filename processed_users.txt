@@ -188,3 +188,13 @@ hzoo
 ValentineFernandes
 eggprotocol
 intel-restricted
+zcbenz
+singwhatiwanna
+youngyangyang04
+laravel
+maxschwarzmueller
+nunomaduro
+mxcl
+intel-sandbox
+sebastianbergmann
+PKUFlyingPig
