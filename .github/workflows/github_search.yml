@@ -46,7 +46,7 @@ jobs:
         run: |
           git config --global user.email "engweiller@hotmail.com"
           git config --global user.name "weillercarvalho"
-          git add processed_users.txt repos_found.txt
+          git add -f processed_users.txt repos_found.txt
           git commit -m "Update processed_users and repos_found from GitHub Actions"
           git push
         env:
