@@ -48,3 +48,13 @@ julycoding
 driesvints
 guo-yu
 calebporzio
+tc39
+jaywcjlove
+EurekaLabsAI
+vinta
+springframeworkguru
+DeborahK
+godotengine
+vjanz
+Fuelet
+FiloSottile
