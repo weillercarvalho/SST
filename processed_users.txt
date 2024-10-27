@@ -420,3 +420,13 @@ vuejs
 kenjinote
 fchollet
 codingforentrepreneurs
+jeresig
+brunosimon
+angelabauer
+chrisbanes
+metatimeofficial
+Visualize-ML
+mattt
+BEPb
+loiane
+vercel
