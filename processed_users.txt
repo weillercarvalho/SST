@@ -158,3 +158,13 @@ nasa
 microsoftopensource
 cmlsharp
 opa334
+egoist
+mathiasbynens
+laruence
+matheusbattisti
+ibireme
+soumith
+acenelio
+spring-projects
+rakyll
+bradfitz
