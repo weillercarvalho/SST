@@ -48,7 +48,8 @@ jobs:
           git config --global user.name "weillercarvalho"
           git add -f processed_users.txt repos_found.txt
           git commit -m "Update processed_users and repos_found from GitHub Actions"
-          git push
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
