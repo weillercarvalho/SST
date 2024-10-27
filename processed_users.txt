@@ -68,3 +68,13 @@ tiann
 angular
 mxstbr
 JCSIVO
+yangshun
+Microsoft-corp
+jakearchibald
+bvaughn
+JohnHammond
+samyk
+necolas
+GoogleCloudPlatform
+QianMo
+shadcn
