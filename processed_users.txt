@@ -400,3 +400,13 @@ commonsguy
 tekkub
 rwightman
 jojoldu
+cusspvz
+jamesmontemagno
+lilianweng
+EbookFoundation
+wcandillon
+mercyblitz
+cyanharlow
+dtolnay
+brendangregg
+BilgisayarKavramlari
