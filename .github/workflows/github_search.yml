@@ -2,11 +2,7 @@ name: GitHub Search Script
 
 on:
   schedule:
-<<<<<<< HEAD
     - cron: "*/15 * * * *"  # Executa a cada 15 minutos
-=======
-    - cron: "*/15 * * * *"  # Executa a cada 30 minutos
->>>>>>> 5996d8b (feat: CI/CD changes.)
   workflow_dispatch:
 
 jobs:
