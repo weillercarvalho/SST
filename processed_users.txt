@@ -148,3 +148,13 @@ ProgrammingHero1
 cloudwu
 donnemartin
 dhh
+Shopify
+bizz84
+xuxueli
+yihong0618
+PySimpleGUI
+mholt
+nasa
+microsoftopensource
+cmlsharp
+opa334
