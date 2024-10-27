@@ -8,3 +8,13 @@ romannurik
 flipperdevices
 mnielsen
 chenshuo
+SkalskiP
+matklad
+themsaid
+charliermarsh
+tonsky
+ebidel
+IBM
+freddier
+Akryum
+w3cj
