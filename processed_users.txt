@@ -332,3 +332,13 @@ JetBrains
 jamiebuilds
 fat
 ardalis
+oobabooga
+doodlewind
+codebasics
+xoreaxeaxeax
+sonnysangha
+satyanadella
+Errichto
+tulna07
+airbnb
+rocketseat-education
