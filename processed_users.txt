@@ -98,3 +98,13 @@ miguelgrinberg
 hakimel
 mattn
 vbuterin
+zenorocha
+craftzdog
+chriscoyier
+offensive-security
+datawhalechina
+robpike
+jrohitofficial
+bot50
+htr-tech
+amueller
