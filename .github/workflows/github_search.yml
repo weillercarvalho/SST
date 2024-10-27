@@ -10,23 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout do repositório para garantir que tenhamos a última versão dos arquivos
       - name: Check out the repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # Isso evita o uso das credenciais padrão
+          fetch-depth: 0  # Pega o histórico completo, necessário para push
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-
-      - name: Restore cache for processed_users.txt and repos_found.txt
-        uses: actions/cache@v3
-        id: cache-users-repos
-        with:
-          path: |
-            processed_users.txt
-            repos_found.txt
-          key: github-search-cache
-          restore-keys: github-search-cache
 
       # Certifique-se de criar os arquivos se eles não existirem
       - name: Create files if not exists
@@ -37,6 +31,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Executa o script de busca no GitHub
       - name: Run the GitHub Search script
         env:
           GITHUB_TOKEN1: ${{ secrets.TOKEN1 }}
@@ -46,27 +41,15 @@ jobs:
           GITHUB_TOKEN5: ${{ secrets.TOKEN5 }}
         run: node script.js
 
-      - name: Show processed_users.txt content (debugging)
-        run: cat processed_users.txt
+      # Faz commit e push dos arquivos atualizados para o repositório
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "engweiller@hotmail.com"
+          git config --global user.name "weillercarvalho"
+          git add processed_users.txt repos_found.txt
+          git commit -m "Update processed_users and repos_found from GitHub Actions"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Show repos_found.txt content (debugging)
-        run: cat repos_found.txt
-
-      - name: Save the processed users and repos as artifacts
-        if: always()  # Sempre atualiza o cache independentemente de ser hit ou não
-        uses: actions/cache@v3
-        with:
-          path: |
-            processed_users.txt
-            repos_found.txt
-          key: github-search-cache-${{ github.run_id }}
-          restore-keys: github-search-cache
-
-      - name: Upload processed_users.txt and repos_found.txt as artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: processed-and-repos
-          path: |
-            processed_users.txt
-            repos_found.txt
 
