@@ -510,3 +510,13 @@ ageron
 gopinav
 RubyLouvre
 astaxie
+mustafacagri
+dennybritz
+tenderlove
+jaredpalmer
+joshlong
+haileys
+frontend-joe
+yihui
+Jack-Cherish
+wasabeef
