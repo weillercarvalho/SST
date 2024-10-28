@@ -540,3 +540,13 @@ bahmutov
 dylanaraps
 bchiang7
 AlexeyAB
+sindresorhus
+geohot
+rafaballerini
+getify
+JakeWharton
+addyosmani
+tj
+google
+TheAlgorithms
+github
