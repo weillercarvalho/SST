@@ -560,3 +560,13 @@ prakhar1989
 gaoxiang12
 obsidianmd
 Lightning-AI
+torvalds
+yyx990803
+gaearon
+karpathy
+gustavoguanabara
+ruanyf
+openai
+peng-zhihui
+microsoft
+bradtraversy
