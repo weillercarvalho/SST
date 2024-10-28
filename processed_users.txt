@@ -613,3 +613,13 @@ supabase
 hakanyalcinkaya
 DanielHe4rt
 jinzhu
+colah
+arthurspk
+mrdbourke
+intel-innersource
+norvig
+THUDM
+codecrafters-io
+wintercn
+ai
+abhishekkrthakur
