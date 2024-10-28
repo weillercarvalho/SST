@@ -500,3 +500,13 @@ lexfridman
 fatih
 nwaliaez
 lucasmontano
+isaacs
+rauchg
+wesm
+cs50
+Kwynto
+kubowania
+ageron
+gopinav
+RubyLouvre
+astaxie
