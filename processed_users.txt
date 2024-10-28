@@ -42,3 +42,13 @@ joshwcomeau
 langchain-ai
 bitwarden
 jph00
+jlord
+tensorflow
+peter-kimanzi
+stormzhang
+lifesinger
+iam-veeramalla
+maykbrito
+LeaVerou
+jackfrued
+sandhikagalih
