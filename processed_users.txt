@@ -72,3 +72,13 @@ mrdoob
 gvanrossum
 defunkt
 mbostock
+w3c
+joelgrus
+noopkat
+smallnest
+deepsea514
+jgilfelt
+denoland
+frontendbr
+robbyrussell
+lukeed
