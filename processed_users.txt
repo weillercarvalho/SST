@@ -281,3 +281,13 @@ nunomaduro
 intel-sandbox
 PKUFlyingPig
 shradha-khapra
+AllenDowney
+CoderMJLee
+replicate
+Unity-Technologies
+mcollina
+scroll-tech
+PatrickAlphaC
+pytorch
+toddmotto
+topjohnwu
