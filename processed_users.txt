@@ -291,3 +291,13 @@ PatrickAlphaC
 pytorch
 toddmotto
 topjohnwu
+gaoxiang12
+BrendanEich
+mhevery
+nextcloud
+MicrosoftLearning
+mstraughan86
+mafintosh
+Fernanda-Kipper
+shadowsocks
+jxnblk
