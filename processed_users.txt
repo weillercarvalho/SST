@@ -62,3 +62,13 @@ lidangzzz
 exercism
 ept
 TanStack
+daimajia
+sdras
+mojombo
+jwasham
+python
+mdo
+mrdoob
+gvanrossum
+defunkt
+mbostock
