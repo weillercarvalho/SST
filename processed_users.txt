@@ -82,3 +82,13 @@ denoland
 frontendbr
 robbyrussell
 lukeed
+kelseyhightower
+codediodeio
+techwithtim
+programthink
+keijiro
+JohnMwendwa
+mitsuhiko
+douglascrockford
+antirez
+tpope
