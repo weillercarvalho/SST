@@ -231,3 +231,13 @@ hax
 CamDavidsonPilon
 bbatsov
 JedWatson
+isaacs
+kubowania
+Kwynto
+rauchg
+astaxie
+wesm
+cs50
+gopinav
+RubyLouvre
+ageron
