@@ -122,3 +122,12 @@ jherr
 moxie0
 daveshap
 PaddlePaddle
+bevacqua
+anvaka
+bahmutov
+asweigart
+JohannesMilke
+wangzheng0822
+andrewjmead
+dylanaraps
+sebmck
