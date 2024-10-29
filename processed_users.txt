@@ -241,3 +241,13 @@ cs50
 gopinav
 RubyLouvre
 ageron
+freekmurze
+Anuj-Kumar-Sharma
+mikeal
+tshemsedinov
+wepe
+susanli2016
+JeffreyZhao
+teddysun
+kevinsawicki
+s4vitar
