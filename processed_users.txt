@@ -181,3 +181,13 @@ ErickWendel
 jart
 Pierian-Data
 jvns
+justjavac
+kenjinote
+dotnet
+fchollet
+vuejs
+esin
+trekhleb
+clowwindy
+JeffreyWay
+codingforentrepreneurs
