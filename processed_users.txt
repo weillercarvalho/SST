@@ -92,3 +92,13 @@ mitsuhiko
 douglascrockford
 antirez
 tpope
+sindresorhus
+tj
+github
+geohot
+getify
+JakeWharton
+google
+TheAlgorithms
+addyosmani
+rafaballerini
