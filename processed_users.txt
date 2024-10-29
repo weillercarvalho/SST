@@ -444,3 +444,13 @@ datawhalechina
 offensive-security
 amueller
 chriscoyier
+bchiang7
+jaredpalmer
+yihui
+frontend-joe
+tenderlove
+Jack-Cherish
+joshlong
+dennybritz
+haileys
+wasabeef
