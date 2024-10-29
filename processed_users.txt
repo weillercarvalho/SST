@@ -112,3 +112,13 @@ intel-restricted
 steven-tey
 eggprotocol
 KevinHock
+mholt
+JubayerRiyad
+crossoverJie
+aptos-labs
+codewithsadee
+Azure-Samples
+jherr
+moxie0
+daveshap
+PaddlePaddle
