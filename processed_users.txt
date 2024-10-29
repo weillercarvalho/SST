@@ -371,3 +371,13 @@ evancz
 ZhangMYihua
 evilcos
 stephencelis
+haoel
+BYVoid
+aws-samples
+btholt
+evanw
+eust-w
+mattn
+miguelgrinberg
+developit
+hakimel
