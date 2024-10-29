@@ -171,3 +171,13 @@ igrigorik
 ardalis
 hmaverickadams
 docker
+google-research
+alex
+open-mmlab
+sophiebits
+romainguy
+rsc
+ErickWendel
+jart
+Pierian-Data
+jvns
