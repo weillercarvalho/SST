@@ -331,3 +331,13 @@ domenic
 antoniolg
 BaseMax
 zhangxinxu
+vercel
+hkirat
+Asabeneh
+cumsoft
+jakevdp
+liyupi
+halfrost
+vczh
+flutter
+Trinea
