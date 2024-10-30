@@ -521,3 +521,13 @@ mgechev
 easychen
 matz
 tjdevries
+tomnomnom
+Stability-AI
+adamwathan
+google-deepmind
+kevin-powell
+acenelio
+Charles-Chrismann
+rust-lang
+NVIDIA
+iconfont-cn
