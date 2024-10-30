@@ -702,3 +702,13 @@ DevonCrawford
 nwaliaez
 OneLoneCoder
 QuincyLarson
+torvalds
+gustavoguanabara
+yyx990803
+ruanyf
+karpathy
+openai
+gaearon
+microsoft
+peng-zhihui
+bradtraversy
