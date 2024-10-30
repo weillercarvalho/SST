@@ -671,3 +671,13 @@ ogrisel
 sahat
 asLody
 topaz
+vbuterin
+egoist
+matheusbattisti
+laruence
+soumith
+mathiasbynens
+rakyll
+spring-projects
+ibireme
+bradfitz
