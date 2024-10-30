@@ -531,3 +531,13 @@ Charles-Chrismann
 rust-lang
 NVIDIA
 iconfont-cn
+UberGuidoZ
+davidbombal
+awslabs
+jtleek
+sebastianbergmann
+LaravelDaily
+satya-nutella
+rdpeng
+luizomf
+ip681
