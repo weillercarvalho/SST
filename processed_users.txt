@@ -515,3 +515,9 @@ mpj
 codewars
 KeithGalli
 poteto
+mdn
+shiftkey
+mgechev
+easychen
+matz
+tjdevries
