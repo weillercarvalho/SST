@@ -652,3 +652,13 @@ fazt
 projectdiscovery
 nahamsec
 aplus-developer
+lepture
+felangel
+GoesToEleven
+rwieruch
+samarjitsahoo
+audreyt
+clementmihailescu
+charmbracelet
+golang
+ChenYilong
