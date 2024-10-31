@@ -18,3 +18,4 @@ kulikov-dev
 aphyr
 ashleygwilliams
 acheong08
+jdevfullstack
