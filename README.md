@@ -10,22 +10,22 @@ Tool that scans all random githubs profiles looking for keywords that link to se
 
 ## Running locally
 
-1. Clone the project
+1. Clone the project.
 
 ```bash
   https://github.com/weillercarvalho/SST
 ```
 
-2. Enter the project directory
+2. Enter the project directory.
 
-3. Install dependencies
+3. Install dependencies.
 
 ```bash
   npm i
 ```
 4. Configure the necessary github tokens to trigger Github API endpoints (If you analyze the script.js file, I used five(5) github tokens, but you can configure the use of just one(1), remembering that you will need to change the code for this to run normally).
 
-5. Run the script
+5. Run the script.
 
 ```bash
   node script.js
@@ -34,7 +34,7 @@ Extra Informations:
 
 6. Github Action is already pre-configured to run a workflow automatically every 15 minutes if you want to clone/fork the project to your machine.
 
-7. These are the keywords currently searched for, if you want to change, change the script.js file
+7. These are the keywords currently searched for, if you want to change, change the script.js file.
 ```bash
      "API_KEY", "API_SECRET", "ACCESS_KEY", "ACCESS_TOKEN", "SECRET_KEY",
     "DB_PASSWORD", "DB_USER", "PRODUCTION_API_KEY",
