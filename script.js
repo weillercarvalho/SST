@@ -45,10 +45,9 @@ async function checkAndHandleRateLimit(octokit, resource) {
   }
 }
 
-
 const limiter = new Bottleneck({
   maxConcurrent: 1,
-  minTime: 65000 
+  minTime: 65000
 });
 
 async function fetchReposWithLimiter(username, keyword) {
@@ -74,7 +73,7 @@ async function searchTopReposByStars(octokit, username, keyword) {
       const repoFullName = repo.full_name;
       console.log(`Checking repository: ${repoFullName}`);
 
-      octokit = await checkAndHandleRateLimit(octokit, 'code_search');
+      octokit = await checkAndHandleRateLimit(octokit, 'code_search'); 
 
       const codeSearch = await octokit.search.code({
         q: `${keyword} in:file repo:${repoFullName}`,
@@ -124,7 +123,7 @@ function isUserProcessed(user) {
 
 async function getTotalPages(octokit, range) {
   try {
-    octokit = await checkAndHandleRateLimit(octokit, 'search'); 
+    octokit = await checkAndHandleRateLimit(octokit, 'search');
     const response = await octokit.search.users({
       q: `followers:${range}`,
       per_page: 1
@@ -152,7 +151,7 @@ async function getRandomUserWithLimiter(keyword) {
     const totalPages = await getTotalPages(octokit, range);
     if (totalPages === 0) continue;
 
-    for (let attempt = 0; attempt < 3; attempt++) {
+    for (let attempt = 0; attempt < 7; attempt++) { 
       const randomPage = Math.floor(Math.random() * totalPages) + 1;
 
       octokit = await checkAndHandleRateLimit(octokit, 'search'); 
@@ -192,12 +191,9 @@ async function main() {
   ];
 
   const keywordQuery = keywords.join(" OR ");
-  let attempt = 0;
-
-  while (attempt < 2) { 
-    await getRandomUserWithLimiter(keywordQuery);
-    attempt++;
-  }
+  
+  // Executa o processo de busca e verificação apenas uma vez
+  await getRandomUserWithLimiter(keywordQuery);
 }
 
 main().catch(console.error);

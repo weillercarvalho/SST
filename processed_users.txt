@@ -23,3 +23,5 @@ alex
 aws
 Sentdex
 munificent
+Luc4st1574
+mdn
