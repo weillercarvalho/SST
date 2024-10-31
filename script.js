@@ -160,7 +160,6 @@ async function searchTopReposByStars(octokit, username, keyword) {
 
       await checkAndHandleCodeSearchRateLimit(octokit);
 
-      // Construção da query para a busca de código, usando corretamente o operador OR
       const codeSearch = await octokit.search.code({
         q: `${keyword} in:file repo:${repoFullName}`,
       });
@@ -181,37 +180,42 @@ async function searchTopReposByStars(octokit, username, keyword) {
   }
 }
 
-// Função para buscar perfis com mais de 5.000 seguidores, verificando se já foram processados
-async function getRandomUsersAndSearchWithLimiter(keyword) {
+// Função para buscar um usuário aleatório com mais de 3.000 seguidores e que ainda não foi processado
+async function getRandomUserWithLimiter(keyword) {
   try {
-    const totalPages = 100;
-    const randomPage = Math.floor(Math.random() * totalPages) + 1;
+    const totalPages = 100; // Supondo que haja até 100 páginas de usuários com +3000 seguidores
     let octokit = getOctokitInstance();
 
-    const users = await octokit.search.users({
-      q: 'followers:>3000',
-      per_page: 10,
-      page: randomPage,
-      sort: 'followers',
-      order: 'desc',
-    });
+    for (let attempt = 0; attempt < 10; attempt++) {
+      const randomPage = Math.floor(Math.random() * totalPages) + 1;
+      const users = await octokit.search.users({
+        q: 'followers:>3000',
+        per_page: 1,
+        page: randomPage,
+        sort: 'followers',
+        order: 'desc',
+      });
 
-    await Promise.all(users.data.items.map(async (user) => {
-      if (!isUserProcessed(user.login)) {
-        console.log(`Verificando usuário: ${user.login}`);
-        await fetchReposWithLimiter(user.login, keyword);
-        saveProcessedUser(user.login);
-        getNextToken();
+      if (users.data.items.length === 0) continue;
+
+      const user = users.data.items[0].login;
+
+      if (!isUserProcessed(user)) {
+        console.log(`Verificando usuário: ${user}`);
+        await fetchReposWithLimiter(user, keyword);
+        saveProcessedUser(user);
+        getNextToken(); // Alterna o token após cada execução
+        return;
       } else {
-        console.log(`Usuário ${user.login} já foi processado anteriormente. Pulando...`);
+        console.log(`Usuário ${user} já foi processado anteriormente. Pulando...`);
       }
-    }));
+    }
   } catch (error) {
-    console.error("Erro ao buscar usuários:", error);
+    console.error("Erro ao buscar usuário:", error);
   }
 }
 
-// Função principal para rodar o script
+// Função principal para rodar o script com busca de usuários aleatórios
 async function main() {
   const keywords = [
     "API_KEY", "API_SECRET", "ACCESS_KEY", "ACCESS_TOKEN", "SECRET_KEY",
@@ -224,11 +228,11 @@ async function main() {
     "API_TOKEN", "API_PRIVATE_KEY", "GOOGLE_API_KEY", "GITHUB_TOKEN", "BITBUCKET_TOKEN", "GITHUB_CLIENT_ID", "GITHUB_CLIENT_SECRET", "DOCKER_PASSWORD", "DOCKER_TOKEN"
   ];
 
-
-  // Construindo a query com o operador OR entre cada palavra-chave
   const keywordQuery = keywords.join(" OR ");
 
-  await getRandomUsersAndSearchWithLimiter(keywordQuery);
+  for (let i = 0; i < 10; i++) { // Ajuste o número de usuários a serem verificados
+    await getRandomUserWithLimiter(keywordQuery);
+  }
 
   const octokit = getOctokitInstance();
   await checkRateLimit(octokit);
