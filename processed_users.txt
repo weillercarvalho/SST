@@ -779,3 +779,5 @@ leah
 aladdinpersson
 kubernetes-sigs
 benedekrozemberczki
+hsutter
+bisqwit
