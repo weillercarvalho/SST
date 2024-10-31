@@ -8,3 +8,7 @@ Repository: bnb-chain/opbnb, File: ops-bedrock/l1.env
 Repository: bnb-chain/opbnb, File: packages/sdk/example.env
 Repository: bnb-chain/opbnb, File: packages/contracts-bedrock/.envrc.example
 Repository: bnb-chain/opbnb, File: packages/chain-mon/.env.example
+Repository: DanWahlin/DockerAndKubernetesCourseCode, File: labs/Working with Volumes-ConfigMaps-Secrets/Begin/.docker/env/app.production.env
+Repository: DanWahlin/DockerAndKubernetesCourseCode, File: labs/Working with Volumes-ConfigMaps-Secrets/Begin/.docker/env/app.development.env
+Repository: DanWahlin/DockerAndKubernetesCourseCode, File: labs/Working with Volumes-ConfigMaps-Secrets/Begin/.docker/env/mongo.production.env
+Repository: DanWahlin/DockerAndKubernetesCourseCode, File: labs/Working with Volumes-ConfigMaps-Secrets/Begin/.docker/env/mongo.development.env
