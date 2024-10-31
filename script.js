@@ -13,12 +13,12 @@ const tokens = [
 ];
 
 let tokenIndex = 0;
-let tokenAttempts = 0; // contador de tentativas de troca de token
+let tokenAttempts = 0; 
 
 function getNextToken() {
-  if (tokenAttempts >= 4) {
+  if (tokenAttempts >= 5) {
     console.log("Limite de tentativas de troca de token atingido. Interrompendo o script.");
-    process.exit(); // encerra o script após 3 trocas de token
+    process.exit(); 
   }
   tokenIndex = (tokenIndex + 1) % tokens.length;
   tokenAttempts += 1;
