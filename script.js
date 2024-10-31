@@ -16,7 +16,7 @@ let tokenIndex = 0;
 let tokenAttempts = 0; 
 
 function getNextToken() {
-  if (tokenAttempts >= 5) {
+  if (tokenAttempts >= 4) {
     console.log("Token exchange attempt limit reached. Interrupting the script.");
     process.exit(); 
   }
