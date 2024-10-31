@@ -1,7 +1,7 @@
 # Search Sensitive Tool
 
 
-Tool that scans all random githubs profiles looking/scanning for keywords that link to sensitive data.
+Tool that scans all random githubs profiles looking/scanning for .env files.
 
 ## References
 
