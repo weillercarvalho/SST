@@ -184,7 +184,11 @@ async function getRandomUserWithLimiter() {
 }
 
 async function main() {
-  await getRandomUserWithLimiter();
+  for (let i = 0; i < 4; i++) {
+    await getRandomUserWithLimiter();
+  }
 }
+
+main().catch(console.error);
 
 main().catch(console.error);
