@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import fs from "fs";
 dotenv.config();
 
-// Carregar os tokens do arquivo .env
+
 const tokens = [
   process.env.GITHUB_TOKEN1,
   process.env.GITHUB_TOKEN2,
@@ -15,7 +15,7 @@ const tokens = [
 
 let tokenIndex = 0;
 
-// Função para alternar entre tokens
+
 function getNextToken() {
   tokenIndex = (tokenIndex + 1) % tokens.length;
   const token = tokens[tokenIndex];
@@ -23,14 +23,14 @@ function getNextToken() {
   return token;
 }
 
-// Função para criar uma nova instância do Octokit com o token atual
+
 function getOctokitInstance() {
   return new Octokit({
     auth: getNextToken()
   });
 }
 
-// Função para verificar o limite de buscas de código e aguardar até o reset se o limite for atingido
+
 async function checkAndHandleCodeSearchRateLimit(octokit) {
   const rateLimit = await octokit.rateLimit.get();
   const searchLimit = rateLimit.data.resources.search;
@@ -51,7 +51,7 @@ async function checkAndHandleCodeSearchRateLimit(octokit) {
   }
 }
 
-// Função para verificar o limite de requisições e aguardar até o reset se o limite for atingido
+
 async function checkAndHandleRateLimit(octokit) {
   try {
     const rateLimit = await octokit.rateLimit.get();
@@ -67,7 +67,7 @@ async function checkAndHandleRateLimit(octokit) {
         console.log(`Quase atingindo o limite de taxa. Aguardando ${Math.ceil(waitTime / 1000)} segundos até o reset...`);
         await new Promise(resolve => setTimeout(resolve, waitTime));
       }
-      // Troca o token após a pausa
+
       octokit = getOctokitInstance();
     }
   } catch (error) {
@@ -81,7 +81,7 @@ async function checkAndHandleRateLimit(octokit) {
   }
 }
 
-// Função para salvar o nome do repositório e o arquivo onde a palavra-chave foi encontrada
+
 function saveRepoAndFileToFile(repoFullName, filePath) {
   const outputFilePath = 'repos_found.txt';
   const logMessage = `Repositório: ${repoFullName}, Arquivo: ${filePath}\n`;
@@ -94,13 +94,13 @@ function saveRepoAndFileToFile(repoFullName, filePath) {
   });
 }
 
-// Função para salvar usuários já verificados
+
 function saveProcessedUser(user) {
   const processedUsersFile = 'processed_users.txt';
   fs.appendFileSync(processedUsersFile, `${user}\n`, 'utf-8');
 }
 
-// Função para verificar se o usuário já foi processado
+
 function isUserProcessed(user) {
   const processedUsersFile = 'processed_users.txt';
   if (!fs.existsSync(processedUsersFile)) {
@@ -111,7 +111,7 @@ function isUserProcessed(user) {
   return processedUsers.includes(user);
 }
 
-// Função para verificar os limites após a execução
+
 async function checkRateLimit(octokit) {
   const rateLimit = await octokit.rateLimit.get();
   const coreLimit = rateLimit.data.resources.core;
@@ -126,20 +126,20 @@ async function checkRateLimit(octokit) {
   console.log(`Reseta em: ${new Date(searchLimit.reset * 1000)}`);
 }
 
-// Cria um limitador de taxa usando Bottleneck
+
 const limiter = new Bottleneck({
   maxConcurrent: 1,
-  minTime: 61000 // 61 segundos entre cada requisição de busca de código
+  minTime: 61000 
 });
 
-// Função para buscar repositórios de um usuário com o limitador
+
 async function fetchReposWithLimiter(username, keyword) {
   let octokit = getOctokitInstance();
   await checkAndHandleRateLimit(octokit);
   await limiter.schedule(() => searchTopReposByStars(octokit, username, keyword));
 }
 
-// Função para buscar os 7 repositórios mais populares (ordenados por estrelas)
+
 async function searchTopReposByStars(octokit, username, keyword) {
   try {
     const repos = await octokit.search.repos({
@@ -180,10 +180,10 @@ async function searchTopReposByStars(octokit, username, keyword) {
   }
 }
 
-// Função para buscar um usuário aleatório com mais de 3.000 seguidores e que ainda não foi processado
+
 async function getRandomUserWithLimiter(keyword) {
   try {
-    const totalPages = 100; // Supondo que haja até 100 páginas de usuários com +3000 seguidores
+    const totalPages = 100; 
     let octokit = getOctokitInstance();
 
     for (let attempt = 0; attempt < 10; attempt++) {
@@ -204,7 +204,7 @@ async function getRandomUserWithLimiter(keyword) {
         console.log(`Verificando usuário: ${user}`);
         await fetchReposWithLimiter(user, keyword);
         saveProcessedUser(user);
-        getNextToken(); // Alterna o token após cada execução
+        getNextToken(); 
         return;
       } else {
         console.log(`Usuário ${user} já foi processado anteriormente. Pulando...`);
@@ -215,7 +215,7 @@ async function getRandomUserWithLimiter(keyword) {
   }
 }
 
-// Função principal para rodar o script com busca de usuários aleatórios
+
 async function main() {
   const keywords = [
     "API_KEY", "API_SECRET", "ACCESS_KEY", "ACCESS_TOKEN", "SECRET_KEY",
@@ -230,7 +230,7 @@ async function main() {
 
   const keywordQuery = keywords.join(" OR ");
 
-  for (let i = 0; i < 10; i++) { // Ajuste o número de usuários a serem verificados
+  for (let i = 0; i < 10; i++) { 
     await getRandomUserWithLimiter(keywordQuery);
   }
 
