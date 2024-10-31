@@ -17,13 +17,13 @@ let tokenAttempts = 0;
 
 function getNextToken() {
   if (tokenAttempts >= 5) {
-    console.log("Limite de tentativas de troca de token atingido. Interrompendo o script.");
+    console.log("Token exchange attempt limit reached. Interrupting the script.");
     process.exit(); 
   }
   tokenIndex = (tokenIndex + 1) % tokens.length;
   tokenAttempts += 1;
   const token = tokens[tokenIndex];
-  console.log(`Usando o token: ${tokenIndex + 1}`);
+  console.log(`Using token: ${tokenIndex + 1}`);
   return token;
 }
 
@@ -42,13 +42,13 @@ async function checkAndHandleRateLimit(octokit, resource) {
     if (remaining === 0) {
       const currentTime = Date.now();
       const waitTime = resetTime - currentTime;
-      console.log(`Limite de ${resource} atingido. Aguardando ${Math.ceil(waitTime / 1000)} segundos para resetar...`);
+      console.log(`Limit ${resource} reached. Awaiting ${Math.ceil(waitTime / 1000)} seconds to reset...`);
       await new Promise(resolve => setTimeout(resolve, waitTime));
       return true;
     }
     return false;
   } catch (error) {
-    console.error(`Erro ao verificar o limite de taxa para ${resource}:`, error);
+    console.error(`Error checking rate limit for ${resource}:`, error);
     return true;
   }
 }
@@ -76,42 +76,42 @@ async function searchTopReposByStars(octokit, username, keyword) {
     });
 
     if (repos.data.items.length === 0) {
-      console.log(`Usuário ${username} não possui repositórios.`);
+      console.log(`User ${username} doesnt have any repository.`);
       return;
     }
 
     for (const repo of repos.data.items) {
       const repoFullName = repo.full_name;
-      console.log(`Verificando repositório: ${repoFullName}`);
+      console.log(`Checking repository: ${repoFullName}`);
 
       const codeSearch = await octokit.search.code({
         q: `${keyword} in:file repo:${repoFullName}`,
       });
 
       if (codeSearch.data.items.length > 0) {
-        console.log(`Palavra "${keyword}" encontrada no repositório ${repoFullName}`);
+        console.log(`Word "${keyword}" found in repository ${repoFullName}`);
         codeSearch.data.items.forEach(item => {
           const filePath = item.path;
-          console.log(`Palavra encontrada no arquivo: ${filePath}`);
+          console.log(`Word found in file: ${filePath}`);
           saveRepoAndFileToFile(repoFullName, filePath);
         });
       } else {
-        console.log(`Nenhuma ocorrência.`);
+        console.log(`No ocurrencies.`);
       }
     }
   } catch (error) {
-    console.error(`Erro ao buscar repositórios de ${username}:`, error);
+    console.error(`Error checking repository of ${username}:`, error);
   }
 }
 
 function saveRepoAndFileToFile(repoFullName, filePath) {
   const outputFilePath = 'repos_found.txt';
-  const logMessage = `Repositório: ${repoFullName}, Arquivo: ${filePath}\n`;
+  const logMessage = `Repository: ${repoFullName}, File: ${filePath}\n`;
   fs.appendFile(outputFilePath, logMessage, (err) => {
     if (err) {
-      console.error(`Erro ao salvar no arquivo: ${err}`);
+      console.error(`Error saving file in: ${err}`);
     } else {
-      console.log(`Repositório ${repoFullName} e arquivo ${filePath} adicionados ao arquivo.`);
+      console.log(`Repository ${repoFullName} and file ${filePath} added to arquive.`);
     }
   });
 }
@@ -141,7 +141,7 @@ async function getTotalPages(octokit, range) {
     const totalUsers = Math.min(response.data.total_count, 1000);
     return Math.ceil(totalUsers / 100);
   } catch (error) {
-    console.error("Erro ao obter o número total de usuários:", error);
+    console.error("Error getting total number of users:", error);
     return 0;
   }
 }
@@ -174,12 +174,12 @@ async function getRandomUserWithLimiter(keyword) {
       const user = users.data.items[0].login;
 
       if (!isUserProcessed(user)) {
-        console.log(`Verificando usuário: ${user} no intervalo ${range}`);
+        console.log(`Checking user: ${user} in range ${range}`);
         await fetchReposWithLimiter(user, keyword);
         saveProcessedUser(user);
         return;
       } else {
-        console.log(`Usuário ${user} já foi processado anteriormente. Pulando...`);
+        console.log(`User ${user} has already been processed previously. Jumping...`);
       }
     }
   }
