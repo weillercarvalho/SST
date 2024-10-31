@@ -159,7 +159,7 @@ async function getRandomUserWithLimiter() {
     const totalPages = await getTotalPages(octokit, range);
     if (totalPages === 0) continue;
 
-    for (let attempt = 0; attempt < 3; attempt++) {  // Limite reduzido para 3 tentativas por faixa
+    for (let attempt = 0; attempt < 10; attempt++) { 
       const randomPage = Math.floor(Math.random() * totalPages) + 1;
       const users = await octokit.search.users({
         q: `followers:${range}`,
