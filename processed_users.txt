@@ -29,3 +29,5 @@ bradtraversy
 peng-zhihui
 ruanyf
 karpathy
+openai
+torvalds
