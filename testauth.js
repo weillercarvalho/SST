@@ -10,7 +10,7 @@ const tokens = [
   process.env.GITHUB_TOKEN5
 ];
 
-// Função para testar a autenticação de cada token
+
 async function testAuthentication() {
   for (let i = 0; i < tokens.length; i++) {
     const octokit = new Octokit({ auth: tokens[i] });
@@ -23,5 +23,5 @@ async function testAuthentication() {
   }
 }
 
-// Chamar a função de teste
+
 testAuthentication();
