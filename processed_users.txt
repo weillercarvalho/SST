@@ -27,3 +27,5 @@ aws
 tjdevries
 bradtraversy
 peng-zhihui
+ruanyf
+karpathy
