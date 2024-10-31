@@ -13,9 +13,15 @@ const tokens = [
 ];
 
 let tokenIndex = 0;
+let tokenAttempts = 0; // contador de tentativas de troca de token
 
 function getNextToken() {
+  if (tokenAttempts >= 4) {
+    console.log("Limite de tentativas de troca de token atingido. Interrompendo o script.");
+    process.exit(); // encerra o script após 3 trocas de token
+  }
   tokenIndex = (tokenIndex + 1) % tokens.length;
+  tokenAttempts += 1;
   const token = tokens[tokenIndex];
   console.log(`Usando o token: ${tokenIndex + 1}`);
   return token;
@@ -27,52 +33,74 @@ function getOctokitInstance() {
   });
 }
 
-async function checkAndHandleCodeSearchRateLimit(octokit) {
-  const rateLimit = await octokit.rateLimit.get();
-  const searchLimit = rateLimit.data.resources.search;
-  const resetTime = searchLimit.reset * 1000;
+async function checkAndHandleRateLimit(octokit, resource) {
+  try {
+    const rateLimit = await octokit.rateLimit.get();
+    const remaining = rateLimit.data.resources[resource].remaining;
+    const resetTime = rateLimit.data.resources[resource].reset * 1000;
 
-  console.log(`Limite de buscas de código: ${searchLimit.limit}`);
-  console.log(`Requisições de busca de código restantes: ${searchLimit.remaining}`);
-  console.log(`Reseta em: ${new Date(resetTime)}`);
-
-  if (searchLimit.remaining === 0) {
-    const currentTime = Date.now();
-    const waitTime = resetTime - currentTime;
-
-    if (waitTime > 0) {
-      console.log(`Limite de buscas de código atingido. Aguardando ${Math.ceil(waitTime / 1000)} segundos até o reset...`);
+    if (remaining === 0) {
+      const currentTime = Date.now();
+      const waitTime = resetTime - currentTime;
+      console.log(`Limite de ${resource} atingido. Aguardando ${Math.ceil(waitTime / 1000)} segundos para resetar...`);
       await new Promise(resolve => setTimeout(resolve, waitTime));
+      return true;
     }
+    return false;
+  } catch (error) {
+    console.error(`Erro ao verificar o limite de taxa para ${resource}:`, error);
+    return true;
   }
 }
 
-async function checkAndHandleRateLimit(octokit) {
+const limiter = new Bottleneck({
+  maxConcurrent: 1,
+  minTime: 61000
+});
+
+async function fetchReposWithLimiter(username, keyword) {
+  let octokit = getOctokitInstance();
+  const exceeded = await checkAndHandleRateLimit(octokit, 'search');
+  if (!exceeded) {
+    await limiter.schedule(() => searchTopReposByStars(octokit, username, keyword));
+  }
+}
+
+async function searchTopReposByStars(octokit, username, keyword) {
   try {
-    const rateLimit = await octokit.rateLimit.get();
-    const remaining = rateLimit.data.resources.core.remaining;
-    const resetTime = rateLimit.data.resources.core.reset * 1000;
+    const repos = await octokit.search.repos({
+      q: `user:${username}`,
+      sort: 'stars',
+      order: 'desc',
+      per_page: 7
+    });
 
-    console.log(`Requisições restantes: ${remaining}`);
-    if (remaining < 50) {
-      const currentTime = Date.now();
-      const waitTime = resetTime - currentTime;
+    if (repos.data.items.length === 0) {
+      console.log(`Usuário ${username} não possui repositórios.`);
+      return;
+    }
 
-      if (waitTime > 0) {
-        console.log(`Quase atingindo o limite de taxa. Aguardando ${Math.ceil(waitTime / 1000)} segundos até o reset...`);
-        await new Promise(resolve => setTimeout(resolve, waitTime));
+    for (const repo of repos.data.items) {
+      const repoFullName = repo.full_name;
+      console.log(`Verificando repositório: ${repoFullName}`);
+
+      const codeSearch = await octokit.search.code({
+        q: `${keyword} in:file repo:${repoFullName}`,
+      });
+
+      if (codeSearch.data.items.length > 0) {
+        console.log(`Palavra "${keyword}" encontrada no repositório ${repoFullName}`);
+        codeSearch.data.items.forEach(item => {
+          const filePath = item.path;
+          console.log(`Palavra encontrada no arquivo: ${filePath}`);
+          saveRepoAndFileToFile(repoFullName, filePath);
+        });
+      } else {
+        console.log(`Nenhuma ocorrência.`);
       }
-
-      octokit = getOctokitInstance();
     }
   } catch (error) {
-    if (error.status === 403 || error.status === 401) {
-      console.log('Erro de autenticação ou limite de requisições atingido. Alternando token...');
-      octokit = getOctokitInstance();
-      await checkAndHandleRateLimit(octokit);
-    } else {
-      console.error('Erro inesperado ao verificar o limite de requisições:', error);
-    }
+    console.error(`Erro ao buscar repositórios de ${username}:`, error);
   }
 }
 
@@ -103,127 +131,57 @@ function isUserProcessed(user) {
   return processedUsers.includes(user);
 }
 
-async function checkRateLimit(octokit) {
-  const rateLimit = await octokit.rateLimit.get();
-  const coreLimit = rateLimit.data.resources.core;
-  const searchLimit = rateLimit.data.resources.search;
-
-  console.log(`Limite de requisições: ${coreLimit.limit}`);
-  console.log(`Requisições restantes: ${coreLimit.remaining}`);
-  console.log(`Reseta em: ${new Date(coreLimit.reset * 1000)}`);
-
-  console.log(`Limite de buscas de código: ${searchLimit.limit}`);
-  console.log(`Requisições de busca de código restantes: ${searchLimit.remaining}`);
-  console.log(`Reseta em: ${new Date(searchLimit.reset * 1000)}`);
-}
-
-const limiter = new Bottleneck({
-  maxConcurrent: 1,
-  minTime: 61000 
-});
-
-async function fetchReposWithLimiter(username, keyword) {
-  let octokit = getOctokitInstance();
-  await checkAndHandleRateLimit(octokit);
-  await limiter.schedule(() => searchTopReposByStars(octokit, username, keyword));
-}
-
-async function searchTopReposByStars(octokit, username, keyword) {
-  try {
-    const repos = await octokit.search.repos({
-      q: `user:${username}`,
-      sort: 'stars',
-      order: 'desc',
-      per_page: 7
-    });
-
-    if (repos.data.items.length === 0) {
-      console.log(`Usuário ${username} não possui repositórios.`);
-      return;
-    }
-
-    for (const repo of repos.data.items) {
-      const repoFullName = repo.full_name;
-      console.log(`Verificando repositório: ${repoFullName}`);
-
-      await checkAndHandleCodeSearchRateLimit(octokit);
-
-      const codeSearch = await octokit.search.code({
-        q: `${keyword} in:file repo:${repoFullName}`,
-      });
-
-      if (codeSearch.data.items.length > 0) {
-        console.log(`Palavra "${keyword}" encontrada no repositório ${repoFullName}`);
-        codeSearch.data.items.forEach(item => {
-          const filePath = item.path;
-          console.log(`Palavra encontrada no arquivo: ${filePath}`);
-          saveRepoAndFileToFile(repoFullName, filePath);
-        });
-      } else {
-        console.log(`Nenhuma ocorrência.`);
-      }
-    }
-  } catch (error) {
-    console.error(`Erro ao buscar repositórios de ${username}:`, error);
-  }
-}
-
 async function getTotalPages(octokit, range) {
   try {
     const response = await octokit.search.users({
       q: `followers:${range}`,
       per_page: 1
     });
-    const totalUsers = Math.min(response.data.total_count, 1000); 
-    console.log("----------> Total Pages:",Math.ceil(totalUsers / 100))
-    return Math.ceil(totalUsers / 100); 
+
+    const totalUsers = Math.min(response.data.total_count, 1000);
+    return Math.ceil(totalUsers / 100);
   } catch (error) {
     console.error("Erro ao obter o número total de usuários:", error);
-    return 100; 
+    return 0;
   }
 }
 
 async function getRandomUserWithLimiter(keyword) {
-  try {
-    let octokit = getOctokitInstance();
+  let octokit = getOctokitInstance();
+  const followerRanges = [
+    '1000..3000',
+    '3001..5000',
+    '5001..10000',
+    '10001..20000',
+    '20001..50000',
+    '50001..100000'
+  ];
 
-    const followerRanges = [
-      '3000..5000',
-      '5001..10000',
-      '10001..20000',
-      '20001..50000',
-      '50001..100000'
-    ];
+  for (const range of followerRanges) {
+    const totalPages = await getTotalPages(octokit, range);
+    if (totalPages === 0) continue;
 
-    for (const range of followerRanges) {
-      const totalPages = await getTotalPages(octokit, range);
-      console.log(`Total de páginas para o intervalo ${range}: ${totalPages}`);
+    for (let attempt = 0; attempt < 7; attempt++) {
+      const randomPage = Math.floor(Math.random() * totalPages) + 1;
+      const users = await octokit.search.users({
+        q: `followers:${range}`,
+        per_page: 1,
+        page: randomPage
+      });
 
-      for (let attempt = 0; attempt < 7; attempt++) {
-        const randomPage = Math.floor(Math.random() * totalPages) + 1;
-        const users = await octokit.search.users({
-          q: `followers:${range}`,
-          per_page: 1,
-          page: randomPage
-        });
+      if (users.data.items.length === 0) continue;
 
-        if (users.data.items.length === 0) continue;
+      const user = users.data.items[0].login;
 
-        const user = users.data.items[0].login;
-
-        if (!isUserProcessed(user)) {
-          console.log(`Verificando usuário: ${user} no intervalo ${range}`);
-          await fetchReposWithLimiter(user, keyword);
-          saveProcessedUser(user);
-          getNextToken(); 
-          return;
-        } else {
-          console.log(`Usuário ${user} já foi processado anteriormente. Pulando...`);
-        }
+      if (!isUserProcessed(user)) {
+        console.log(`Verificando usuário: ${user} no intervalo ${range}`);
+        await fetchReposWithLimiter(user, keyword);
+        saveProcessedUser(user);
+        return;
+      } else {
+        console.log(`Usuário ${user} já foi processado anteriormente. Pulando...`);
       }
     }
-  } catch (error) {
-    console.error("Erro ao buscar usuário:", error);
   }
 }
 
@@ -240,14 +198,12 @@ async function main() {
   ];
 
   const keywordQuery = keywords.join(" OR ");
+  let attempt = 0;
 
-  for (let i = 0; i < 3; i++) { 
+  while (attempt < 3) { 
     await getRandomUserWithLimiter(keywordQuery);
+    attempt++;
   }
-
-  const octokit = getOctokitInstance();
-  await checkRateLimit(octokit);
 }
 
 main().catch(console.error);
-
