@@ -31,6 +31,8 @@ Tool that scans all random githubs profiles looking for keywords that link to se
   node script.js
 ```
 
+6. Github Action is already pre-configured to run a workflow automatically every 15 minutes if you want to clone/fork the project to your machine.
+
 ## Enjoy 🚀
 
 
