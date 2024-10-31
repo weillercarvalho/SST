@@ -12,3 +12,5 @@ azer
 >>>>>>> ce993375122f51c684d08071fe4d55bce449162b
 normanmaurer
 akshaybahadur21
+kulikov-dev
+DanWahlin
