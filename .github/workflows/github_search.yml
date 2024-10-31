@@ -2,7 +2,7 @@ name: GitHub Search Script 2.0
 
 on:
   schedule:
-    - cron: "*/15 * * * *"  # Executa a cada 15 minutos
+    - cron: "*/15 * * * *"  
   workflow_dispatch:
 
 jobs:
@@ -10,19 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout do repositório para garantir que tenhamos a última versão dos arquivos
+
       - name: Check out the repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: false  # Isso evita o uso das credenciais padrão
-          fetch-depth: 0  # Pega o histórico completo, necessário para push
+          persist-credentials: false 
+          fetch-depth: 0 
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
 
-      # Certifique-se de criar os arquivos se eles não existirem
+
       - name: Create files if not exists
         run: |
           touch processed_users.txt
@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Executa o script de busca no GitHub
+
       - name: Run the GitHub Search script
         env:
           GITHUB_TOKEN1: ${{ secrets.TOKEN1 }}
@@ -41,16 +41,17 @@ jobs:
           GITHUB_TOKEN5: ${{ secrets.TOKEN5 }}
         run: node script.js
 
-      # Faz commit e push dos arquivos atualizados para o repositório
+
       - name: Commit and push changes
         run: |
-          git config --global user.email "engweiller@hotmail.com"
-          git config --global user.name "weillercarvalho"
+          git config --global user.email "${{ secrets.USER_EMAIL }}"
+          git config --global user.name "${{ secrets.USER_NAME }}"
           git add -f processed_users.txt repos_found.txt
           git commit -m "Update processed_users and repos_found from GitHub Actions"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git push origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
