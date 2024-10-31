@@ -13,23 +13,24 @@ const tokens = [
 ];
 
 let tokenIndex = 0;
-let tokenAttempts = 0;
+let tokenAttempts = 0; 
 
 function getNextToken() {
-  if (tokenAttempts >= 4) {
-    console.log("Token exchange attempt limit reached. Interrupting the script.");
-    process.exit();
-  }
   tokenIndex = (tokenIndex + 1) % tokens.length;
-  tokenAttempts += 1;
   const token = tokens[tokenIndex];
+
+  if (!token) {
+    console.log("Error: Missing authentication token.");
+    process.exit(1);
+  }
+  
   console.log(`Using token: ${tokenIndex + 1}`);
   return token;
 }
 
 function getOctokitInstance() {
   return new Octokit({
-    auth: getNextToken()
+    auth: getNextToken()  // Ajuste para definir o token em cada instância do Octokit
   });
 }
 
@@ -55,7 +56,7 @@ async function checkAndHandleRateLimit(octokit, resource) {
 
 const limiter = new Bottleneck({
   maxConcurrent: 1,
-  minTime: 300000 // 5 minutos entre chamadas para reduzir o risco de limitação de taxa no GitHub Actions
+  minTime: 61000
 });
 
 async function fetchReposWithLimiter(username) {
@@ -84,19 +85,19 @@ async function searchTopReposForEnvFile(octokit, username) {
       const repoFullName = repo.full_name;
       console.log(`Checking repository: ${repoFullName}`);
 
-      const fileSearch = await octokit.search.code({
-        q: `filename:.env repo:${repoFullName}`,
+      const codeSearch = await octokit.search.code({
+        q: `filename:.env repo:${repoFullName}`,  // Atualizado para procurar pelo arquivo .env
       });
 
-      if (fileSearch.data.items.length > 0) {
+      if (codeSearch.data.items.length > 0) {
         console.log(`.env file found in repository ${repoFullName}`);
-        fileSearch.data.items.forEach(item => {
+        codeSearch.data.items.forEach(item => {
           const filePath = item.path;
-          console.log(`.env file found at: ${filePath}`);
+          console.log(`File found: ${filePath}`);
           saveRepoAndFileToFile(repoFullName, filePath);
         });
       } else {
-        console.log(`No .env file found.`);
+        console.log(`No .env files found.`);
       }
     }
   } catch (error) {
@@ -151,31 +152,15 @@ async function getRandomUserWithLimiter() {
   const followerRanges = [
     '1000..3000',
     '3001..5000',
-    '5001..10000',
-    '10001..20000',
-    '20001..50000',
-    '50001..100000'
+    '5001..10000'
   ];
-
-  // Limite de tentativas e páginas para reduzir o número de requisições
-  const maxAttemptsPerRange = 2; // Reduzido para 2 tentativas por faixa de seguidores
-  const maxPagesPerRange = 5;    // Limite para as primeiras 5 páginas por faixa
 
   for (const range of followerRanges) {
     const totalPages = await getTotalPages(octokit, range);
+    if (totalPages === 0) continue;
 
-    // Use o menor valor entre as páginas totais e o máximo de páginas definido
-    const pagesToSearch = Math.min(totalPages, maxPagesPerRange);
-    if (pagesToSearch === 0) continue;
-
-    // Tente buscar um número reduzido de usuários aleatórios dentro do limite de tentativas
-    for (let attempt = 0; attempt < maxAttemptsPerRange; attempt++) {
-      const randomPage = Math.floor(Math.random() * pagesToSearch) + 1;
-
-      const limitExceeded = await checkAndHandleRateLimit(octokit, 'search'); // Verifica o limite antes de buscar usuários
-
-      if (limitExceeded) octokit = getOctokitInstance();
-
+    for (let attempt = 0; attempt < 3; attempt++) {  // Limite reduzido para 3 tentativas por faixa
+      const randomPage = Math.floor(Math.random() * totalPages) + 1;
       const users = await octokit.search.users({
         q: `followers:${range}`,
         per_page: 1,
