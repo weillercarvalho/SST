@@ -13,3 +13,13 @@ kulikov-dev
 DanWahlin
 acheong08
 KittyGiraudel
+NationalSecurityAgency
+AppServiceProvider
+jdevfullstack
+ashleygwilliams
+aphyr
+Rodrigo-Cn
+alex
+aws
+Sentdex
+munificent
