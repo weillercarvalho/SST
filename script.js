@@ -230,7 +230,7 @@ async function main() {
 
   const keywordQuery = keywords.join(" OR ");
 
-  for (let i = 0; i < 10; i++) { 
+  for (let i = 0; i < 5; i++) { 
     await getRandomUserWithLimiter(keywordQuery);
   }
 
