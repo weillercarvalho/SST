@@ -186,7 +186,7 @@ async function getRandomUserWithLimiter(keyword) {
     const totalPages = 100; 
     let octokit = getOctokitInstance();
 
-    for (let attempt = 0; attempt < 10; attempt++) {
+    for (let attempt = 0; attempt < 3; attempt++) {
       const randomPage = Math.floor(Math.random() * totalPages) + 1;
       const users = await octokit.search.users({
         q: 'followers:>3000',
@@ -230,7 +230,7 @@ async function main() {
 
   const keywordQuery = keywords.join(" OR ");
 
-  for (let i = 0; i < 5; i++) { 
+  for (let i = 0; i < 10; i++) { 
     await getRandomUserWithLimiter(keywordQuery);
   }
 
