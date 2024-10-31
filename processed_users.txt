@@ -31,3 +31,5 @@ ruanyf
 karpathy
 openai
 torvalds
+gaearon
+gustavoguanabara
