@@ -781,3 +781,5 @@ kubernetes-sigs
 benedekrozemberczki
 hsutter
 bisqwit
+bnb-chain
+azer
