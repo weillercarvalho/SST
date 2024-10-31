@@ -19,3 +19,9 @@ aphyr
 ashleygwilliams
 acheong08
 jdevfullstack
+mdn
+Sentdex
+munificent
+alex
+aws
+tjdevries

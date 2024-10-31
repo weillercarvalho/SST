@@ -12,3 +12,13 @@ Repository: DanWahlin/DockerAndKubernetesCourseCode, File: labs/Working with Vol
 Repository: DanWahlin/DockerAndKubernetesCourseCode, File: labs/Working with Volumes-ConfigMaps-Secrets/Begin/.docker/env/app.development.env
 Repository: DanWahlin/DockerAndKubernetesCourseCode, File: labs/Working with Volumes-ConfigMaps-Secrets/Begin/.docker/env/mongo.production.env
 Repository: DanWahlin/DockerAndKubernetesCourseCode, File: labs/Working with Volumes-ConfigMaps-Secrets/Begin/.docker/env/mongo.development.env
+Repository: Sentdex/TermGPT, File: .env.example
+Repository: aws/aws-cdk, File: packages/@aws-cdk/aws-cloud9-alpha/test/cloud9.environment.test.ts
+Repository: aws/aws-cdk, File: packages/aws-cdk-lib/aws-ecs/test/demo-envfiles/test-envfile.env
+Repository: aws/aws-cdk, File: packages/@aws-cdk-testing/framework-integ/test/aws-appconfig/test/integ.environment.ts
+Repository: aws/aws-cdk, File: packages/@aws-cdk-testing/framework-integ/test/aws-appconfig/test/integ.environment-grant.ts
+Repository: aws/aws-cdk, File: packages/@aws-cdk-testing/framework-integ/test/aws-ecs/test/ec2/integ.environment-file.ts
+Repository: aws/aws-cdk, File: packages/@aws-cdk-testing/framework-integ/test/aws-appsync/test/integ.environment-variables.ts
+Repository: aws/aws-cdk, File: packages/@aws-cdk-testing/framework-integ/test/aws-ecs/test/demo-envfiles/test-envfile.env
+Repository: aws/aws-cdk, File: packages/@aws-cdk-testing/framework-integ/test/aws-ecs/test/ec2/integ.environment-file.js.snapshot/asset.872561bf078edd1685d50c9ff821cdd60d2b2ddfb0013c4087e79bf2bb50724d.env
+Repository: aws/aws-cdk, File: packages/@aws-cdk-testing/framework-integ/test/aws-ecs/test/ec2/integ.environment-file.js.snapshot/asset.972240f9dd6e036a93d5f081af9a24315b2053828ac049b3b19b2fa12d7ae64a/test-envfile.env
