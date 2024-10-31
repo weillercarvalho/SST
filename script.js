@@ -55,18 +55,18 @@ async function checkAndHandleRateLimit(octokit, resource) {
 
 const limiter = new Bottleneck({
   maxConcurrent: 1,
-  minTime: 65000
+  minTime: 300000 // 5 minutos entre chamadas para reduzir o risco de limitação de taxa no GitHub Actions
 });
 
-async function fetchReposWithLimiter(username, keyword) {
+async function fetchReposWithLimiter(username) {
   let octokit = getOctokitInstance();
   const exceeded = await checkAndHandleRateLimit(octokit, 'search');
   if (!exceeded) {
-    await limiter.schedule(() => searchTopReposByStars(octokit, username, keyword));
+    await limiter.schedule(() => searchTopReposForEnvFile(octokit, username));
   }
 }
 
-async function searchTopReposByStars(octokit, username, keyword) {
+async function searchTopReposForEnvFile(octokit, username) {
   try {
     const repos = await octokit.search.repos({
       q: `user:${username}`,
@@ -76,7 +76,7 @@ async function searchTopReposByStars(octokit, username, keyword) {
     });
 
     if (repos.data.items.length === 0) {
-      console.log(`User ${username} doesnt have any repository.`);
+      console.log(`User ${username} doesn't have any repository.`);
       return;
     }
 
@@ -84,19 +84,19 @@ async function searchTopReposByStars(octokit, username, keyword) {
       const repoFullName = repo.full_name;
       console.log(`Checking repository: ${repoFullName}`);
 
-      const codeSearch = await octokit.search.code({
-        q: `${keyword} in:file repo:${repoFullName}`,
+      const fileSearch = await octokit.search.code({
+        q: `filename:.env repo:${repoFullName}`,
       });
 
-      if (codeSearch.data.items.length > 0) {
-        console.log(`Word "${keyword}" found in repository ${repoFullName}`);
-        codeSearch.data.items.forEach(item => {
+      if (fileSearch.data.items.length > 0) {
+        console.log(`.env file found in repository ${repoFullName}`);
+        fileSearch.data.items.forEach(item => {
           const filePath = item.path;
-          console.log(`Word found in file: ${filePath}`);
+          console.log(`.env file found at: ${filePath}`);
           saveRepoAndFileToFile(repoFullName, filePath);
         });
       } else {
-        console.log(`No occurrences.`);
+        console.log(`No .env file found.`);
       }
     }
   } catch (error) {
@@ -146,7 +146,7 @@ async function getTotalPages(octokit, range) {
   }
 }
 
-async function getRandomUserWithLimiter(keyword) {
+async function getRandomUserWithLimiter() {
   let octokit = getOctokitInstance();
   const followerRanges = [
     '1000..3000',
@@ -157,20 +157,22 @@ async function getRandomUserWithLimiter(keyword) {
     '50001..100000'
   ];
 
-
-  const maxAttemptsPerRange = 2; 
-  const maxPagesPerRange = 5;  
+  // Limite de tentativas e páginas para reduzir o número de requisições
+  const maxAttemptsPerRange = 2; // Reduzido para 2 tentativas por faixa de seguidores
+  const maxPagesPerRange = 5;    // Limite para as primeiras 5 páginas por faixa
 
   for (const range of followerRanges) {
     const totalPages = await getTotalPages(octokit, range);
 
+    // Use o menor valor entre as páginas totais e o máximo de páginas definido
     const pagesToSearch = Math.min(totalPages, maxPagesPerRange);
     if (pagesToSearch === 0) continue;
 
+    // Tente buscar um número reduzido de usuários aleatórios dentro do limite de tentativas
     for (let attempt = 0; attempt < maxAttemptsPerRange; attempt++) {
       const randomPage = Math.floor(Math.random() * pagesToSearch) + 1;
 
-      const limitExceeded = await checkAndHandleRateLimit(octokit, 'search');
+      const limitExceeded = await checkAndHandleRateLimit(octokit, 'search'); // Verifica o limite antes de buscar usuários
 
       if (limitExceeded) octokit = getOctokitInstance();
 
@@ -186,7 +188,7 @@ async function getRandomUserWithLimiter(keyword) {
 
       if (!isUserProcessed(user)) {
         console.log(`Checking user: ${user} in range ${range}`);
-        await fetchReposWithLimiter(user, keyword);
+        await fetchReposWithLimiter(user);
         saveProcessedUser(user);
         return;
       } else {
@@ -197,19 +199,7 @@ async function getRandomUserWithLimiter(keyword) {
 }
 
 async function main() {
-  const keywords = [
-    "API_KEY", "API_SECRET", "ACCESS_KEY", "ACCESS_TOKEN", "SECRET_KEY",
-    "DB_PASSWORD", "DB_USER", "PRODUCTION_API_KEY",
-    "PRIVATE_KEY", "SSL_CERT", "TLS_KEY", "AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY",
-    "AWS_SESSION_TOKEN", "AZURE_CLIENT_ID", "AZURE_SECRET", "GCP_CREDENTIALS",
-    "GCP_API_KEY", "ADMIN_PASSWORD", "EMAIL_PASSWORD", "MYSQL_PASSWORD", "PG_PASSWORD",
-    "BEARER_TOKEN", "AUTH_TOKEN", "CREDENTIALS", "TOKEN", "PASSWORD_HASH", "ENCRYPTION_KEY", "CLIENT_SECRET", "SECRET_TOKEN", "APP_SECRET", "JWT_SECRET",
-    "OAUTH_TOKEN", "SSH_KEY", "SSH_PRIVATE_KEY", "CLOUD_SECRET", "AUTH_KEY", "AUTH_SECRET", "POSTGRES_PASSWORD", "MONGO_PASSWORD", "ELASTIC_PASSWORD",
-    "API_TOKEN", "API_PRIVATE_KEY", "GOOGLE_API_KEY", "GITHUB_TOKEN", "BITBUCKET_TOKEN", "GITHUB_CLIENT_ID", "GITHUB_CLIENT_SECRET", "DOCKER_PASSWORD", "DOCKER_TOKEN"
-  ];
-
-  const keywordQuery = keywords.join(" OR ");
-  await getRandomUserWithLimiter(keywordQuery);
+  await getRandomUserWithLimiter();
 }
 
 main().catch(console.error);
