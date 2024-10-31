@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import fs from "fs";
 dotenv.config();
 
-
 const tokens = [
   process.env.GITHUB_TOKEN1,
   process.env.GITHUB_TOKEN2,
@@ -15,7 +14,6 @@ const tokens = [
 
 let tokenIndex = 0;
 
-
 function getNextToken() {
   tokenIndex = (tokenIndex + 1) % tokens.length;
   const token = tokens[tokenIndex];
@@ -23,13 +21,11 @@ function getNextToken() {
   return token;
 }
 
-
 function getOctokitInstance() {
   return new Octokit({
     auth: getNextToken()
   });
 }
-
 
 async function checkAndHandleCodeSearchRateLimit(octokit) {
   const rateLimit = await octokit.rateLimit.get();
@@ -50,7 +46,6 @@ async function checkAndHandleCodeSearchRateLimit(octokit) {
     }
   }
 }
-
 
 async function checkAndHandleRateLimit(octokit) {
   try {
@@ -81,7 +76,6 @@ async function checkAndHandleRateLimit(octokit) {
   }
 }
 
-
 function saveRepoAndFileToFile(repoFullName, filePath) {
   const outputFilePath = 'repos_found.txt';
   const logMessage = `Repositório: ${repoFullName}, Arquivo: ${filePath}\n`;
@@ -94,12 +88,10 @@ function saveRepoAndFileToFile(repoFullName, filePath) {
   });
 }
 
-
 function saveProcessedUser(user) {
   const processedUsersFile = 'processed_users.txt';
   fs.appendFileSync(processedUsersFile, `${user}\n`, 'utf-8');
 }
-
 
 function isUserProcessed(user) {
   const processedUsersFile = 'processed_users.txt';
@@ -110,7 +102,6 @@ function isUserProcessed(user) {
   const processedUsers = fs.readFileSync(processedUsersFile, 'utf-8').split('\n');
   return processedUsers.includes(user);
 }
-
 
 async function checkRateLimit(octokit) {
   const rateLimit = await octokit.rateLimit.get();
@@ -126,19 +117,16 @@ async function checkRateLimit(octokit) {
   console.log(`Reseta em: ${new Date(searchLimit.reset * 1000)}`);
 }
 
-
 const limiter = new Bottleneck({
   maxConcurrent: 1,
   minTime: 61000 
 });
-
 
 async function fetchReposWithLimiter(username, keyword) {
   let octokit = getOctokitInstance();
   await checkAndHandleRateLimit(octokit);
   await limiter.schedule(() => searchTopReposByStars(octokit, username, keyword));
 }
-
 
 async function searchTopReposByStars(octokit, username, keyword) {
   try {
@@ -180,41 +168,64 @@ async function searchTopReposByStars(octokit, username, keyword) {
   }
 }
 
+async function getTotalPages(octokit, range) {
+  try {
+    const response = await octokit.search.users({
+      q: `followers:${range}`,
+      per_page: 1
+    });
+    const totalUsers = Math.min(response.data.total_count, 1000); 
+    console.log("----------> Total Pages:",Math.ceil(totalUsers / 100))
+    return Math.ceil(totalUsers / 100); 
+  } catch (error) {
+    console.error("Erro ao obter o número total de usuários:", error);
+    return 100; 
+  }
+}
 
 async function getRandomUserWithLimiter(keyword) {
   try {
-    const totalPages = 100; 
     let octokit = getOctokitInstance();
 
-    for (let attempt = 0; attempt < 10; attempt++) {
-      const randomPage = Math.floor(Math.random() * totalPages) + 1;
-      const users = await octokit.search.users({
-        q: 'followers:>3000',
-        per_page: 1,
-        page: randomPage,
-        sort: 'followers',
-        order: 'desc',
-      });
+    const followerRanges = [
+      '3000..5000',
+      '5001..10000',
+      '10001..20000',
+      '20001..50000',
+      '50001..100000'
+    ];
 
-      if (users.data.items.length === 0) continue;
+    for (const range of followerRanges) {
+      const totalPages = await getTotalPages(octokit, range);
+      console.log(`Total de páginas para o intervalo ${range}: ${totalPages}`);
 
-      const user = users.data.items[0].login;
+      for (let attempt = 0; attempt < 7; attempt++) {
+        const randomPage = Math.floor(Math.random() * totalPages) + 1;
+        const users = await octokit.search.users({
+          q: `followers:${range}`,
+          per_page: 1,
+          page: randomPage
+        });
 
-      if (!isUserProcessed(user)) {
-        console.log(`Verificando usuário: ${user}`);
-        await fetchReposWithLimiter(user, keyword);
-        saveProcessedUser(user);
-        getNextToken(); 
-        return;
-      } else {
-        console.log(`Usuário ${user} já foi processado anteriormente. Pulando...`);
+        if (users.data.items.length === 0) continue;
+
+        const user = users.data.items[0].login;
+
+        if (!isUserProcessed(user)) {
+          console.log(`Verificando usuário: ${user} no intervalo ${range}`);
+          await fetchReposWithLimiter(user, keyword);
+          saveProcessedUser(user);
+          getNextToken(); 
+          return;
+        } else {
+          console.log(`Usuário ${user} já foi processado anteriormente. Pulando...`);
+        }
       }
     }
   } catch (error) {
     console.error("Erro ao buscar usuário:", error);
   }
 }
-
 
 async function main() {
   const keywords = [
@@ -239,3 +250,4 @@ async function main() {
 }
 
 main().catch(console.error);
+
