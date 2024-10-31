@@ -25,3 +25,5 @@ munificent
 alex
 aws
 tjdevries
+bradtraversy
+peng-zhihui

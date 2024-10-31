@@ -108,63 +108,40 @@ function isUserProcessed(user) {
   return processedUsers.includes(user);
 }
 
-async function getTotalPages(octokit, range) {
-  try {
-    const response = await octokit.search.users({
-      q: `followers:${range}`,
-      per_page: 1,
-    });
-
-    const totalUsers = Math.min(response.data.total_count, 1000);
-    return Math.ceil(totalUsers / 100);
-  } catch (error) {
-    console.error("Error getting total number of users:", error);
-    return 0;
-  }
-}
-
 async function getRandomUserWithLimiter() {
   let octokit = getOctokitInstance();
-  const followerRanges = ["1000..3000", "3001..5000", "5001..10000"];
   const maxUsersPerExecution = 2;
   let usersProcessed = 0;
 
-  for (const range of followerRanges) {
-    const totalPages = await getTotalPages(octokit, range);
-    if (totalPages === 0) continue;
+  for (let attempt = 0; attempt < 15; attempt++) {
+    const randomPage = Math.floor(Math.random() * 10) + 1; 
+    const users = await octokit.search.users({
+      q: `followers:>1000`,
+      per_page: 1,
+      page: randomPage,
+    });
 
-    for (let attempt = 0; attempt < 7; attempt++) {
-      const randomPage = Math.floor(Math.random() * totalPages) + 1;
-      const users = await octokit.search.users({
-        q: `followers:${range}`,
-        per_page: 1,
-        page: randomPage,
-      });
+    if (users.data.items.length === 0) continue;
 
-      if (users.data.items.length === 0) continue;
+    const user = users.data.items[0].login;
 
-      const user = users.data.items[0].login;
+    if (!isUserProcessed(user)) {
+      console.log(`Checking user: ${user}`);
+      await fetchReposWithLimiter(user);
+      saveProcessedUser(user);
+      usersProcessed++;
 
-      if (!isUserProcessed(user)) {
-        console.log(`Checking user: ${user} in range ${range}`);
-        await fetchReposWithLimiter(user);
-        saveProcessedUser(user);
-        usersProcessed++;
+      if (usersProcessed >= maxUsersPerExecution) return;
 
-        if (usersProcessed >= maxUsersPerExecution) return;
-
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-      } else {
-        console.log(`User ${user} has already been processed previously. Skipping...`);
-      }
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+    } else {
+      console.log(`User ${user} has already been processed previously. Skipping...`);
     }
   }
 }
 
 async function main() {
-  for (let i = 0; i < 3; i++) {
-    await getRandomUserWithLimiter();
-  }
+  await getRandomUserWithLimiter();
 }
 
 main().catch(console.error);
