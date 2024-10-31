@@ -34,24 +34,12 @@ Extra Informations:
 
 6. Github Action is already pre-configured to run a workflow automatically every 15 minutes if you want to clone/fork the project to your machine.
 
-7. These are the keywords currently searched for, if you want to change, change the script.js file.
-
-```bash
-     "API_KEY", "API_SECRET", "ACCESS_KEY", "ACCESS_TOKEN", "SECRET_KEY",
-    "DB_PASSWORD", "DB_USER", "PRODUCTION_API_KEY",
-    "PRIVATE_KEY", "SSL_CERT", "TLS_KEY", "AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY",
-    "AWS_SESSION_TOKEN", "AZURE_CLIENT_ID", "AZURE_SECRET", "GCP_CREDENTIALS",
-    "GCP_API_KEY", "ADMIN_PASSWORD", "EMAIL_PASSWORD", "MYSQL_PASSWORD", "PG_PASSWORD",
-    "BEARER_TOKEN", "AUTH_TOKEN", "CREDENTIALS", "TOKEN", "PASSWORD_HASH", "ENCRYPTION_KEY", "CLIENT_SECRET", "SECRET_TOKEN", "APP_SECRET", "JWT_SECRET",
-    "OAUTH_TOKEN", "SSH_KEY", "SSH_PRIVATE_KEY", "CLOUD_SECRET", "AUTH_KEY", "AUTH_SECRET", "POSTGRES_PASSWORD", "MONGO_PASSWORD", "ELASTIC_PASSWORD",
-    "API_TOKEN", "API_PRIVATE_KEY", "GOOGLE_API_KEY", "GITHUB_TOKEN", "BITBUCKET_TOKEN", "GITHUB_CLIENT_ID", "GITHUB_CLIENT_SECRET", "DOCKER_PASSWORD", "DOCKER_TOKEN"
-```
-8. If you want to test whether your tokens are working correctly after setting them, run the file below.
+7. If you want to test whether your tokens are working correctly after setting them, run the file below.
    
 ```bash
  node testauth.js
 ```
-9. The Node.js version used was v20.12.2
+8. The Node.js version used was v20.12.2
 
    
 ## Enjoy 🚀
