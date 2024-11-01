@@ -45,3 +45,5 @@ WebDevSimplified
 antfu
 IDouble
 krishnaik06
+hiteshchoudhary
+kunal-kushwaha
