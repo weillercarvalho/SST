@@ -71,3 +71,4 @@ getify
 llSourcell
 michaelliao
 sindresorhus
+addyosmani
