@@ -65,3 +65,14 @@ Repository: taylorotwell/next-example-backend, File: .env.example
 Repository: taylorotwell/meilisearch-web, File: .env.example
 Repository: taylorotwell/nexmo-horizon-demo, File: .env.example
 Repository: taylorotwell/vapor-fresh-test, File: .env.example
+Repository: wesbos/Advanced-React, File: sick-fits/backend/sample.env
+Repository: benawad/dogehouse, File: kousa/.envrc
+Repository: benawad/dogehouse, File: kibbeh/.env.example
+Repository: benawad/vsinder, File: packages/api/.env.example
+Repository: benawad/lireddit, File: web/.env.local
+Repository: benawad/lireddit, File: server/.env
+Repository: benawad/lireddit, File: server/.env.example
+Repository: benawad/lireddit, File: server/.env.production
+Repository: benawad/fullstack-graphql-airbnb-clone, File: packages/server/.env.example
+Repository: benawad/fullstack-graphql-airbnb-clone, File: packages/web/.env.production
+Repository: benawad/fullstack-graphql-airbnb-clone, File: packages/web/.env.development
