@@ -85,3 +85,5 @@ fabpot
 defunkt
 cumsoft
 esin
+JohnMwendwa
+octocat
