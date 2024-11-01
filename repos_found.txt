@@ -78,3 +78,11 @@ Repository: benawad/fullstack-graphql-airbnb-clone, File: packages/web/.env.prod
 Repository: benawad/fullstack-graphql-airbnb-clone, File: packages/web/.env.development
 Repository: filipedeschamps/tabnews.com.br, File: .env
 Repository: tj/commander.js, File: tests/options.env.test.js
+Repository: diego3g/umbriel, File: .env.local.example
+Repository: diego3g/umbriel, File: prisma/.env
+Repository: diego3g/umbriel, File: .env.test.local.example
+Repository: diego3g/umbriel, File: prisma/.env.example
+Repository: diego3g/node-microservices-ddd, File: packages/server/atlas/.env.example
+Repository: diego3g/node-microservices-ddd, File: packages/server/atlas/prisma/.env
+Repository: diego3g/rsxp-2023, File: apps/server/.env.example
+Repository: diego3g/rsxp-2023, File: apps/mobile/.env.example
