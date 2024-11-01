@@ -83,3 +83,5 @@ anuraghazra
 john-smilga
 fabpot
 defunkt
+cumsoft
+esin
