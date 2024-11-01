@@ -51,3 +51,5 @@ JakeWharton
 dmalan
 kennethreitz
 kamranahmedse
+paulirish
+EpicGames
