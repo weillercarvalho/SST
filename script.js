@@ -111,12 +111,12 @@ function isUserProcessed(user) {
 async function getRandomUserWithLimiter() {
   let octokit = getOctokitInstance();
   const maxUsersPerExecution = 2;
-  const totalPages = 50; 
+  const totalPages = 100; // Aumente o total de páginas para buscar uma variedade maior de usuários
   let usersProcessed = 0;
   const checkedUsers = new Set(); 
   const checkedPages = new Set(); 
 
-  for (let attempt = 0; attempt < 15; attempt++) {
+  for (let attempt = 0; attempt < 10; attempt++) {
     let randomPage;
 
     do {
@@ -126,13 +126,14 @@ async function getRandomUserWithLimiter() {
     checkedPages.add(randomPage); 
     const users = await octokit.search.users({
       q: `followers:>1000`,
-      per_page: 1,
+      per_page: 2,
       page: randomPage,
     });
 
     if (users.data.items.length === 0) continue;
 
-    const user = users.data.items[0].login;
+    const randomUserIndex = Math.floor(Math.random() * users.data.items.length); 
+    const user = users.data.items[randomUserIndex].login;
 
     if (!isUserProcessed(user) && !checkedUsers.has(user)) {
       console.log(`Checking user: ${user}`);
