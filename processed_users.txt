@@ -41,3 +41,5 @@ iamshaunjp
 tiangolo
 midudev
 StephenGrider
+WebDevSimplified
+antfu
