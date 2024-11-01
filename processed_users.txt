@@ -97,3 +97,5 @@ python
 community
 jlord
 lifesinger
+tpope
+RubyLouvre
