@@ -47,3 +47,5 @@ IDouble
 krishnaik06
 hiteshchoudhary
 kunal-kushwaha
+JakeWharton
+dmalan
