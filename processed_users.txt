@@ -49,3 +49,5 @@ hiteshchoudhary
 kunal-kushwaha
 JakeWharton
 dmalan
+kennethreitz
+kamranahmedse

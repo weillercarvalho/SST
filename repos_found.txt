@@ -56,3 +56,4 @@ Repository: hiteshchoudhary/React-native-projects, File: natigationexplore09/ios
 Repository: hiteshchoudhary/React-native-projects, File: passwordGenerator03/ios/.xcode.env
 Repository: hiteshchoudhary/nextjs-fullstack-auth, File: sample.env
 Repository: hiteshchoudhary/react-english, File: 11blogapp/.env.sample
+Repository: kamranahmedse/developer-roadmap, File: .env.example
