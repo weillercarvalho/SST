@@ -24,3 +24,4 @@ Repository: aws/aws-cdk, File: packages/@aws-cdk-testing/framework-integ/test/aw
 Repository: aws/aws-cdk, File: packages/@aws-cdk-testing/framework-integ/test/aws-ecs/test/ec2/integ.environment-file.js.snapshot/asset.972240f9dd6e036a93d5f081af9a24315b2053828ac049b3b19b2fa12d7ae64a/test-envfile.env
 Repository: openai/chatgpt-retrieval-plugin, File: .env.example
 Repository: yyx990803/build-your-own-mint, File: .env.sample
+Repository: microsoft/vscode, File: src/vs/workbench/contrib/terminalContrib/environmentChanges/browser/terminal.environmentChanges.contribution.ts

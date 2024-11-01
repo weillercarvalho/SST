@@ -34,3 +34,4 @@ torvalds
 gaearon
 gustavoguanabara
 yyx990803
+microsoft
