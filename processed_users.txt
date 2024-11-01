@@ -103,3 +103,5 @@ mattt
 chrisbanes
 jakevdp
 CodeWithHarry
+mdo
+MrXyfir
