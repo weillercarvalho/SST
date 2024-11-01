@@ -57,3 +57,5 @@ github
 TheAlgorithms
 buckyroberts
 ThePrimeagen
+3b1b
+adrianhajdin

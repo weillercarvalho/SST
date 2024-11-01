@@ -57,3 +57,6 @@ Repository: hiteshchoudhary/React-native-projects, File: passwordGenerator03/ios
 Repository: hiteshchoudhary/nextjs-fullstack-auth, File: sample.env
 Repository: hiteshchoudhary/react-english, File: 11blogapp/.env.sample
 Repository: kamranahmedse/developer-roadmap, File: .env.example
+Repository: 3b1b/3Blue1Brown.com, File: .env
+Repository: 3b1b/captions, File: app/.env
+Repository: adrianhajdin/project_syncfusion_dashboard, File: .env
