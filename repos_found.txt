@@ -32,3 +32,7 @@ Repository: huggingface/transformers.js, File: examples/semantic-image-search/.e
 Repository: midudev/aprendiendo-react, File: projects/09-google-translate-clone/.env
 Repository: midudev/la-velada-web-oficial, File: .env.demo
 Repository: midudev/curso-node-js, File: clase-6/.env
+Repository: krishnaik06/The-Grand-Complete-Data-Science-Materials, File: prod_llmops/backend_chatbot/Infra/.connection.env
+Repository: krishnaik06/The-Grand-Complete-Data-Science-Materials, File: ML Projects/NLP_Transcript_Analysis/api_modules/summary/prediction/.env
+Repository: krishnaik06/The-Grand-Complete-Data-Science-Materials, File: ML Projects/NLP_Transcript_Analysis/api_modules/topic/prediction/.env
+Repository: krishnaik06/The-Grand-Complete-Data-Science-Materials, File: ML Projects/NLP_Transcript_Analysis/api_modules/keyword_hashtag/prediction/.env
