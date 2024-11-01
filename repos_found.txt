@@ -76,3 +76,5 @@ Repository: benawad/lireddit, File: server/.env.production
 Repository: benawad/fullstack-graphql-airbnb-clone, File: packages/server/.env.example
 Repository: benawad/fullstack-graphql-airbnb-clone, File: packages/web/.env.production
 Repository: benawad/fullstack-graphql-airbnb-clone, File: packages/web/.env.development
+Repository: filipedeschamps/tabnews.com.br, File: .env
+Repository: tj/commander.js, File: tests/options.env.test.js
