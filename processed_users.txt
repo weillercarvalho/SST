@@ -81,3 +81,5 @@ Asabeneh
 tensorflow
 anuraghazra
 john-smilga
+fabpot
+defunkt

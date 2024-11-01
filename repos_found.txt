@@ -88,3 +88,5 @@ Repository: diego3g/rsxp-2023, File: apps/server/.env.example
 Repository: diego3g/rsxp-2023, File: apps/mobile/.env.example
 Repository: anuraghazra/BugVilla, File: .env.EXAMPLE
 Repository: anuraghazra/convoychat, File: .env.EXAMPLE
+Repository: fabpot/test, File: .env
+Repository: fabpot/test, File: .env.test
