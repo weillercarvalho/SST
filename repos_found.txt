@@ -93,3 +93,6 @@ Repository: fabpot/test, File: .env.test
 Repository: CodeWithHarry/Sigma-Web-Dev-Course, File: Video 103/.env
 Repository: CodeWithHarry/Sigma-Web-Dev-Course, File: Video 130/passop-mongo/backend/.env
 Repository: CodeWithHarry/Sigma-Web-Dev-Course, File: Video 134/environment-variables/.env
+Repository: bailicangdu/vue2-manage, File: config/dev.env.js
+Repository: bailicangdu/vue2-manage, File: config/prod.env.js
+Repository: bailicangdu/vue2-manage, File: config/test.env.js
