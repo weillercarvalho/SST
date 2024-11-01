@@ -90,3 +90,6 @@ Repository: anuraghazra/BugVilla, File: .env.EXAMPLE
 Repository: anuraghazra/convoychat, File: .env.EXAMPLE
 Repository: fabpot/test, File: .env
 Repository: fabpot/test, File: .env.test
+Repository: CodeWithHarry/Sigma-Web-Dev-Course, File: Video 103/.env
+Repository: CodeWithHarry/Sigma-Web-Dev-Course, File: Video 130/passop-mongo/backend/.env
+Repository: CodeWithHarry/Sigma-Web-Dev-Course, File: Video 134/environment-variables/.env

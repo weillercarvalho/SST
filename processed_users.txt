@@ -101,3 +101,5 @@ tpope
 RubyLouvre
 mattt
 chrisbanes
+jakevdp
+CodeWithHarry
