@@ -69,3 +69,5 @@ filipedeschamps
 tj
 getify
 llSourcell
+michaelliao
+sindresorhus
