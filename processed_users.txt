@@ -53,3 +53,5 @@ kennethreitz
 kamranahmedse
 paulirish
 EpicGames
+github
+TheAlgorithms
