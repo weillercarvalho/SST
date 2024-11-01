@@ -39,3 +39,5 @@ kentcdodds
 huggingface
 iamshaunjp
 tiangolo
+midudev
+StephenGrider

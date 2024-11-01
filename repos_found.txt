@@ -29,3 +29,6 @@ Repository: kentcdodds/bookshelf, File: .env.development
 Repository: kentcdodds/bookshelf, File: .env
 Repository: kentcdodds/kentcdodds.com, File: .env.example
 Repository: huggingface/transformers.js, File: examples/semantic-image-search/.env.local.example
+Repository: midudev/aprendiendo-react, File: projects/09-google-translate-clone/.env
+Repository: midudev/la-velada-web-oficial, File: .env.demo
+Repository: midudev/curso-node-js, File: clase-6/.env
