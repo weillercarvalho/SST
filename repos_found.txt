@@ -86,3 +86,5 @@ Repository: diego3g/node-microservices-ddd, File: packages/server/atlas/.env.exa
 Repository: diego3g/node-microservices-ddd, File: packages/server/atlas/prisma/.env
 Repository: diego3g/rsxp-2023, File: apps/server/.env.example
 Repository: diego3g/rsxp-2023, File: apps/mobile/.env.example
+Repository: anuraghazra/BugVilla, File: .env.EXAMPLE
+Repository: anuraghazra/convoychat, File: .env.EXAMPLE

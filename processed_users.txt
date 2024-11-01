@@ -79,3 +79,5 @@ draveness
 douglascrockford
 Asabeneh
 tensorflow
+anuraghazra
+john-smilga
