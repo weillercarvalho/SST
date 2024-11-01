@@ -107,3 +107,5 @@ mdo
 MrXyfir
 jessfraz
 jashkenas
+ahejlsberg
+unclebob
