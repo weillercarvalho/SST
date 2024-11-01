@@ -60,3 +60,8 @@ Repository: kamranahmedse/developer-roadmap, File: .env.example
 Repository: 3b1b/3Blue1Brown.com, File: .env
 Repository: 3b1b/captions, File: app/.env
 Repository: adrianhajdin/project_syncfusion_dashboard, File: .env
+Repository: taylorotwell/next-example-frontend, File: .env.example
+Repository: taylorotwell/next-example-backend, File: .env.example
+Repository: taylorotwell/meilisearch-web, File: .env.example
+Repository: taylorotwell/nexmo-horizon-demo, File: .env.example
+Repository: taylorotwell/vapor-fresh-test, File: .env.example
