@@ -109,3 +109,5 @@ jessfraz
 jashkenas
 ahejlsberg
 unclebob
+taniarascia
+JacksonTian
