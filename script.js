@@ -111,10 +111,19 @@ function isUserProcessed(user) {
 async function getRandomUserWithLimiter() {
   let octokit = getOctokitInstance();
   const maxUsersPerExecution = 2;
+  const totalPages = 50; 
   let usersProcessed = 0;
+  const checkedUsers = new Set(); 
+  const checkedPages = new Set(); 
 
   for (let attempt = 0; attempt < 15; attempt++) {
-    const randomPage = Math.floor(Math.random() * 10) + 1; 
+    let randomPage;
+
+    do {
+      randomPage = Math.floor(Math.random() * totalPages) + 1;
+    } while (checkedPages.has(randomPage));
+
+    checkedPages.add(randomPage); 
     const users = await octokit.search.users({
       q: `followers:>1000`,
       per_page: 1,
@@ -125,17 +134,18 @@ async function getRandomUserWithLimiter() {
 
     const user = users.data.items[0].login;
 
-    if (!isUserProcessed(user)) {
+    if (!isUserProcessed(user) && !checkedUsers.has(user)) {
       console.log(`Checking user: ${user}`);
       await fetchReposWithLimiter(user);
       saveProcessedUser(user);
+      checkedUsers.add(user);
       usersProcessed++;
 
       if (usersProcessed >= maxUsersPerExecution) return;
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
     } else {
-      console.log(`User ${user} has already been processed previously. Skipping...`);
+      console.log(`User ${user} has already been processed or checked previously. Skipping...`);
     }
   }
 }
