@@ -224,3 +224,6 @@ Repository: dotnet/runtime, File: src/libraries/Microsoft.Extensions.Configurati
 Repository: dotnet/runtime, File: src/libraries/Microsoft.Extensions.Configuration.EnvironmentVariables/ref/Microsoft.Extensions.Configuration.EnvironmentVariables.csproj
 Repository: dotnet/runtime, File: src/libraries/Microsoft.Extensions.Configuration.EnvironmentVariables/src/Microsoft.Extensions.Configuration.EnvironmentVariables.csproj
 Repository: dotnet/runtime, File: src/libraries/Microsoft.Extensions.Configuration.EnvironmentVariables/tests/Microsoft.Extensions.Configuration.EnvironmentVariables.Tests.csproj
+Repository: halfrost/vue-objccn, File: config/dev.env.js
+Repository: halfrost/vue-objccn, File: config/prod.env.js
+Repository: halfrost/vue-objccn, File: config/test.env.js
