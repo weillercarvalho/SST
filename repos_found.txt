@@ -115,3 +115,6 @@ Repository: PanJiaChen/electron-vue-admin, File: config/dev.env.js
 Repository: PanJiaChen/electron-vue-admin, File: config/prod.env.js
 Repository: vuejs/vue-cli, File: packages/@vue/cli-ui/.env.production
 Repository: vuejs/vue-cli, File: packages/@vue/cli-ui/.env.development
+Repository: ageron/handson-ml2, File: docker/.env
+Repository: ageron/handson-ml, File: docker/.env
+Repository: ageron/handson-ml3, File: docker/.env

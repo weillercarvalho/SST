@@ -141,3 +141,5 @@ facebookresearch
 acdlite
 astaxie
 jadijadi
+lydiahallie
+ageron
