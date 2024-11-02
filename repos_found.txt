@@ -96,3 +96,5 @@ Repository: CodeWithHarry/Sigma-Web-Dev-Course, File: Video 134/environment-vari
 Repository: bailicangdu/vue2-manage, File: config/dev.env.js
 Repository: bailicangdu/vue2-manage, File: config/prod.env.js
 Repository: bailicangdu/vue2-manage, File: config/test.env.js
+Repository: apple/foundationdb, File: packaging/docker/samples/golang/.env
+Repository: apple/foundationdb, File: packaging/docker/samples/python/.env
