@@ -98,3 +98,10 @@ Repository: bailicangdu/vue2-manage, File: config/prod.env.js
 Repository: bailicangdu/vue2-manage, File: config/test.env.js
 Repository: apple/foundationdb, File: packaging/docker/samples/golang/.env
 Repository: apple/foundationdb, File: packaging/docker/samples/python/.env
+Repository: alibaba/arthas, File: web-ui/arthasWebConsole/.env.tunnel
+Repository: alibaba/arthas, File: web-ui/arthasWebConsole/.env.ui
+Repository: alibaba/arthas, File: web-ui/arthasWebConsole/.env
+Repository: alibaba/canal, File: admin/admin-ui/.env.development
+Repository: alibaba/canal, File: admin/admin-ui/.env.staging
+Repository: alibaba/canal, File: admin/admin-ui/.env.production
+Repository: alibaba/spring-cloud-alibaba, File: spring-cloud-alibaba-examples/integrated-example/docker-compose/.env
