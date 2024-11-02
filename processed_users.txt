@@ -129,3 +129,5 @@ mbostock
 techwithtim
 lllyasviel
 Visual-Studio-Code
+maykbrito
+kelseyhightower
