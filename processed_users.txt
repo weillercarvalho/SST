@@ -162,3 +162,5 @@ clowwindy
 ReVanced
 programthink
 jackfrued
+mitchellh
+feross
