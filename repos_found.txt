@@ -105,3 +105,11 @@ Repository: alibaba/canal, File: admin/admin-ui/.env.development
 Repository: alibaba/canal, File: admin/admin-ui/.env.staging
 Repository: alibaba/canal, File: admin/admin-ui/.env.production
 Repository: alibaba/spring-cloud-alibaba, File: spring-cloud-alibaba-examples/integrated-example/docker-compose/.env
+Repository: PanJiaChen/vue-element-admin, File: .env.staging
+Repository: PanJiaChen/vue-element-admin, File: .env.development
+Repository: PanJiaChen/vue-element-admin, File: .env.production
+Repository: PanJiaChen/vue-admin-template, File: .env.staging
+Repository: PanJiaChen/vue-admin-template, File: .env.production
+Repository: PanJiaChen/vue-admin-template, File: .env.development
+Repository: PanJiaChen/electron-vue-admin, File: config/dev.env.js
+Repository: PanJiaChen/electron-vue-admin, File: config/prod.env.js
