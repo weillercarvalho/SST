@@ -125,3 +125,5 @@ stormzhang
 goodfeli
 rasbt
 josevalim
+mbostock
+techwithtim
