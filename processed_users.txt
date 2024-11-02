@@ -145,3 +145,5 @@ lydiahallie
 ageron
 cassidoo
 JeffreyWay
+PacktPublishing
+jeresig
