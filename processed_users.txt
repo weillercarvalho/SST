@@ -160,3 +160,5 @@ dhh
 apache
 clowwindy
 ReVanced
+programthink
+jackfrued
