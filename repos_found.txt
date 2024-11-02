@@ -121,3 +121,4 @@ Repository: ageron/handson-ml3, File: docker/.env
 Repository: JeffreyWay/council, File: .env.example
 Repository: JeffreyWay/council, File: .env.travis
 Repository: JeffreyWay/Laravel-From-Scratch-Blog-Project, File: .env.example
+Repository: Kwynto/GracefulDB, File: .env
