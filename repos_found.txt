@@ -133,3 +133,10 @@ Repository: sdras/array-explorer, File: config/dev.env.js
 Repository: sdras/array-explorer, File: config/prod.env.js
 Repository: sorrycc/weekly, File: .env
 Repository: spf13/viper, File: .envrc
+Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-section-11/config.env
+Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-section-06/config.env
+Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-section-09/config.env
+Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-section-13/config.env
+Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-section-12/config.env
+Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-section-10/config.env
+Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-section-08/config.env

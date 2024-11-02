@@ -187,3 +187,5 @@ mojombo
 antirez
 Trinea
 spf13
+AlexTheAnalyst
+jonasschmedtmann
