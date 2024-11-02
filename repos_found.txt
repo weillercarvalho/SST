@@ -118,3 +118,6 @@ Repository: vuejs/vue-cli, File: packages/@vue/cli-ui/.env.development
 Repository: ageron/handson-ml2, File: docker/.env
 Repository: ageron/handson-ml, File: docker/.env
 Repository: ageron/handson-ml3, File: docker/.env
+Repository: JeffreyWay/council, File: .env.example
+Repository: JeffreyWay/council, File: .env.travis
+Repository: JeffreyWay/Laravel-From-Scratch-Blog-Project, File: .env.example
