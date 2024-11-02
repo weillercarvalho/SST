@@ -123,3 +123,5 @@ codediodeio
 alibaba
 stormzhang
 goodfeli
+rasbt
+josevalim
