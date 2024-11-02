@@ -211,3 +211,4 @@ hadley
 metatimeofficial
 cloudwu
 halfrost
+fchollet
