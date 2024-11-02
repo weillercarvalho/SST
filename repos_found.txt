@@ -215,3 +215,12 @@ Repository: vercel/vercel, File: packages/static-build/test/fixtures/umi-v2/.env
 Repository: vercel/vercel, File: packages/remix/test/fixtures-legacy/13-remix-v2-public-path/site/remix.env.d.ts
 Repository: vercel/vercel, File: packages/remix/test/fixtures-legacy/01-remix-basics/remix.env.d.ts
 Repository: vercel/commerce, File: .env.example
+Repository: dotnet/aspnetcore, File: src/Mvc/test/Mvc.FunctionalTests/compiler/resources/HtmlGenerationWebSite.HtmlGeneration_Home.Environment.html
+Repository: dotnet/core, File: release-notes/6.0/api-diff/Asp.Net/6.0.0_Microsoft.Extensions.Configuration.EnvironmentVariables.md
+Repository: dotnet/core, File: release-notes/7.0/7.0.0/api-diff/Microsoft.AspNetCore.App/7.0.0_Microsoft.Extensions.Configuration.EnvironmentVariables.md
+Repository: dotnet/core, File: release-notes/7.0/preview/api-diff/preview1/Microsoft.AspNetCore.App/7.0-preview1_Microsoft.Extensions.Configuration.EnvironmentVariables.md
+Repository: dotnet/runtime, File: src/libraries/Microsoft.Extensions.Configuration.EnvironmentVariables/ref/Microsoft.Extensions.Configuration.EnvironmentVariables.cs
+Repository: dotnet/runtime, File: src/libraries/Microsoft.Extensions.Configuration.EnvironmentVariables/Microsoft.Extensions.Configuration.EnvironmentVariables.sln
+Repository: dotnet/runtime, File: src/libraries/Microsoft.Extensions.Configuration.EnvironmentVariables/ref/Microsoft.Extensions.Configuration.EnvironmentVariables.csproj
+Repository: dotnet/runtime, File: src/libraries/Microsoft.Extensions.Configuration.EnvironmentVariables/src/Microsoft.Extensions.Configuration.EnvironmentVariables.csproj
+Repository: dotnet/runtime, File: src/libraries/Microsoft.Extensions.Configuration.EnvironmentVariables/tests/Microsoft.Extensions.Configuration.EnvironmentVariables.Tests.csproj
