@@ -129,3 +129,5 @@ Repository: apache/airflow, File: scripts/ci/docker-compose/devcontainer.env
 Repository: ReVanced/revanced-website, File: .env
 Repository: mitchellh/libxev, File: .envrc
 Repository: johnpapa/angular-ngrx-data, File: .env.example
+Repository: sdras/array-explorer, File: config/dev.env.js
+Repository: sdras/array-explorer, File: config/prod.env.js
