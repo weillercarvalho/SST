@@ -196,3 +196,5 @@ breakwa11
 geerlingguy
 onevcat
 keijiro
+wesm
+developedbyed
