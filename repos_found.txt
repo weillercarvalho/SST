@@ -122,3 +122,7 @@ Repository: JeffreyWay/council, File: .env.example
 Repository: JeffreyWay/council, File: .env.travis
 Repository: JeffreyWay/Laravel-From-Scratch-Blog-Project, File: .env.example
 Repository: Kwynto/GracefulDB, File: .env
+Repository: apache/superset, File: docker/.env
+Repository: apache/superset, File: scripts/databases/hive/hadoop-hive.env
+Repository: apache/airflow, File: airflow/ui/.env.example
+Repository: apache/airflow, File: scripts/ci/docker-compose/devcontainer.env
