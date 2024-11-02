@@ -227,3 +227,7 @@ Repository: dotnet/runtime, File: src/libraries/Microsoft.Extensions.Configurati
 Repository: halfrost/vue-objccn, File: config/dev.env.js
 Repository: halfrost/vue-objccn, File: config/prod.env.js
 Repository: halfrost/vue-objccn, File: config/test.env.js
+Repository: freeCodeCamp/freeCodeCamp, File: sample.env
+Repository: freeCodeCamp/freeCodeCamp, File: curriculum/challenges/english/05-back-end-development-and-apis/basic-node-and-express/use-the-.env-file.md
+Repository: freeCodeCamp/freeCodeCamp, File: tools/challenge-editor/api/sample.env
+Repository: freeCodeCamp/freeCodeCamp, File: tools/challenge-editor/client/sample.env
