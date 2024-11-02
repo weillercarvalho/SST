@@ -126,3 +126,4 @@ Repository: apache/superset, File: docker/.env
 Repository: apache/superset, File: scripts/databases/hive/hadoop-hive.env
 Repository: apache/airflow, File: airflow/ui/.env.example
 Repository: apache/airflow, File: scripts/ci/docker-compose/devcontainer.env
+Repository: ReVanced/revanced-website, File: .env
