@@ -147,3 +147,5 @@ cassidoo
 JeffreyWay
 PacktPublishing
 jeresig
+florinpop17
+isaacs
