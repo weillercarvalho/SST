@@ -113,3 +113,5 @@ Repository: PanJiaChen/vue-admin-template, File: .env.production
 Repository: PanJiaChen/vue-admin-template, File: .env.development
 Repository: PanJiaChen/electron-vue-admin, File: config/dev.env.js
 Repository: PanJiaChen/electron-vue-admin, File: config/prod.env.js
+Repository: vuejs/vue-cli, File: packages/@vue/cli-ui/.env.production
+Repository: vuejs/vue-cli, File: packages/@vue/cli-ui/.env.development
