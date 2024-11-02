@@ -231,3 +231,12 @@ Repository: freeCodeCamp/freeCodeCamp, File: sample.env
 Repository: freeCodeCamp/freeCodeCamp, File: curriculum/challenges/english/05-back-end-development-and-apis/basic-node-and-express/use-the-.env-file.md
 Repository: freeCodeCamp/freeCodeCamp, File: tools/challenge-editor/api/sample.env
 Repository: freeCodeCamp/freeCodeCamp, File: tools/challenge-editor/client/sample.env
+Repository: facebook/react, File: fixtures/nesting/.env
+Repository: facebook/react, File: fixtures/fiber-debugger/.env
+Repository: facebook/react-native, File: packages/helloworld/ios/.xcode.env
+Repository: facebook/react-native, File: packages/rn-tester/.xcode.env
+Repository: facebook/react-native, File: scripts/.tests.env
+Repository: facebook/create-react-app, File: packages/react-scripts/fixtures/kitchensink/template/.env
+Repository: facebook/create-react-app, File: packages/react-scripts/fixtures/kitchensink/template/.env.local
+Repository: facebook/create-react-app, File: packages/react-scripts/fixtures/kitchensink/template/.env.production
+Repository: facebook/create-react-app, File: packages/react-scripts/fixtures/kitchensink/template/.env.development
