@@ -168,3 +168,5 @@ johnpapa
 ggerganov
 daimajia
 justjavac
+Rich-Harris
+xiaolai
