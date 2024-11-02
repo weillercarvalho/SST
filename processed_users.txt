@@ -206,3 +206,5 @@ fengdu78
 dotnet
 kenjinote
 gamemann
+angelabauer
+hadley
