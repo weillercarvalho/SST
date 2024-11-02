@@ -139,3 +139,5 @@ vuejs
 PremChapagain
 facebookresearch
 acdlite
+astaxie
+jadijadi
