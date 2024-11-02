@@ -185,3 +185,5 @@ phodal
 sorrycc
 mojombo
 antirez
+Trinea
+spf13

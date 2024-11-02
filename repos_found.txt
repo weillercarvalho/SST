@@ -132,3 +132,4 @@ Repository: johnpapa/angular-ngrx-data, File: .env.example
 Repository: sdras/array-explorer, File: config/dev.env.js
 Repository: sdras/array-explorer, File: config/prod.env.js
 Repository: sorrycc/weekly, File: .env
+Repository: spf13/viper, File: .envrc
