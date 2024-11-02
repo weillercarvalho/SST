@@ -140,3 +140,9 @@ Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-secti
 Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-section-12/config.env
 Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-section-10/config.env
 Repository: jonasschmedtmann/complete-node-bootcamp, File: 4-natours/after-section-08/config.env
+Repository: twitter/finagle, File: finagle-toggle/src/test/resources/com/twitter/toggles/configs/com.twitter.finagle.toggle.tests.EnvOverlays.json
+Repository: twitter/finagle, File: finagle-toggle/src/test/resources/com/twitter/toggles/configs/com.twitter.finagle.toggle.tests.EnvOverlays-staging.json
+Repository: brunosimon/keppler, File: app/config/dev.env.js
+Repository: brunosimon/keppler, File: app/config/prod.env.js
+Repository: brunosimon/keppler, File: site/config/prod.env.js
+Repository: brunosimon/keppler, File: site/config/dev.env.js

@@ -190,3 +190,5 @@ spf13
 AlexTheAnalyst
 jonasschmedtmann
 vczh
+twitter
+brunosimon
