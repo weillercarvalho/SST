@@ -349,3 +349,4 @@ Repository: GoogleCloudPlatform/professional-services, File: examples/risk-analy
 Repository: GoogleCloudPlatform/professional-services, File: examples/risk-analysis-asset/frontend/.env
 Repository: GoogleCloudPlatform/professional-services, File: tools/slo-definition-converter/slo-frontend/.env
 Repository: GoogleCloudPlatform/professional-services, File: tools/google-cloud-support-slackbot/.env
+Repository: danielmiessler/fabric, File: .envrc

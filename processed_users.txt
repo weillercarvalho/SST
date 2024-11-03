@@ -325,3 +325,5 @@ ChrisTitusTech
 frontend-joe
 chenshuo
 davidfowl
+abuanwar072
+danielmiessler
