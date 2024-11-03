@@ -249,3 +249,5 @@ easychen
 bojone
 lepture
 CoderMJLee
+aws-samples
+mnielsen
