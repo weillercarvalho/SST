@@ -126,7 +126,7 @@ async function getRandomUserWithLimiter() {
     checkedPages.add(randomPage); 
     const users = await octokit.search.users({
       q: `followers:>1000`,
-      per_page: 1,
+      per_page: 5,
       page: randomPage,
     });
 
