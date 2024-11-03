@@ -294,3 +294,4 @@ Repository: JetBrains/kotlin, File: compiler/testData/cli/jvm/readingConfigFromE
 Repository: JetBrains/intellij-community, File: platform/statistics/envTests/intellij.platform.statistics.envTests.iml
 Repository: JetBrains/intellij-community, File: plugins/settings-sync/test-resources/.env
 Repository: JetBrains/intellij-community, File: plugins/tasks/tasks-tests/requests/http-client.env.json
+Repository: codecrafters-io/frontend, File: .env.example

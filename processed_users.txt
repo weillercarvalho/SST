@@ -277,3 +277,5 @@ JetBrains
 junegunn
 wasabeef
 wycats
+BilgisayarKavramlari
+codecrafters-io
