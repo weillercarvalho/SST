@@ -378,3 +378,12 @@ Repository: docker/compose, File: pkg/e2e/fixtures/environment/env-interpolation
 Repository: docker/compose, File: pkg/e2e/fixtures/environment/env-file-comments/.env
 Repository: docker/compose, File: pkg/e2e/fixtures/environment/env-interpolation-default-value/.env
 Repository: docker/compose, File: pkg/e2e/fixtures/profiles/test-profile.env
+Repository: kubernetes/kompose, File: script/test/fixtures/env/hadoop-hive-namenode.env
+Repository: kubernetes/kompose, File: script/test/fixtures/configmap/bar.env
+Repository: kubernetes/kompose, File: script/test/fixtures/configmap/foo.env
+Repository: kubernetes/kompose, File: script/test/fixtures/unused/v3/example1.env
+Repository: kubernetes/kompose, File: script/test/fixtures/unused/v3/example2.env
+Repository: kubernetes/kompose, File: script/test/fixtures/env-multiple/env1/hadoop-hive-namenode.env
+Repository: kubernetes/kompose, File: script/test/fixtures/env-multiple/env2/hadoop-hive-namenode.env
+Repository: kubernetes/kompose, File: script/test/fixtures/configmap-pod/bar.env
+Repository: kubernetes/kompose, File: script/test/fixtures/configmap-pod/foo.env

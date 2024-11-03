@@ -345,3 +345,5 @@ mattn
 sofish
 evanw
 docker
+kubernetes
+Microsoft-corp
