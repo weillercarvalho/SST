@@ -297,3 +297,15 @@ Repository: JetBrains/intellij-community, File: plugins/tasks/tasks-tests/reques
 Repository: codecrafters-io/frontend, File: .env.example
 Repository: nunomaduro/collision, File: tests/LaravelApp/.env
 Repository: nunomaduro/collision, File: tests/LaravelApp/.env.example
+Repository: jaredpalmer/razzle, File: examples/with-reason-react/.env
+Repository: jaredpalmer/razzle, File: examples/with-custom-environment-variables/.env.production
+Repository: jaredpalmer/razzle, File: examples/with-vendor-bundle/.env
+Repository: jaredpalmer/razzle, File: examples/with-devcert-https/.env
+Repository: jaredpalmer/razzle, File: examples/with-monorepo/basic-2/.env
+Repository: jaredpalmer/razzle, File: examples/with-webpack-public-path/.env
+Repository: jaredpalmer/razzle, File: examples/with-monorepo/basic-1/.env
+Repository: jaredpalmer/razzle, File: examples/with-module-federation/basic-1/.env
+Repository: jaredpalmer/razzle, File: examples/with-module-federation/basic-2/.env
+Repository: jaredpalmer/razzle, File: examples/with-custom-environment-variables/.env
+Repository: jaredpalmer/razzle, File: examples/with-monorepo-without-workspaces/basic-2/.env
+Repository: jaredpalmer/razzle, File: examples/with-monorepo-without-workspaces/basic-1/.env

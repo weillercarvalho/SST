@@ -281,3 +281,5 @@ BilgisayarKavramlari
 codecrafters-io
 wizardforcel
 nunomaduro
+jaredpalmer
+alyssaxuu
