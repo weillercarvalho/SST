@@ -301,3 +301,5 @@ ChristianLempa
 tqchen
 mxcl
 tannerlinsley
+nwaliaez
+developit
