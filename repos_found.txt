@@ -357,3 +357,6 @@ Repository: YunaiV/yudao-cloud, File: script/idea/http-client.env.json
 Repository: YunaiV/onemall-web, File: admin-dashboard-vue/.env.staging
 Repository: YunaiV/onemall-web, File: admin-dashboard-vue/.env.production
 Repository: YunaiV/onemall-web, File: admin-dashboard-vue/.env.development
+Repository: bchiang7/spotify-profile, File: .env.example
+Repository: bchiang7/time-to-have-more-fun, File: .env.example
+Repository: bchiang7/google-keep-vue-firebase, File: .env.example

@@ -337,3 +337,5 @@ fireship-io
 carpedm20
 EurekaLabsAI
 Yangqing
+bchiang7
+shiftkey
