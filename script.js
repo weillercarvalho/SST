@@ -111,7 +111,7 @@ function isUserProcessed(user) {
 async function getRandomUserWithLimiter() {
   let octokit = getOctokitInstance();
   const maxUsersPerExecution = 2;
-  const totalPages = 100; // Aumente o total de páginas para buscar uma variedade maior de usuários
+  const totalPages = 100;
   let usersProcessed = 0;
   const checkedUsers = new Set(); 
   const checkedPages = new Set(); 
@@ -126,7 +126,7 @@ async function getRandomUserWithLimiter() {
     checkedPages.add(randomPage); 
     const users = await octokit.search.users({
       q: `followers:>1000`,
-      per_page: 2,
+      per_page: 1,
       page: randomPage,
     });
 
