@@ -343,3 +343,5 @@ chokcoco
 cyanharlow
 mattn
 sofish
+evanw
+docker
