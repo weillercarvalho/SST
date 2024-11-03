@@ -277,3 +277,4 @@ Repository: vinta/albedo, File: .docker-assets/django.env
 Repository: mosh-hamedani/issue-tracker, File: .env.example
 Repository: Charles-Chrismann/dynamic-readme, File: .env.example
 Repository: Charles-Chrismann/discord-jobs, File: .env.example
+Repository: easychen/pushdeer, File: api/.env.example
