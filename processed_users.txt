@@ -251,3 +251,5 @@ lepture
 CoderMJLee
 aws-samples
 mnielsen
+teteusAraujo
+htr-tech
