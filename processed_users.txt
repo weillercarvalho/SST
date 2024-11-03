@@ -303,3 +303,5 @@ mxcl
 tannerlinsley
 nwaliaez
 developit
+romannurik
+home-assistant
