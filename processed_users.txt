@@ -311,3 +311,5 @@ swisskyrepo
 ErickWendel
 s0md3v
 ryanflorence
+projectdiscovery
+mathiasbynens
