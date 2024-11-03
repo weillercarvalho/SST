@@ -282,3 +282,7 @@ Repository: macrozheng/mall-admin-web, File: config/dev.env.js
 Repository: macrozheng/mall-admin-web, File: config/prod.env.js
 Repository: DIYgod/RSSHub, File: scripts/ansible/rsshub.env
 Repository: ChenYilong/iOSInterviewQuestions, File: cross-platform/ReactNativeDemo/ios/.xcode.env
+Repository: jrohitofficial/ReactJs-Chatapp_Mangodb, File: .env
+Repository: jrohitofficial/webAPI-test, File: .env
+Repository: jrohitofficial/Chat-MO-APP-MangoDB-Flutter-MVC, File: backend/.env
+Repository: jrohitofficial/FlutterAPP-MVVM-MangoDB-EC-Clothing, File: trendy_backend/config/.env
