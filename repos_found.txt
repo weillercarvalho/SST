@@ -351,3 +351,9 @@ Repository: GoogleCloudPlatform/professional-services, File: tools/slo-definitio
 Repository: GoogleCloudPlatform/professional-services, File: tools/google-cloud-support-slackbot/.env
 Repository: danielmiessler/fabric, File: .envrc
 Repository: scroll-tech/scroll-documentation, File: .env.example
+Repository: YunaiV/ruoyi-vue-pro, File: script/docker/docker.env
+Repository: YunaiV/ruoyi-vue-pro, File: script/idea/http-client.env.json
+Repository: YunaiV/yudao-cloud, File: script/idea/http-client.env.json
+Repository: YunaiV/onemall-web, File: admin-dashboard-vue/.env.staging
+Repository: YunaiV/onemall-web, File: admin-dashboard-vue/.env.production
+Repository: YunaiV/onemall-web, File: admin-dashboard-vue/.env.development
