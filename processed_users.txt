@@ -307,3 +307,5 @@ romannurik
 home-assistant
 google-deepmind
 topjohnwu
+swisskyrepo
+ErickWendel
