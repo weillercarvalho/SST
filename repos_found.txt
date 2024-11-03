@@ -280,3 +280,4 @@ Repository: Charles-Chrismann/discord-jobs, File: .env.example
 Repository: easychen/pushdeer, File: api/.env.example
 Repository: macrozheng/mall-admin-web, File: config/dev.env.js
 Repository: macrozheng/mall-admin-web, File: config/prod.env.js
+Repository: DIYgod/RSSHub, File: scripts/ansible/rsshub.env
