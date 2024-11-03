@@ -221,3 +221,5 @@ donnemartin
 chiphuyen
 romainguy
 george0st
+rengwuxian
+vinta
