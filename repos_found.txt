@@ -360,3 +360,4 @@ Repository: YunaiV/onemall-web, File: admin-dashboard-vue/.env.development
 Repository: bchiang7/spotify-profile, File: .env.example
 Repository: bchiang7/time-to-have-more-fun, File: .env.example
 Repository: bchiang7/google-keep-vue-firebase, File: .env.example
+Repository: mattn/goreman, File: _example/.env

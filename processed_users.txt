@@ -341,3 +341,5 @@ bchiang7
 shiftkey
 chokcoco
 cyanharlow
+mattn
+sofish
