@@ -323,3 +323,5 @@ charmbracelet
 intel-innersource
 ChrisTitusTech
 frontend-joe
+chenshuo
+davidfowl
