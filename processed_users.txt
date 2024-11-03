@@ -271,3 +271,5 @@ rust-lang
 shanselman
 miguelgrinberg
 pjreddie
+EbookFoundation
+mgechev
