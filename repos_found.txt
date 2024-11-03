@@ -332,3 +332,6 @@ Repository: nwaliaez/ezSnippet, File: .env.exmaple
 Repository: nwaliaez/eCommerce, File: backend/.env.example
 Repository: nwaliaez/eCommerce, File: frontend/.env.example
 Repository: nwaliaez/spotify-clone, File: .env.exmaple
+Repository: Azure/azure-sdk-for-python, File: sdk/agrifood/azure-agrifood-farming/samples/.env
+Repository: Azure/azure-sdk-for-python, File: sdk/core/azure-core-experimental/samples/pyodide_integration/example.env
+Repository: Azure/Azure-Sentinel, File: Solutions/VaronisSaaS/Data Connectors/VaronisSaaSFunction/settings.env.parameters.json
