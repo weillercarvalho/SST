@@ -313,3 +313,5 @@ s0md3v
 ryanflorence
 projectdiscovery
 mathiasbynens
+jart
+H-K-R
