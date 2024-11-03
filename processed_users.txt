@@ -297,3 +297,5 @@ daneden
 OneLoneCoder
 joshlong
 django
+ChristianLempa
+tqchen

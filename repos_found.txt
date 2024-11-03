@@ -326,3 +326,5 @@ Repository: eugenp/tutorials, File: spring-security-modules/spring-security-oaut
 Repository: eugenp/tutorials, File: spring-security-modules/spring-security-dynamic-registration/server/.env
 Repository: eugenp/tutorials, File: spring-security-modules/spring-security-oauth2-testing/.env
 Repository: eugenp/tutorials, File: spring-security-modules/spring-security-oauth2-bff/keycloak/.env
+Repository: ChristianLempa/homelab, File: wazuh/wazuh-prod-1/.env.example
+Repository: ChristianLempa/homelab, File: renovate/renovate-prod-1/.env.example
