@@ -278,3 +278,5 @@ Repository: mosh-hamedani/issue-tracker, File: .env.example
 Repository: Charles-Chrismann/dynamic-readme, File: .env.example
 Repository: Charles-Chrismann/discord-jobs, File: .env.example
 Repository: easychen/pushdeer, File: api/.env.example
+Repository: macrozheng/mall-admin-web, File: config/dev.env.js
+Repository: macrozheng/mall-admin-web, File: config/prod.env.js
