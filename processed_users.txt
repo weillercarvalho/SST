@@ -363,3 +363,5 @@ felangel
 open-mmlab
 agentzh
 koush
+arthurspk
+jakearchibald
