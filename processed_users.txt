@@ -349,3 +349,5 @@ kubernetes
 Microsoft-corp
 Colt
 fazt
+CoreyMSchafer
+ardalis
