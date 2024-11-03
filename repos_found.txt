@@ -274,3 +274,4 @@ Repository: george0st/qgate-examples, File: perf_cql/config/local/local-RW1-low.
 Repository: george0st/qgate-examples, File: perf_cql/config/cass/cass-RW3-hgh.env
 Repository: vinta/albedo, File: .docker-assets/mysql.env
 Repository: vinta/albedo, File: .docker-assets/django.env
+Repository: mosh-hamedani/issue-tracker, File: .env.example
