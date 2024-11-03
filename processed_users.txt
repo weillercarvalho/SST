@@ -219,3 +219,5 @@ jwasham
 facebook
 donnemartin
 chiphuyen
+romainguy
+george0st

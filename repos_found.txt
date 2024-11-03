@@ -240,3 +240,35 @@ Repository: facebook/create-react-app, File: packages/react-scripts/fixtures/kit
 Repository: facebook/create-react-app, File: packages/react-scripts/fixtures/kitchensink/template/.env.local
 Repository: facebook/create-react-app, File: packages/react-scripts/fixtures/kitchensink/template/.env.production
 Repository: facebook/create-react-app, File: packages/react-scripts/fixtures/kitchensink/template/.env.development
+Repository: george0st/qgate-sln-mlrun, File: qgate-sln-mlrun.env
+Repository: george0st/qgate-sln-mlrun, File: qgate-sln-mlrun-private.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_cass.env
+Repository: george0st/qgate-examples, File: .run/run _cass.env.run.xml
+Repository: george0st/qgate-examples, File: .run/diagnose _cass.env.run.xml
+Repository: george0st/qgate-examples, File: perf_cql/config/cass/cass-W1-low.env
+Repository: george0st/qgate-examples, File: .run/run _local-cass.env.run.xml
+Repository: george0st/qgate-examples, File: perf_cql/config/local/local-W1-low.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_old/cassV4V5/cassV4-W1-low.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_cass-quick.env
+Repository: george0st/qgate-examples, File: perf_cql/config/cass/cass-W3-hgh.env
+Repository: george0st/qgate-examples, File: perf_cql/config/cass/cass-RW2-med.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_old/_azure-cass-v4.env
+Repository: george0st/qgate-examples, File: perf_cql/config/astra/astra-RW2-med.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_old/cassV4V5/cassV5-R1-low.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_old/cassV4V5/cassV4-R1-low.env
+Repository: george0st/qgate-examples, File: perf_cql/config/cass/cass-RW1-low.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_cass-peek.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_old/_azure-cass-v4-one.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_old/_azure-cass-v5-one.env
+Repository: george0st/qgate-examples, File: perf_cql/config/local/local-R1-low.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_cass-peek2.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_old/cassV4V5/cassV5-W1-low.env
+Repository: george0st/qgate-examples, File: .run/run _cass-quick.env.run.xml
+Repository: george0st/qgate-examples, File: perf_cql/config/cass/cass-R2-med.env
+Repository: george0st/qgate-examples, File: perf_cql/config/cass/cass-R3-hgh.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_cass2.env
+Repository: george0st/qgate-examples, File: perf_cql/config/_cass-peek-RW.env
+Repository: george0st/qgate-examples, File: perf_cql/config/astra/astra-W2-med.env
+Repository: george0st/qgate-examples, File: perf_cql/config/astra/astra-R2-med.env
+Repository: george0st/qgate-examples, File: perf_cql/config/local/local-RW1-low.env
+Repository: george0st/qgate-examples, File: perf_cql/config/cass/cass-RW3-hgh.env
