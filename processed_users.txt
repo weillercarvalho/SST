@@ -339,3 +339,5 @@ EurekaLabsAI
 Yangqing
 bchiang7
 shiftkey
+chokcoco
+cyanharlow
