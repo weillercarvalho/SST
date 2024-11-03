@@ -279,3 +279,5 @@ wasabeef
 wycats
 BilgisayarKavramlari
 codecrafters-io
+wizardforcel
+nunomaduro
