@@ -309,3 +309,5 @@ google-deepmind
 topjohnwu
 swisskyrepo
 ErickWendel
+s0md3v
+ryanflorence
