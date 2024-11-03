@@ -269,3 +269,5 @@ dennybritz
 jrohitofficial
 rust-lang
 shanselman
+miguelgrinberg
+pjreddie
