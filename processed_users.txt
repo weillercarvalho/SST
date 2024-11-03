@@ -351,3 +351,5 @@ Colt
 fazt
 CoreyMSchafer
 ardalis
+wintercn
+yihui
