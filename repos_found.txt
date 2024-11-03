@@ -335,3 +335,17 @@ Repository: nwaliaez/spotify-clone, File: .env.exmaple
 Repository: Azure/azure-sdk-for-python, File: sdk/agrifood/azure-agrifood-farming/samples/.env
 Repository: Azure/azure-sdk-for-python, File: sdk/core/azure-core-experimental/samples/pyodide_integration/example.env
 Repository: Azure/Azure-Sentinel, File: Solutions/VaronisSaaS/Data Connectors/VaronisSaaSFunction/settings.env.parameters.json
+Repository: GoogleCloudPlatform/generative-ai, File: gemini/sample-apps/image-bash-jam/.envrc.dist
+Repository: GoogleCloudPlatform/generative-ai, File: genkit/postcard-generator/.env.example
+Repository: GoogleCloudPlatform/generative-ai, File: search/cloud-function/python/.env.example
+Repository: GoogleCloudPlatform/professional-services, File: examples/neo4j-backup-restore-via-gke-gcs-example/restore/restore.env
+Repository: GoogleCloudPlatform/professional-services, File: tools/k8s-2-gsm/.env
+Repository: GoogleCloudPlatform/professional-services, File: examples/bigquery-auditlog-anomaly-detection/var.env
+Repository: GoogleCloudPlatform/professional-services, File: examples/cloudbuild-with-tcp-proxy/.env
+Repository: GoogleCloudPlatform/professional-services, File: examples/bigquery-table-access-pattern-analysis/var.env
+Repository: GoogleCloudPlatform/professional-services, File: examples/ccai-agentassist-five9-grpc/.env
+Repository: GoogleCloudPlatform/professional-services, File: examples/neo4j-backup-restore-via-gke-gcs-example/backup/backup.env
+Repository: GoogleCloudPlatform/professional-services, File: examples/risk-analysis-asset/backend/.env
+Repository: GoogleCloudPlatform/professional-services, File: examples/risk-analysis-asset/frontend/.env
+Repository: GoogleCloudPlatform/professional-services, File: tools/slo-definition-converter/slo-frontend/.env
+Repository: GoogleCloudPlatform/professional-services, File: tools/google-cloud-support-slackbot/.env
