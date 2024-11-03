@@ -225,3 +225,5 @@ rengwuxian
 vinta
 mosh-hamedani
 aplus-developer
+AbdeenM
+norvig
