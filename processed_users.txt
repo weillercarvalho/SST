@@ -273,3 +273,5 @@ miguelgrinberg
 pjreddie
 EbookFoundation
 mgechev
+JetBrains
+junegunn

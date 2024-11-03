@@ -286,3 +286,11 @@ Repository: jrohitofficial/ReactJs-Chatapp_Mangodb, File: .env
 Repository: jrohitofficial/webAPI-test, File: .env
 Repository: jrohitofficial/Chat-MO-APP-MangoDB-Flutter-MVC, File: backend/.env
 Repository: jrohitofficial/FlutterAPP-MVVM-MangoDB-EC-Clothing, File: trendy_backend/config/.env
+Repository: JetBrains/kotlin, File: compiler/testData/cli/jvm/readingConfigFromEnvironment/simple.env
+Repository: JetBrains/kotlin, File: compiler/testData/cli/jvm/readingConfigFromEnvironment/overridingXx.env
+Repository: JetBrains/kotlin, File: compiler/testData/cli/jvm/readingConfigFromEnvironment/overridingArgs.env
+Repository: JetBrains/kotlin, File: compiler/testData/cli/jvm/readingConfigFromEnvironment/appendingArgs.env
+Repository: JetBrains/kotlin, File: compiler/testData/cli/jvm/readingConfigFromEnvironment/overridingLv.env
+Repository: JetBrains/intellij-community, File: platform/statistics/envTests/intellij.platform.statistics.envTests.iml
+Repository: JetBrains/intellij-community, File: plugins/settings-sync/test-resources/.env
+Repository: JetBrains/intellij-community, File: plugins/tasks/tasks-tests/requests/http-client.env.json
