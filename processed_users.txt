@@ -299,3 +299,5 @@ joshlong
 django
 ChristianLempa
 tqchen
+mxcl
+tannerlinsley
