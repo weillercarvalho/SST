@@ -253,3 +253,5 @@ aws-samples
 mnielsen
 teteusAraujo
 htr-tech
+nzakas
+samyk
