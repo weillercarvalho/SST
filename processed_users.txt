@@ -305,3 +305,5 @@ nwaliaez
 developit
 romannurik
 home-assistant
+google-deepmind
+topjohnwu
