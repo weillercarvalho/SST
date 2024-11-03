@@ -387,3 +387,4 @@ Repository: kubernetes/kompose, File: script/test/fixtures/env-multiple/env1/had
 Repository: kubernetes/kompose, File: script/test/fixtures/env-multiple/env2/hadoop-hive-namenode.env
 Repository: kubernetes/kompose, File: script/test/fixtures/configmap-pod/bar.env
 Repository: kubernetes/kompose, File: script/test/fixtures/configmap-pod/foo.env
+Repository: fazt/mern-crud-auth, File: .env.template

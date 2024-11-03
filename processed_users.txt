@@ -347,3 +347,5 @@ evanw
 docker
 kubernetes
 Microsoft-corp
+Colt
+fazt
