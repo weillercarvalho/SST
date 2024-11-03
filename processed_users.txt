@@ -267,3 +267,5 @@ ChenYilong
 toddmotto
 dennybritz
 jrohitofficial
+rust-lang
+shanselman
