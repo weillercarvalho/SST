@@ -227,3 +227,5 @@ mosh-hamedani
 aplus-developer
 AbdeenM
 norvig
+fat
+intel-sandbox
