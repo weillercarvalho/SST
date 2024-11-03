@@ -321,3 +321,5 @@ chriscoyier
 GoogleCloudPlatform
 charmbracelet
 intel-innersource
+ChrisTitusTech
+frontend-joe
