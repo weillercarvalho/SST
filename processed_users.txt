@@ -319,3 +319,5 @@ Azure
 BurntSushi
 chriscoyier
 GoogleCloudPlatform
+charmbracelet
+intel-innersource
