@@ -275,3 +275,5 @@ EbookFoundation
 mgechev
 JetBrains
 junegunn
+wasabeef
+wycats
