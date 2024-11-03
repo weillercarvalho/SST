@@ -295,3 +295,5 @@ drkostas
 eugenp
 daneden
 OneLoneCoder
+joshlong
+django
