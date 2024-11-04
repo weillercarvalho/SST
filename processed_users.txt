@@ -441,3 +441,5 @@ ryanb
 colah
 godotengine
 AntonioErdeljac
+NVIDIA
+Stability-AI
