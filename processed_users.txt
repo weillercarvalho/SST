@@ -422,3 +422,5 @@ NeuralNine
 OracleBrain
 kevin-powell
 igrigorik
+mozilla
+jordwalke
