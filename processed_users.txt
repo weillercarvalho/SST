@@ -388,3 +388,5 @@ benbalter
 samarjitsahoo
 necolas
 hashicorp
+tc39
+soumith
