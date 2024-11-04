@@ -396,3 +396,4 @@ Repository: replicate/keepsake, File: web/.env
 Repository: replicate/llama-chat, File: .env.example
 Repository: lucasmontano/openweathermap-reactnative, File: .env.example
 Repository: lucasmontano/twitch, File: .env.example
+Repository: benbalter/jekyll-auth, File: templates/.env
