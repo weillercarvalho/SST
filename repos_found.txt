@@ -469,3 +469,4 @@ Repository: pmndrs/use-gesture, File: demo/src/vite.env.d.ts
 Repository: datawhalechina/llm-universe, File: .env
 Repository: t3dotgg/chirp, File: .env.example
 Repository: t3dotgg/t3gallery, File: .env.example
+Repository: golang/go, File: go.env
