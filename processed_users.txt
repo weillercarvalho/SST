@@ -456,3 +456,5 @@ springframeworkguru
 golang
 wcandillon
 rakyll
+Pierian-Data
+lilianweng
