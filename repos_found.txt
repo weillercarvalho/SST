@@ -462,3 +462,4 @@ Repository: vjanz/flask-cache-redis, File: .env_example
 Repository: vjanz/kubernetes-demo-app, File: .env_example
 Repository: vjanz/questionnaire-laravel, File: .env.example
 Repository: THUDM/ChatGLM3, File: openai_api_demo/.env
+Repository: leerob/next-saas-starter, File: .env.example
