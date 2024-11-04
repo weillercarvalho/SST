@@ -401,3 +401,5 @@ BYVoid
 maxschwarzmueller
 CarGuo
 matz
+felipefialho
+jamiebuilds
