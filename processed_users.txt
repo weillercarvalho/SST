@@ -382,3 +382,5 @@ lucasmontano
 lattner
 996icu
 jaywcjlove
+justmarkham
+offensive-security
