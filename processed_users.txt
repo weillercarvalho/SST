@@ -417,3 +417,5 @@ amueller
 ghost
 liuyubobobo
 pytorch
+ethereum
+NeuralNine
