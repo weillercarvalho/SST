@@ -374,3 +374,5 @@ evilsocket
 knadh
 iconfont-cn
 rauchg
+dtolnay
+replicate

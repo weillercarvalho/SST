@@ -390,3 +390,7 @@ Repository: kubernetes/kompose, File: script/test/fixtures/configmap-pod/foo.env
 Repository: fazt/mern-crud-auth, File: .env.template
 Repository: knadh/listmonk, File: frontend/.env.sample
 Repository: knadh/koanf, File: mock/mock.env
+Repository: replicate/cog, File: .envrc
+Repository: replicate/scribble-diffusion, File: .env.example
+Repository: replicate/keepsake, File: web/.env
+Repository: replicate/llama-chat, File: .env.example
