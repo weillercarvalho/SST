@@ -435,3 +435,12 @@ Repository: taikoxyz/raiko, File: .env
 Repository: taikoxyz/raiko, File: provers/sp1/driver/.env
 Repository: laravel/laravel, File: .env.example
 Repository: laravel/framework, File: tests/Foundation/fixtures/.env
+Repository: nodejs/node, File: benchmark/fixtures/valid.env
+Repository: nodejs/node, File: test/fixtures/run-script/.env
+Repository: nodejs/node, File: test/fixtures/dotenv/multiline.env
+Repository: nodejs/node, File: test/fixtures/dotenv/basic-valid.env
+Repository: nodejs/node, File: test/fixtures/dotenv/node-options.env
+Repository: nodejs/node, File: test/fixtures/dotenv/uv-threadpool.env
+Repository: nodejs/node, File: test/fixtures/dotenv/eof-without-value.env
+Repository: nodejs/node, File: test/fixtures/dotenv/.env
+Repository: nodejs/node, File: test/fixtures/dotenv/valid.env
