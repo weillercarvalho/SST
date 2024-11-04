@@ -420,3 +420,5 @@ pytorch
 ethereum
 NeuralNine
 OracleBrain
+kevin-powell
+igrigorik
