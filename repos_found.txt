@@ -454,3 +454,4 @@ Repository: matheusbattisti/curso_docker, File: 5_compose/5_build_compose/config
 Repository: matheusbattisti/curso_docker, File: 5_compose/6_bind_mount_compose/config/db.env
 Repository: matheusbattisti/curso_docker, File: 5_compose/2_variaveis/config/wp.env
 Repository: matheusbattisti/curso_docker, File: 5_compose/2_variaveis/config/db.env
+Repository: ustbhuangyi/better-scroll, File: packages/react-examples/.env
