@@ -425,3 +425,5 @@ igrigorik
 mozilla
 jordwalke
 hakimel
+rwieruch
+miloyip
