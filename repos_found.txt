@@ -458,3 +458,6 @@ Repository: ustbhuangyi/better-scroll, File: packages/react-examples/.env
 Repository: ethereum/go-ethereum, File: build/nsis.envvarupdate.nsh
 Repository: ethereum/ethereum-org-website, File: .env.example
 Repository: NeuralNine/youtube-tutorials, File: AI Hashtag Generator/.env
+Repository: vjanz/flask-cache-redis, File: .env_example
+Repository: vjanz/kubernetes-demo-app, File: .env_example
+Repository: vjanz/questionnaire-laravel, File: .env.example
