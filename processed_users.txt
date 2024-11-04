@@ -405,3 +405,5 @@ felipefialho
 jamiebuilds
 matheusbattisti
 haoel
+sokra
+vbuterin
