@@ -378,3 +378,5 @@ dtolnay
 replicate
 rsc
 stefanprodan
+lucasmontano
+lattner

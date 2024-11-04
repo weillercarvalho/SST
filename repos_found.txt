@@ -394,3 +394,5 @@ Repository: replicate/cog, File: .envrc
 Repository: replicate/scribble-diffusion, File: .env.example
 Repository: replicate/keepsake, File: web/.env
 Repository: replicate/llama-chat, File: .env.example
+Repository: lucasmontano/openweathermap-reactnative, File: .env.example
+Repository: lucasmontano/twitch, File: .env.example
