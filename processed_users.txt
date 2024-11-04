@@ -390,3 +390,5 @@ necolas
 hashicorp
 tc39
 soumith
+taikoxyz
+tenderlove
