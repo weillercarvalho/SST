@@ -437,3 +437,5 @@ audreyt
 robpike
 rovo89
 zenorocha
+ryanb
+colah
