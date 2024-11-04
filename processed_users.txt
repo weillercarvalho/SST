@@ -424,3 +424,4 @@ kevin-powell
 igrigorik
 mozilla
 jordwalke
+hakimel
