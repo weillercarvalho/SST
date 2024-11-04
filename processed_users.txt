@@ -365,3 +365,5 @@ agentzh
 koush
 arthurspk
 jakearchibald
+CleverProgrammer
+ossu
