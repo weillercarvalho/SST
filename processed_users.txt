@@ -428,3 +428,5 @@ hakimel
 rwieruch
 miloyip
 vjanz
+laruence
+THUDM
