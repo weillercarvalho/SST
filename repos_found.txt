@@ -464,3 +464,5 @@ Repository: vjanz/questionnaire-laravel, File: .env.example
 Repository: THUDM/ChatGLM3, File: openai_api_demo/.env
 Repository: leerob/next-saas-starter, File: .env.example
 Repository: AntonioErdeljac/messenger-video, File: .env
+Repository: pmndrs/react-spring, File: docs/.env.template
+Repository: pmndrs/use-gesture, File: demo/src/vite.env.d.ts
