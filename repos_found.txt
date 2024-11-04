@@ -433,3 +433,5 @@ Repository: taikoxyz/simple-taiko-node, File: .env.sample
 Repository: taikoxyz/simple-taiko-node, File: .env.sample.hekla
 Repository: taikoxyz/raiko, File: .env
 Repository: taikoxyz/raiko, File: provers/sp1/driver/.env
+Repository: laravel/laravel, File: .env.example
+Repository: laravel/framework, File: tests/Foundation/fixtures/.env

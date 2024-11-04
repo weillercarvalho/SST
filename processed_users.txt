@@ -392,3 +392,5 @@ tc39
 soumith
 taikoxyz
 tenderlove
+laravel
+fatih
