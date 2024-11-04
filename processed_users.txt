@@ -464,3 +464,5 @@ hmaverickadams
 Snailclimb
 lexfridman
 sophiebits
+adamwathan
+eddiejaoude

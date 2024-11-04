@@ -470,3 +470,4 @@ Repository: datawhalechina/llm-universe, File: .env
 Repository: t3dotgg/chirp, File: .env.example
 Repository: t3dotgg/t3gallery, File: .env.example
 Repository: golang/go, File: go.env
+Repository: adamwathan/laracon2017, File: .env.example
