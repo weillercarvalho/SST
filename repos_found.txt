@@ -388,3 +388,5 @@ Repository: kubernetes/kompose, File: script/test/fixtures/env-multiple/env2/had
 Repository: kubernetes/kompose, File: script/test/fixtures/configmap-pod/bar.env
 Repository: kubernetes/kompose, File: script/test/fixtures/configmap-pod/foo.env
 Repository: fazt/mern-crud-auth, File: .env.template
+Repository: knadh/listmonk, File: frontend/.env.sample
+Repository: knadh/koanf, File: mock/mock.env
