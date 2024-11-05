@@ -6,3 +6,4 @@ ruanyf
 microsoft
 peng-zhihui
 bradtraversy
+openai
