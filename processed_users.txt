@@ -7,3 +7,4 @@ microsoft
 peng-zhihui
 bradtraversy
 openai
+karpathy
