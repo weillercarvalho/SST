@@ -11,69 +11,57 @@ const tokens = [
   process.env.GITHUB_TOKEN4,
   process.env.GITHUB_TOKEN5,
 ];
-
 let tokenIndex = 0;
 
 function getNextToken() {
   tokenIndex = (tokenIndex + 1) % tokens.length;
   const token = tokens[tokenIndex];
-
-  if (!token) {
-    console.log("Error: Missing authentication token.");
-    process.exit(1);
-  }
-
   console.log(`Using token: ${tokenIndex + 1}`);
   return token;
 }
 
 function getOctokitInstance() {
   return new Octokit({
-    auth: getNextToken(),
+    auth: getNextToken()
   });
 }
 
 const limiter = new Bottleneck({
   maxConcurrent: 1,
-  minTime: 61000,
+  minTime: 80000 // Aumentando para 80 segundos entre as requisições
 });
 
-async function fetchReposWithLimiter(username) {
-  let octokit = getOctokitInstance();
-  await limiter.schedule(() => searchTopReposForEnvFile(octokit, username));
+async function fetchReposWithLimiter(username, keyword) {
+  const octokit = getOctokitInstance();
+  await limiter.schedule(() => searchTopReposByStars(octokit, username, keyword));
 }
 
-async function searchTopReposForEnvFile(octokit, username) {
+async function searchTopReposByStars(octokit, username, keyword) {
   try {
     const repos = await octokit.search.repos({
       q: `user:${username}`,
-      sort: "stars",
-      order: "desc",
-      per_page: 7,
+      sort: 'stars',
+      order: 'desc',
+      per_page: 5
     });
-
-    if (repos.data.items.length === 0) {
-      console.log(`User ${username} doesn't have any repository.`);
-      return;
-    }
 
     for (const repo of repos.data.items) {
       const repoFullName = repo.full_name;
       console.log(`Checking repository: ${repoFullName}`);
 
       const codeSearch = await octokit.search.code({
-        q: `filename:.env repo:${repoFullName}`,
+        q: `${keyword} in:file repo:${repoFullName}`,
       });
 
       if (codeSearch.data.items.length > 0) {
-        console.log(`.env file found in repository ${repoFullName}`);
-        codeSearch.data.items.forEach((item) => {
+        console.log(`Keyword "${keyword}" found in repository ${repoFullName}`);
+        codeSearch.data.items.forEach(item => {
           const filePath = item.path;
-          console.log(`File found: ${filePath}`);
+          console.log(`Found in file: ${filePath}`);
           saveRepoAndFileToFile(repoFullName, filePath);
         });
       } else {
-        console.log(`No .env files found.`);
+        console.log(`No occurrences in ${repoFullName}.`);
       }
     }
   } catch (error) {
@@ -82,77 +70,66 @@ async function searchTopReposForEnvFile(octokit, username) {
 }
 
 function saveRepoAndFileToFile(repoFullName, filePath) {
-  const outputFilePath = "repos_found.txt";
+  const outputFilePath = 'repos_found.txt';
   const logMessage = `Repository: ${repoFullName}, File: ${filePath}\n`;
   fs.appendFile(outputFilePath, logMessage, (err) => {
-    if (err) {
-      console.error(`Error saving file in: ${err}`);
-    } else {
-      console.log(`Repository ${repoFullName} and file ${filePath} added to archive.`);
-    }
+    if (err) console.error(`Error saving file in: ${err}`);
   });
 }
 
 function saveProcessedUser(user) {
-  const processedUsersFile = "processed_users.txt";
-  fs.appendFileSync(processedUsersFile, `${user}\n`, "utf-8");
+  const processedUsersFile = 'processed_users.txt';
+  fs.appendFileSync(processedUsersFile, `${user}\n`, 'utf-8');
 }
 
 function isUserProcessed(user) {
-  const processedUsersFile = "processed_users.txt";
-  if (!fs.existsSync(processedUsersFile)) {
-    return false;
-  }
+  const processedUsersFile = 'processed_users.txt';
+  if (!fs.existsSync(processedUsersFile)) return false;
 
-  const processedUsers = fs.readFileSync(processedUsersFile, "utf-8").split("\n");
+  const processedUsers = fs.readFileSync(processedUsersFile, 'utf-8').split('\n');
   return processedUsers.includes(user);
 }
 
-async function getRandomUserWithLimiter() {
-  let octokit = getOctokitInstance();
-  const maxUsersPerExecution = 2;
-  const totalPages = 100;
-  let usersProcessed = 0;
-  const checkedUsers = new Set(); 
-  const checkedPages = new Set(); 
+async function getRandomUserWithLimiter(keyword) {
+  const octokit = getOctokitInstance();
 
-  for (let attempt = 0; attempt < 10; attempt++) {
-    let randomPage;
-
-    do {
-      randomPage = Math.floor(Math.random() * totalPages) + 1;
-    } while (checkedPages.has(randomPage));
-
-    checkedPages.add(randomPage); 
+  try {
     const users = await octokit.search.users({
-      q: `followers:>1000`,
-      per_page: 5,
-      page: randomPage,
+      q: "followers:>1000",
+      per_page: 1,
+      page: Math.floor(Math.random() * 10) + 1 // Limita a busca a um intervalo de páginas
     });
 
-    if (users.data.items.length === 0) continue;
+    if (users.data.items.length === 0) return;
 
-    const randomUserIndex = Math.floor(Math.random() * users.data.items.length); 
-    const user = users.data.items[randomUserIndex].login;
+    const user = users.data.items[0].login;
 
-    if (!isUserProcessed(user) && !checkedUsers.has(user)) {
+    if (!isUserProcessed(user)) {
       console.log(`Checking user: ${user}`);
-      await fetchReposWithLimiter(user);
+      await fetchReposWithLimiter(user, keyword);
       saveProcessedUser(user);
-      checkedUsers.add(user);
-      usersProcessed++;
-
-      if (usersProcessed >= maxUsersPerExecution) return;
-
-      await new Promise((resolve) => setTimeout(resolve, 2000));
     } else {
-      console.log(`User ${user} has already been processed or checked previously. Skipping...`);
+      console.log(`User ${user} has already been processed previously. Skipping...`);
     }
+  } catch (error) {
+    console.error("Error fetching user:", error);
   }
 }
 
 async function main() {
-  await getRandomUserWithLimiter();
+  const keywords = [
+    "API_KEY", "API_SECRET", "ACCESS_KEY", "ACCESS_TOKEN", "SECRET_KEY",
+    "DB_PASSWORD", "DB_USER", "PRODUCTION_API_KEY",
+    "PRIVATE_KEY", "SSL_CERT", "TLS_KEY", "AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY",
+    "AWS_SESSION_TOKEN", "AZURE_CLIENT_ID", "AZURE_SECRET", "GCP_CREDENTIALS",
+    "GCP_API_KEY", "ADMIN_PASSWORD", "EMAIL_PASSWORD", "MYSQL_PASSWORD", "PG_PASSWORD",
+    "BEARER_TOKEN", "AUTH_TOKEN", "CREDENTIALS", "TOKEN", "PASSWORD_HASH", "ENCRYPTION_KEY", "CLIENT_SECRET", "SECRET_TOKEN", "APP_SECRET", "JWT_SECRET",
+    "OAUTH_TOKEN", "SSH_KEY", "SSH_PRIVATE_KEY", "CLOUD_SECRET", "AUTH_KEY", "AUTH_SECRET", "POSTGRES_PASSWORD", "MONGO_PASSWORD", "ELASTIC_PASSWORD",
+    "API_TOKEN", "API_PRIVATE_KEY", "GOOGLE_API_KEY", "GITHUB_TOKEN", "BITBUCKET_TOKEN", "GITHUB_CLIENT_ID", "GITHUB_CLIENT_SECRET", "DOCKER_PASSWORD", "DOCKER_TOKEN"
+  ];
+
+  const keywordQuery = keywords.join(" OR ");
+  await getRandomUserWithLimiter(keywordQuery);
 }
 
 main().catch(console.error);
