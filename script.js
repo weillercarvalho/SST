@@ -28,7 +28,7 @@ function getOctokitInstance() {
 
 const limiter = new Bottleneck({
   maxConcurrent: 1,
-  minTime: 80000 // Aumentando para 80 segundos entre as requisições
+  minTime: 80000 
 });
 
 async function fetchReposWithLimiter(username, keyword) {
@@ -94,10 +94,21 @@ async function getRandomUserWithLimiter(keyword) {
   const octokit = getOctokitInstance();
 
   try {
+
+    const initialSearch = await octokit.search.users({
+      q: "followers:>1000",
+      per_page: 1
+    });
+    const totalUsers = initialSearch.data.total_count;
+    const totalPages = Math.ceil(totalUsers / 30); 
+
+
+    const randomPage = Math.floor(Math.random() * totalPages) + 1;
+
     const users = await octokit.search.users({
       q: "followers:>1000",
       per_page: 1,
-      page: Math.floor(Math.random() * 10) + 1 // Limita a busca a um intervalo de páginas
+      page: randomPage
     });
 
     if (users.data.items.length === 0) return;
@@ -105,7 +116,7 @@ async function getRandomUserWithLimiter(keyword) {
     const user = users.data.items[0].login;
 
     if (!isUserProcessed(user)) {
-      console.log(`Checking user: ${user}`);
+      console.log(`Checking user: ${user} from page: ${randomPage}`);
       await fetchReposWithLimiter(user, keyword);
       saveProcessedUser(user);
     } else {
