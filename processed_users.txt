@@ -16,3 +16,4 @@ michaelliao
 PacktPublishing
 codediodeio
 tpope
+brunosimon
