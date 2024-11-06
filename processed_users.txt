@@ -25,3 +25,4 @@ atilsamancioglu
 kentcdodds
 developit
 vercel
+cs50
