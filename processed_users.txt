@@ -13,3 +13,4 @@ ggerganov
 metatimeofficial
 kamranahmedse
 michaelliao
+PacktPublishing
