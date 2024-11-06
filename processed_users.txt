@@ -9,3 +9,4 @@ bradtraversy
 openai
 karpathy
 ForrestKnight
+ggerganov
