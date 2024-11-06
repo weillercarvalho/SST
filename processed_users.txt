@@ -24,3 +24,4 @@ esin
 atilsamancioglu
 kentcdodds
 developit
+vercel
