@@ -23,3 +23,4 @@ developedbyed
 esin
 atilsamancioglu
 kentcdodds
+developit
