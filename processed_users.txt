@@ -74,3 +74,4 @@ sdras
 chiphuyen
 chrisbanes
 CoreyMSchafer
+sindresorhus
