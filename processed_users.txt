@@ -45,3 +45,4 @@ termux
 shiffman
 ReVanced
 fengdu78
+haoel
