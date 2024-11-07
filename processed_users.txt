@@ -75,3 +75,4 @@ chiphuyen
 chrisbanes
 CoreyMSchafer
 sindresorhus
+IDouble
