@@ -92,3 +92,4 @@ mitchellh
 rasbt
 jeresig
 davidfowl
+elyxdev
