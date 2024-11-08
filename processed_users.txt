@@ -116,3 +116,4 @@ fabpot
 android
 MorvanZhou
 sandhikagalih
+rust-lang
