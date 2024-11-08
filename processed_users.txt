@@ -94,3 +94,4 @@ jeresig
 davidfowl
 elyxdev
 mitsuhiko
+AUTOMATIC1111
