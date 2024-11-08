@@ -124,3 +124,4 @@ aws-samples
 goodfeli
 gamemann
 loiane
+peter-kimanzi
