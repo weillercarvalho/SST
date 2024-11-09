@@ -140,3 +140,4 @@ BYVoid
 brianyu28
 gvanrossum
 fchollet
+jakevdp
