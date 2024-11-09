@@ -139,3 +139,4 @@ dmalan
 BYVoid
 brianyu28
 gvanrossum
+fchollet
