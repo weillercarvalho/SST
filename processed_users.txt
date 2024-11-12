@@ -208,3 +208,4 @@ python
 KaimingHe
 addyosmani
 yinwang0
+jackfrued
