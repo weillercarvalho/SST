@@ -229,3 +229,4 @@ tqchen
 lifesinger
 clowwindy
 iconfont-cn
+Trinea
