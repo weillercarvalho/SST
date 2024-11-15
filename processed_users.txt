@@ -232,3 +232,4 @@ iconfont-cn
 Trinea
 bedimcode
 feross
+tannerlinsley
