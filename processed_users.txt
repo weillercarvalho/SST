@@ -230,3 +230,4 @@ lifesinger
 clowwindy
 iconfont-cn
 Trinea
+bedimcode
