@@ -246,3 +246,4 @@ daimajia
 draveness
 egoist
 mathiasbynens
+GoogleCloudPlatform
