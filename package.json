@@ -17,6 +17,7 @@
   "dependencies": {
     "@octokit/rest": "^21.0.2",
     "bottleneck": "^2.19.5",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "winston": "^3.17.0"
   }
 }
