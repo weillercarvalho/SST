@@ -34,3 +34,4 @@ kentcdodds
 antfu
 taylorotwell
 ry
+diego3g
