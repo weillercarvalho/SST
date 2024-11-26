@@ -32,3 +32,4 @@ filipedeschamps
 wesbos
 kentcdodds
 antfu
+taylorotwell
