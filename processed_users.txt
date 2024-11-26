@@ -18,3 +18,4 @@ getify
 geohot
 lucidrains
 TheAlgorithms
+addyosmani
