@@ -33,3 +33,4 @@ wesbos
 kentcdodds
 antfu
 taylorotwell
+ry
