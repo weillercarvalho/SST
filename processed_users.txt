@@ -76,3 +76,4 @@ mitsuhiko
 tpope
 codediodeio
 douglascrockford
+antirez
