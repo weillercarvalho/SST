@@ -45,3 +45,4 @@ kennethreitz
 benawad
 adrianhajdin
 StephenGrider
+midudev
