@@ -77,3 +77,4 @@ tpope
 codediodeio
 douglascrockford
 antirez
+geerlingguy
