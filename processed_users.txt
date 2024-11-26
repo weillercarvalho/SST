@@ -75,3 +75,4 @@ keijiro
 mitsuhiko
 tpope
 codediodeio
+douglascrockford
