@@ -19,3 +19,4 @@ geohot
 lucidrains
 TheAlgorithms
 addyosmani
+huggingface
