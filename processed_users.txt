@@ -129,3 +129,4 @@ fchollet
 esin
 JeffreyWay
 tensorflow
+peter-kimanzi
