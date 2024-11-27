@@ -120,3 +120,4 @@ halfrost
 dotnet
 Trinea
 iam-veeramalla
+vuejs
