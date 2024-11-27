@@ -147,3 +147,4 @@ AUTOMATIC1111
 onevcat
 ggerganov
 spf13
+johnpapa
