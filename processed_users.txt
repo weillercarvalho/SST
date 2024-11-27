@@ -124,3 +124,4 @@ vuejs
 justjavac
 clowwindy
 trekhleb
+kenjinote
