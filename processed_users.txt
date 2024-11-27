@@ -150,3 +150,4 @@ spf13
 johnpapa
 josevalim
 cs50
+isaacs
