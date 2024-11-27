@@ -102,3 +102,4 @@ brunosimon
 angelabauer
 jeresig
 chrisbanes
+community
