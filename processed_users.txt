@@ -213,3 +213,4 @@ angusshire
 CoreyMSchafer
 haoel
 google-deepmind
+developit
