@@ -227,3 +227,4 @@ egoist
 NVIDIA
 mathiasbynens
 laruence
+soumith
