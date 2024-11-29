@@ -224,3 +224,4 @@ hakimel
 spring-projects
 vbuterin
 egoist
+NVIDIA
