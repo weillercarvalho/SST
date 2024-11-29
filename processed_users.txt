@@ -230,3 +230,4 @@ laruence
 soumith
 acenelio
 rakyll
+Stability-AI
