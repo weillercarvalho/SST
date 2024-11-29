@@ -234,3 +234,4 @@ Stability-AI
 tomnomnom
 ibireme
 rust-lang
+bradfitz
