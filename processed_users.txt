@@ -248,3 +248,4 @@ tqchen
 agentzh
 philipplackner
 GoogleCloudPlatform
+Microsoft-corp
