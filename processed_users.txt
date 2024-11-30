@@ -242,3 +242,4 @@ twbs
 nicknochnack
 YunaiV
 jonhoo
+tannerlinsley
