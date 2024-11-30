@@ -284,3 +284,4 @@ home-assistant
 Azure
 2dust
 offensive-security
+uprockcom
