@@ -235,3 +235,4 @@ tomnomnom
 ibireme
 rust-lang
 bradfitz
+iconfont-cn
