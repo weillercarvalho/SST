@@ -305,3 +305,4 @@ Snailclimb
 ossu
 nzakas
 danielmiessler
+open-mmlab
