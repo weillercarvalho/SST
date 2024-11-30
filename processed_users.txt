@@ -281,3 +281,4 @@ htr-tech
 chriscoyier
 flipperdevices
 home-assistant
+Azure
