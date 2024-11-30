@@ -310,3 +310,4 @@ lattner
 BurntSushi
 aneagoie
 jart
+jhaddix
