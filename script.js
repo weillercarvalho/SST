@@ -26,25 +26,29 @@ function getOctokitInstance() {
   });
 }
 
-
 const limiter = new Bottleneck({
   maxConcurrent: 1,
   minTime: 2000,
 });
 
-
 function saveProcessedUser(username) {
   const processedUsersFile = "processed_users.txt";
-  fs.appendFileSync(processedUsersFile, `${username}\n`, "utf-8");
+  try {
+    fs.appendFileSync(processedUsersFile, `${username}\n`, "utf-8");
+  } catch (err) {
+    console.error(`Failed to save processed user ${username}:`, err);
+  }
 }
-
 
 function saveToRepoFound(username, repoFullName, filePath) {
   const repoFoundFile = "repo_found.txt";
   const logMessage = `User: ${username}, Repository: ${repoFullName}, File: ${filePath}\n`;
-  fs.appendFileSync(repoFoundFile, logMessage, "utf-8");
+  try {
+    fs.appendFileSync(repoFoundFile, logMessage, "utf-8");
+  } catch (err) {
+    console.error(`Failed to save found repository for ${username}:`, err);
+  }
 }
-
 
 function isUserProcessed(username) {
   const processedUsersFile = "processed_users.txt";
@@ -55,7 +59,6 @@ function isUserProcessed(username) {
     .split("\n");
   return processedUsers.includes(username);
 }
-
 
 async function processSingleUser(username, keywordQuery) {
   const octokit = getOctokitInstance();
@@ -94,12 +97,18 @@ async function processSingleUser(username, keywordQuery) {
       console.log(`No keywords found for user: ${username}`);
     }
 
-    saveProcessedUser(username); 
+    saveProcessedUser(username);
   } catch (error) {
-    console.error(`Error processing user ${username}:`, error);
+    if (error.status === 422) {
+      console.error(
+        `Validation error for user ${username}. Skipping this user.`
+      );
+      saveProcessedUser(username); // Marcar como processado para evitar repetição
+    } else {
+      console.error(`Error processing user ${username}:`, error);
+    }
   }
 }
-
 
 async function processOneUser(keywordQuery) {
   const octokit = getOctokitInstance();
@@ -138,22 +147,106 @@ async function processOneUser(keywordQuery) {
   }
 }
 
-
 async function main() {
-  const keywords = [
-    "API_KEY",
-    "API_SECRET",
-    "ACCESS_KEY",
-    "ACCESS_TOKEN",
-    "SECRET_KEY",
-    "DB_PASSWORD",
-    "DB_USER",
-    "PRIVATE_KEY",
-    "JWT_SECRET",
-  ];
+const keywords = [
+  "API_KEY",
+  "API_SECRET",
+  "ACCESS_KEY",
+  "ACCESS_TOKEN",
+  "SECRET_KEY",
+  "DB_PASSWORD",
+  "DB_USER",
+  "DB_HOST",
+  "DB_NAME",
+  "DATABASE_URL",
+  "JWT_SECRET",
+  "PRIVATE_KEY",
+  "PUBLIC_KEY",
+  "SSH_KEY",
+  "ENCRYPTION_KEY",
+  "AWS_ACCESS_KEY_ID",
+  "AWS_SECRET_ACCESS_KEY",
+  "GCP_CREDENTIALS",
+  "AZURE_SUBSCRIPTION_ID",
+  "AZURE_CLIENT_ID",
+  "AZURE_CLIENT_SECRET",
+  "SMTP_PASSWORD",
+  "SMTP_USERNAME",
+  "SENDGRID_API_KEY",
+  "STRIPE_SECRET_KEY",
+  "STRIPE_PUBLIC_KEY",
+  "PAYPAL_CLIENT_ID",
+  "PAYPAL_SECRET",
+  "TWILIO_ACCOUNT_SID",
+  "TWILIO_AUTH_TOKEN",
+  "SLACK_TOKEN",
+  "DISCORD_TOKEN",
+  "GITHUB_TOKEN",
+  "BITBUCKET_TOKEN",
+  "NPM_TOKEN",
+  "DOCKER_PASSWORD",
+  "DOCKER_USERNAME",
+  "HEROKU_API_KEY",
+  "CIRCLECI_TOKEN",
+  "TRAVIS_TOKEN",
+  "SONARQUBE_TOKEN",
+  "NETLIFY_AUTH_TOKEN",
+  "VERCEL_TOKEN",
+  "FIREBASE_API_KEY",
+  "FIREBASE_PROJECT_ID",
+  "GOOGLE_API_KEY",
+  "GOOGLE_CLIENT_ID",
+  "GOOGLE_CLIENT_SECRET",
+  "FACEBOOK_APP_ID",
+  "FACEBOOK_APP_SECRET",
+  "INSTAGRAM_CLIENT_ID",
+  "INSTAGRAM_CLIENT_SECRET",
+  "LINKEDIN_CLIENT_ID",
+  "LINKEDIN_CLIENT_SECRET",
+  "OAUTH_CLIENT_ID",
+  "OAUTH_CLIENT_SECRET",
+  "REDIS_PASSWORD",
+  "MONGO_URI",
+  "MONGODB_URI",
+  "SQLALCHEMY_DATABASE_URI",
+  "POSTGRES_PASSWORD",
+  "POSTGRES_USER",
+  "ELASTICSEARCH_PASSWORD",
+  "KAFKA_PASSWORD",
+  "RABBITMQ_PASSWORD",
+  "VAULT_TOKEN",
+  "VAULT_SECRET",
+  "SENTRY_DSN",
+  "MAILCHIMP_API_KEY",
+  "CLOUDFLARE_API_KEY",
+  "CLOUDFLARE_API_TOKEN",
+  "SHOPIFY_API_KEY",
+  "SHOPIFY_API_SECRET",
+  "DROPBOX_API_KEY",
+  "DROPBOX_API_SECRET",
+  "ZOOM_CLIENT_ID",
+  "ZOOM_CLIENT_SECRET",
+  "PLIVO_AUTH_ID",
+  "PLIVO_AUTH_TOKEN",
+  "ONESPAN_API_KEY",
+  "ONESPAN_API_SECRET",
+  "IV_KEY",
+  "MASTER_KEY",
+  "SESSION_SECRET",
+  "FLUTTERWAVE_SECRET_KEY",
+  "ALGORITHM",
+  "JWT_ALGORITHM",
+  "AES_KEY",
+  "ENCRYPTION_SECRET",
+  "RECOVERY_TOKEN",
+  "GITLAB_TOKEN",
+  "VAULT_ACCESS_TOKEN",
+  "CREDENTIALS",
+  "ENVIRONMENT_VARIABLE"
+];
 
   const keywordQuery = keywords.join(" OR ");
-  await processOneUser(keywordQuery); 
+  await processOneUser(keywordQuery);
 }
 
 main().catch(console.error);
