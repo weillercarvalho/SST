@@ -103,7 +103,7 @@ async function processSingleUser(username, keywordQuery) {
       console.error(
         `Validation error for user ${username}. Skipping this user.`
       );
-      saveProcessedUser(username); // Marcar como processado para evitar repetição
+      saveProcessedUser(username);
     } else {
       console.error(`Error processing user ${username}:`, error);
     }
