@@ -365,3 +365,4 @@ haileys
 wasabeef
 intel-innersource
 arthurspk
+norvig
