@@ -367,3 +367,4 @@ intel-innersource
 arthurspk
 norvig
 samarjitsahoo
+wintercn
