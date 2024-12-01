@@ -357,3 +357,4 @@ jaredpalmer
 yihui
 dennybritz
 joshlong
+Jack-Cherish
