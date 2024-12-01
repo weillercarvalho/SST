@@ -329,3 +329,4 @@ shiftkey
 Sentdex
 easychen
 mgechev
+kubernetes
