@@ -355,3 +355,4 @@ THUDM
 listen1
 jaredpalmer
 yihui
+dennybritz
