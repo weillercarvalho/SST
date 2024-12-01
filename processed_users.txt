@@ -333,3 +333,4 @@ kubernetes
 shahradelahi
 pytorch
 replicate
+AllenDowney
