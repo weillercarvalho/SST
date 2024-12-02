@@ -434,3 +434,4 @@ pjhyett
 mozilla
 chokcoco
 justmarkham
+swisskyrepo
