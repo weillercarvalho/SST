@@ -442,3 +442,4 @@ daneden
 EurekaLabsAI
 dataprofessor
 pmndrs
+hashicorp
