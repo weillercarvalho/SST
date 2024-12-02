@@ -446,3 +446,4 @@ hashicorp
 stefanprodan
 fengmk2
 jamesmontemagno
+dtolnay
