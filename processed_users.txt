@@ -517,3 +517,4 @@ ip681
 AsahiLinux
 skyzh
 jtleek
+cursoemvideo
