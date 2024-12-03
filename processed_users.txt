@@ -512,3 +512,4 @@ dair-ai
 sebastianbergmann
 ValveSoftware
 singwhatiwanna
+LaravelDaily
