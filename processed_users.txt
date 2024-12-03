@@ -497,3 +497,4 @@ UberGuidoZ
 maxschwarzmueller
 tsoding
 nunomaduro
+intel-sandbox
