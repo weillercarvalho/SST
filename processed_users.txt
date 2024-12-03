@@ -499,3 +499,4 @@ tsoding
 nunomaduro
 intel-sandbox
 Rafaelmdcarneiro
+discord
