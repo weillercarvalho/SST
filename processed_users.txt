@@ -472,3 +472,4 @@ springframeworkguru
 django
 FiloSottile
 projectdiscovery
+fireship-io
