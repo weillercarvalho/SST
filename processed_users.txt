@@ -571,3 +571,4 @@ appleboy
 steveklabnik
 amusi
 otaviossousa
+bluesky-social
