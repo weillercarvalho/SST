@@ -532,3 +532,4 @@ zero-to-mastery
 safak
 tailwindlabs
 ljharb
+ashishpatel26
