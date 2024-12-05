@@ -616,3 +616,4 @@ rodrigobranas
 catppuccin
 0vm
 bitwarden
+jojoldu
