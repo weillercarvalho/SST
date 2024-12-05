@@ -594,3 +594,4 @@ langchain-ai
 base-org
 Jarred-Sumner
 cornflourblue
+lemire
