@@ -617,3 +617,4 @@ catppuccin
 0vm
 bitwarden
 jojoldu
+campusx-official
