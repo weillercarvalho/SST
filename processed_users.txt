@@ -613,3 +613,4 @@ barryvdh
 davecheney
 notwaldorf
 rodrigobranas
+catppuccin
