@@ -624,3 +624,4 @@ labuladong
 joshwcomeau
 emmabostian
 tekkub
+obsidianmd
