@@ -678,3 +678,4 @@ jbogard
 Grafikart
 jasontaylordev
 staltz
+richhickey
