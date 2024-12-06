@@ -713,3 +713,4 @@ evancz
 codewars
 microsoftopensource
 KeithGalli
+williamfiset
