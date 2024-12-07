@@ -782,3 +782,4 @@ jdalton
 krahets
 zhangxinxu
 BaseMax
+intel-restricted
