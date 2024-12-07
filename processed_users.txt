@@ -726,3 +726,4 @@ PaddlePaddle
 planetoftheweb
 bitcoin
 daveshap
+Magicianred
