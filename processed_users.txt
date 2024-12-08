@@ -866,3 +866,4 @@ rfyiamcool
 ashleygwilliams
 SensorsIot
 DanWahlin
+mistralai
