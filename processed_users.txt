@@ -925,3 +925,4 @@ andrewjmead
 Rodrigo-Cn
 odoo
 camenduru
+ogrisel
