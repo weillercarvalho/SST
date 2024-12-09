@@ -896,3 +896,4 @@ denoland
 antonbabenko
 AlexeyAB
 yegor256
+chai2010
