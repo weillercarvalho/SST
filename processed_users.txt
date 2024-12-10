@@ -993,3 +993,4 @@ Brooooooklyn
 xtekky
 insidegui
 pissang
+vim-scripts
