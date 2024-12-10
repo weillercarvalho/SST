@@ -996,3 +996,4 @@ pissang
 vim-scripts
 xopaz
 thedaviddias
+awesomekling
