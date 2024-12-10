@@ -954,3 +954,4 @@ jesseduffield
 championswimmer
 felixrieseberg
 blender
+madeye
