@@ -994,3 +994,4 @@ xtekky
 insidegui
 pissang
 vim-scripts
+xopaz
