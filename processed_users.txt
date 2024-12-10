@@ -997,3 +997,4 @@ vim-scripts
 xopaz
 thedaviddias
 awesomekling
+ValdikSS
