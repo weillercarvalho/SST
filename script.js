@@ -26,27 +26,12 @@ function getOctokitInstance() {
   });
 }
 
-const limiter = new Bottleneck({
-  maxConcurrent: 1,
-  minTime: 2000,
-});
-
 function saveProcessedUser(username) {
   const processedUsersFile = "processed_users.txt";
   try {
     fs.appendFileSync(processedUsersFile, `${username}\n`, "utf-8");
   } catch (err) {
     console.error(`Failed to save processed user ${username}:`, err);
-  }
-}
-
-function saveToRepoFound(username, repoFullName, filePath) {
-  const repoFoundFile = "repo_found.txt";
-  const logMessage = `User: ${username}, Repository: ${repoFullName}, File: ${filePath}\n`;
-  try {
-    fs.appendFileSync(repoFoundFile, logMessage, "utf-8");
-  } catch (err) {
-    console.error(`Failed to save found repository for ${username}:`, err);
   }
 }
 
@@ -68,10 +53,8 @@ async function processSingleUser(username, keywordQuery) {
       q: `user:${username}`,
       sort: "stars",
       order: "desc",
-      per_page: 5,
+      per_page: 7,
     });
-
-    let keywordFound = false;
 
     for (const repo of repos.data.items) {
       const repoFullName = repo.full_name;
@@ -82,64 +65,57 @@ async function processSingleUser(username, keywordQuery) {
       });
 
       if (codeSearch.data.items.length > 0) {
-        keywordFound = true;
         codeSearch.data.items.forEach((item) => {
-          const filePath = item.path;
           console.log(
-            `Keyword found in repository: ${repoFullName}, file: ${filePath}`
+            `Keyword found in repository: ${repoFullName}, file: ${item.path}`
           );
-          saveToRepoFound(username, repoFullName, filePath);
         });
       }
     }
 
-    if (!keywordFound) {
-      console.log(`No keywords found for user: ${username}`);
-    }
-
     saveProcessedUser(username);
+    console.log(`Successfully processed user: ${username}`);
+    return true;
   } catch (error) {
-    if (error.status === 422) {
-      console.error(
-        `Validation error for user ${username}. Skipping this user.`
-      );
-      saveProcessedUser(username);
-    } else {
-      console.error(`Error processing user ${username}:`, error);
-    }
+    console.error(`Error processing user ${username}:`, error);
+    return false;
   }
 }
 
-async function processOneUser(keywordQuery) {
+async function fetchAndProcessUsers(criteria, keywordQuery) {
   const octokit = getOctokitInstance();
   let page = 1;
 
   while (true) {
     try {
-      console.log(`Fetching page ${page}...`);
+      console.log(`Fetching users with criteria: ${criteria}, page ${page}...`);
       const users = await octokit.search.users({
-        q: "followers:>1000",
+        q: criteria,
         per_page: 100,
-        page: page,
+        page,
       });
 
       if (users.data.items.length === 0) {
         console.log("No more users to process.");
-        return;
+        break;
       }
 
       for (const user of users.data.items) {
         const username = user.login;
+
         if (!isUserProcessed(username)) {
           console.log(`Processing user: ${username}`);
-          await limiter.schedule(() => processSingleUser(username, keywordQuery));
-          return; 
+          const success = await processSingleUser(username, keywordQuery);
+
+          if (success) {
+            return; 
+          }
         } else {
           console.log(`User ${username} already processed. Skipping.`);
         }
       }
 
-      page++; 
+      page++;
     } catch (error) {
       console.error(`Error fetching users on page ${page}:`, error);
       break;
@@ -148,38 +124,41 @@ async function processOneUser(keywordQuery) {
 }
 
 async function main() {
-const keywords = [
-  "API_KEY",
-  "API_SECRET",
-  "ACCESS_KEY",
-  "ACCESS_TOKEN",
-  "SECRET_KEY",
-  "DB_PASSWORD",
-  "DB_USER",
-  "DB_HOST",
-  "DB_NAME",
-  "DATABASE_URL",
-  "JWT_SECRET",
-  "PRIVATE_KEY",
-  "PUBLIC_KEY",
-  "SSH_KEY",
-  "ENCRYPTION_KEY",
-  "AWS_ACCESS_KEY_ID",
-  "AWS_SECRET_ACCESS_KEY",
-  "GCP_CREDENTIALS",
-  "AZURE_SUBSCRIPTION_ID",
-  "AZURE_CLIENT_ID",
-  "AZURE_CLIENT_SECRET",
-  "SLACK_TOKEN",
-  "DISCORD_TOKEN",
-  "GITHUB_TOKEN",
-  "GOOGLE_API_KEY",
-  "GOOGLE_CLIENT_ID",
-  "GOOGLE_CLIENT_SECRET"
-];
+  const keywords = [
+    "API_KEY",
+    "API_SECRET",
+    "ACCESS_KEY",
+    "ACCESS_TOKEN",
+    "SECRET_KEY",
+    "DB_PASSWORD",
+    "DB_USER",
+    "DB_HOST",
+    "DB_NAME",
+    "DATABASE_URL",
+    "JWT_SECRET",
+    "PRIVATE_KEY",
+    "PUBLIC_KEY",
+    "SSH_KEY",
+    "ENCRYPTION_KEY",
+    "AWS_ACCESS_KEY_ID",
+    "AWS_SECRET_ACCESS_KEY",
+    "GCP_CREDENTIALS",
+    "AZURE_SUBSCRIPTION_ID",
+    "AZURE_CLIENT_ID",
+    "AZURE_CLIENT_SECRET",
+    "SLACK_TOKEN",
+    "DISCORD_TOKEN",
+    "GITHUB_TOKEN",
+    "GOOGLE_API_KEY",
+    "GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET",
+  ];
 
   const keywordQuery = keywords.join(" OR ");
-  await processOneUser(keywordQuery);
+  const criteria = "followers:>10000"; 
+
+  await fetchAndProcessUsers(criteria, keywordQuery);
+  console.log("Finished processing.");
 }
 
 main().catch(console.error);
