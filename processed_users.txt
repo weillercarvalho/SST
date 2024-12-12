@@ -17,3 +17,4 @@ github
 lucidrains
 getify
 geohot
+TheAlgorithms
