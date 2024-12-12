@@ -59,3 +59,4 @@ hadley
 jonasschmedtmann
 gamemann
 daimajia
+JohnMwendwa
