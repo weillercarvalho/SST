@@ -68,3 +68,4 @@ python
 gvanrossum
 mdo
 mbostock
+kelseyhightower
