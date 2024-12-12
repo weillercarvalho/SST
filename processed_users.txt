@@ -65,3 +65,4 @@ mojombo
 jwasham
 mrdoob
 python
+gvanrossum
