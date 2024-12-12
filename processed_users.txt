@@ -40,3 +40,4 @@ paulirish
 kunal-kushwaha
 iamshaunjp
 dmalan
+WebDevSimplified
