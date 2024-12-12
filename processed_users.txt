@@ -43,3 +43,4 @@ dmalan
 WebDevSimplified
 kennethreitz
 adrianhajdin
+midudev
