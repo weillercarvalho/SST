@@ -19,3 +19,4 @@ getify
 geohot
 TheAlgorithms
 addyosmani
+huggingface
