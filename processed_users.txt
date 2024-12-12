@@ -69,3 +69,4 @@ gvanrossum
 mdo
 mbostock
 kelseyhightower
+defunkt
