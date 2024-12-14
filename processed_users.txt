@@ -155,3 +155,4 @@ isaacs
 rauchg
 astaxie
 kubowania
+Visual-Studio-Code
