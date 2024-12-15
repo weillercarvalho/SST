@@ -242,3 +242,4 @@ nicknochnack
 jonhoo
 YunaiV
 tannerlinsley
+GoogleCloudPlatform
