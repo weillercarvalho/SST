@@ -283,3 +283,4 @@ chriscoyier
 uprockcom
 george0st
 Elfocrash
+offensive-security
