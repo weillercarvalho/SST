@@ -271,3 +271,4 @@ home-assistant
 QianMo
 jrohitofficial
 necolas
+robpike
