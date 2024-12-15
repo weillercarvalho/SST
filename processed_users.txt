@@ -232,3 +232,4 @@ tomnomnom
 acenelio
 Stability-AI
 rakyll
+soumith
