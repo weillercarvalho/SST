@@ -234,3 +234,4 @@ Stability-AI
 rakyll
 soumith
 ibireme
+bradfitz
