@@ -247,3 +247,4 @@ KalleHallden
 philipplackner
 tqchen
 agentzh
+ethereum
