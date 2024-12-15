@@ -235,3 +235,4 @@ rakyll
 soumith
 ibireme
 bradfitz
+kevin-powell
