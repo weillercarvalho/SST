@@ -286,3 +286,4 @@ Elfocrash
 offensive-security
 amueller
 mnielsen
+ChrisTitusTech
