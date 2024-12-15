@@ -276,3 +276,4 @@ zenorocha
 flipperdevices
 gitdagray
 htr-tech
+craftzdog
