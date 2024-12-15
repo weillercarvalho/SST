@@ -270,3 +270,4 @@ samyk
 home-assistant
 QianMo
 jrohitofficial
+necolas
