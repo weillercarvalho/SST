@@ -243,3 +243,4 @@ jonhoo
 YunaiV
 tannerlinsley
 GoogleCloudPlatform
+KalleHallden
