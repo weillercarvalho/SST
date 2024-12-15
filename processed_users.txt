@@ -267,3 +267,4 @@ bvaughn
 jakearchibald
 t3dotgg
 samyk
+home-assistant
