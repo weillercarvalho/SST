@@ -275,3 +275,4 @@ robpike
 zenorocha
 flipperdevices
 gitdagray
+htr-tech
