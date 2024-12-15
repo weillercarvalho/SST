@@ -249,3 +249,4 @@ tqchen
 agentzh
 ethereum
 bedimcode
+shadcn
