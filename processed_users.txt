@@ -227,3 +227,4 @@ vbuterin
 egoist
 mathiasbynens
 rust-lang
+laruence
