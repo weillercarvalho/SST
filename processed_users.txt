@@ -226,3 +226,4 @@ hakimel
 vbuterin
 egoist
 mathiasbynens
+rust-lang
