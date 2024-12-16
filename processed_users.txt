@@ -306,3 +306,4 @@ BurntSushi
 aws
 jart
 aneagoie
+jhaddix
