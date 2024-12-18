@@ -324,3 +324,4 @@ alex
 munificent
 kubernetes
 iconfont-cn
+pytorch
