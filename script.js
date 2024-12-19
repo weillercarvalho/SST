@@ -78,13 +78,17 @@ async function processSingleUser(username, keywordQuery) {
     return true;
   } catch (error) {
     console.error(`Error processing user ${username}:`, error);
+
+    // Save the user that caused the error to processed_users.txt
+    saveProcessedUser(username);
+    console.log(`User ${username} caused an error and was marked as processed.`);
     return false;
   }
 }
 
 async function fetchAndProcessUsers(criteria, keywordQuery) {
   const octokit = getOctokitInstance();
-  let page = 1;
+  let page = 6;
 
   while (true) {
     try {
@@ -155,7 +159,7 @@ async function main() {
   ];
 
   const keywordQuery = keywords.join(" OR ");
-  const criteria = "followers:>10000"; 
+  const criteria = "followers:>1000"; 
 
   await fetchAndProcessUsers(criteria, keywordQuery);
   console.log("Finished processing.");
