@@ -365,3 +365,4 @@ luizomf
 aplus-developer
 AsahiLinux
 mxcl
+LaravelDaily
