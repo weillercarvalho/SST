@@ -358,3 +358,4 @@ intel-sandbox
 bytedance
 blocage
 davidbombal
+ValveSoftware
