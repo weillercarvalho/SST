@@ -368,3 +368,4 @@ mxcl
 LaravelDaily
 cursoemvideo
 ip681
+sebastianbergmann
