@@ -472,3 +472,4 @@ obsidianmd
 notwaldorf
 joshwcomeau
 skills
+jojoldu
