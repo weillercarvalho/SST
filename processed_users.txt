@@ -437,3 +437,4 @@ GrahamCampbell
 base-org
 swyxio
 AsmrProg-YT
+sharkdp
