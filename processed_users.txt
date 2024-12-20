@@ -506,3 +506,4 @@ coderwhy
 giswqs
 isyuricunha
 nikic
+shadowsocks
