@@ -495,3 +495,4 @@ FuelLabs
 bagder
 rhiever
 TheLarkInn
+ultralytics
