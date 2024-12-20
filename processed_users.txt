@@ -461,3 +461,4 @@ rbgirshick
 campusx-official
 koushikkothagal
 rwightman
+bitwarden
