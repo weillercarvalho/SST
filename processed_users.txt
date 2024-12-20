@@ -465,3 +465,4 @@ bitwarden
 historicalsource
 marijnh
 barryvdh
+davecheney
