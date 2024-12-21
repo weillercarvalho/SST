@@ -522,3 +522,4 @@ mckaywrigley
 meta-llama
 mhevery
 mafintosh
+EddieHubCommunity
