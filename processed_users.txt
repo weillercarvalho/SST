@@ -521,3 +521,4 @@ BrendanEich
 mckaywrigley
 meta-llama
 mhevery
+mafintosh
