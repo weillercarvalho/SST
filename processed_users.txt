@@ -547,3 +547,5 @@ liuhuanyong
 fuzhengwei
 desandro
 Shopify
+microsoftopensource
+NobleMajo
