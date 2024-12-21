@@ -526,3 +526,4 @@ EddieHubCommunity
 lmstudio-ai
 mstraughan86
 orta
+jxnblk
