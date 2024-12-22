@@ -608,3 +608,4 @@ mikepenz
 fenixsoft
 timneutkens
 iptv-org
+MichalPaszkiewicz
