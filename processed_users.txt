@@ -630,3 +630,5 @@ sebastianruder
 exercism
 nfultz
 ept
+intel-restricted
+domenic
