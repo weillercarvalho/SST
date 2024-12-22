@@ -634,3 +634,4 @@ intel-restricted
 domenic
 jennybc
 afollestad
+jdalton
