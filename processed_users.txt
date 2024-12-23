@@ -714,3 +714,4 @@ CharlesCreativeContent
 unjs
 roboticcam
 Lissy93
+ghostty-org
