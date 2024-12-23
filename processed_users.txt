@@ -718,3 +718,4 @@ ghostty-org
 AppServiceProvider
 una
 ProvableHQ
+cncf
