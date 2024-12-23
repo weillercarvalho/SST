@@ -707,3 +707,4 @@ s4vitar
 rusty1s
 csswizardry
 ebidel
+git-ecosystem
