@@ -3,3 +3,4 @@ catppuccin
 max-mapper
 filswan
 campusx-official
+bitwarden
