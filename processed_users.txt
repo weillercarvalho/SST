@@ -4,3 +4,4 @@ max-mapper
 filswan
 campusx-official
 bitwarden
+skywind3000
