@@ -34,3 +34,4 @@ digitalinnovationone
 ultralytics
 nextcloud
 mxmnk
+iuricode
