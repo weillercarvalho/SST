@@ -33,3 +33,4 @@ tekkub
 digitalinnovationone
 ultralytics
 nextcloud
+mxmnk
