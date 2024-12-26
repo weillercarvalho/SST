@@ -19,3 +19,4 @@ netlify
 joshwcomeau
 rodrigobranas
 stebsnusch
+notwaldorf
