@@ -88,7 +88,7 @@ async function processSingleUser(username, keywordQuery) {
 
 async function fetchAndProcessUsers(criteria, keywordQuery) {
   const octokit = getOctokitInstance();
-  let page = 6;
+  let page = 7;
 
   while (true) {
     try {
@@ -159,7 +159,7 @@ async function main() {
   ];
 
   const keywordQuery = keywords.join(" OR ");
-  const criteria = "followers:>1000"; 
+  const criteria = "followers:>10000"; 
 
   await fetchAndProcessUsers(criteria, keywordQuery);
   console.log("Finished processing.");
