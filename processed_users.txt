@@ -16,3 +16,4 @@ barryvdh
 learnwithsumit
 davecheney
 netlify
+joshwcomeau
