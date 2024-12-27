@@ -51,3 +51,4 @@ ankane
 Fernanda-Kipper
 giswqs
 coderwhy
+shadowsocks
