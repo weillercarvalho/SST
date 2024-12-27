@@ -71,3 +71,4 @@ lmstudio-ai
 mhevery
 mafintosh
 EddieHubCommunity
+NobleMajo
