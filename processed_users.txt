@@ -102,3 +102,4 @@ jgthms
 geektime-geekbang
 guolindev
 chenglou
+bitcoin
