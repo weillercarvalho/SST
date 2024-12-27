@@ -92,3 +92,5 @@ GoldenDev321
 Azure-Samples
 poteto
 hackedteam
+microsoftopensource
+Shopify
