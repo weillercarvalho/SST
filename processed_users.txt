@@ -139,3 +139,4 @@ Magicianred
 joschan21
 jherr
 aptos-labs
+academind
