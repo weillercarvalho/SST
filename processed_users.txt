@@ -126,3 +126,4 @@ ghostty-org
 markerikson
 cmlsharp
 U7P4L-IN
+Nutlope
