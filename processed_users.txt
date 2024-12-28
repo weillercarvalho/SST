@@ -135,3 +135,4 @@ alura-cursos
 planetoftheweb
 daveshap
 greatfrontend
+Magicianred
