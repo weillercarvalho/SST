@@ -214,3 +214,4 @@ espressif
 eggprotocol
 matklad
 ValentineFernandes
+SkalskiP
