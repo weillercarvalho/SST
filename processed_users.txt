@@ -235,3 +235,5 @@ driesvints
 alexcrichton
 calebporzio
 ddgksf2013
+researchersource
+samuelcolvin
