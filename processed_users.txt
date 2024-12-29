@@ -242,3 +242,4 @@ guo-yu
 tonsky
 huangzworks
 julycoding
+freddier
