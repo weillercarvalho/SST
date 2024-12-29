@@ -264,3 +264,4 @@ cncf
 AppServiceProvider
 roboticcam
 una
+mistralai
