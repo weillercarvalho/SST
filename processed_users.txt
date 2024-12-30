@@ -305,3 +305,4 @@ odoo
 JeffreyZhao
 antonbabenko
 dylanaraps
+yegor256
