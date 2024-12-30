@@ -279,3 +279,4 @@ reactjs
 DanWahlin
 ashleygwilliams
 anthdm
+supabase
