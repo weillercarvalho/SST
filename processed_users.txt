@@ -331,3 +331,4 @@ bevacqua
 camenduru
 wangzheng0822
 sebmck
+raspberrypi
