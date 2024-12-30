@@ -345,3 +345,4 @@ joelgrus
 migueldeicaza
 deepsea514
 robbyrussell
+jesseduffield
