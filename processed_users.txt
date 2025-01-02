@@ -402,3 +402,4 @@ barretlee
 insidegui
 jeffersongoncalves
 cornflourblue
+deepseek-ai
