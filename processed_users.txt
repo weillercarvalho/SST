@@ -403,3 +403,4 @@ insidegui
 jeffersongoncalves
 cornflourblue
 deepseek-ai
+android10
