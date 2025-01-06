@@ -88,7 +88,7 @@ async function processSingleUser(username, keywordQuery) {
 
 async function fetchAndProcessUsers(criteria, keywordQuery) {
   const octokit = getOctokitInstance();
-  let page = 7;
+  let page = 8;
 
   while (true) {
     try {
