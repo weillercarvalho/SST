@@ -36,3 +36,4 @@ alura-cursos
 TanStack
 daveshap
 mpj
+academind
