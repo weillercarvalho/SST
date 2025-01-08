@@ -80,3 +80,4 @@ ept
 OfficialCodeVoyage
 sebastianruder
 emirkaanozdemr
+deepseek-ai
