@@ -141,3 +141,5 @@ lihaoyi
 arpitbbhayani
 calebporzio
 alexcrichton
+researchersource
+creationix
