@@ -146,3 +146,4 @@ creationix
 tonsky
 guo-yu
 huangzworks
+git-ecosystem
