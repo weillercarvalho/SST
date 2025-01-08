@@ -103,3 +103,4 @@ hasinhayder
 rustdesk
 akira-cn
 murtazahassan
+espressif
