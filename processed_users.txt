@@ -84,3 +84,4 @@ deepseek-ai
 nfultz
 intel-restricted
 domenic
+jennybc
