@@ -101,3 +101,4 @@ hak5darren
 ncase
 hasinhayder
 rustdesk
+akira-cn
