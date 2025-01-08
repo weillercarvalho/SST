@@ -104,3 +104,4 @@ rustdesk
 akira-cn
 murtazahassan
 espressif
+vakila
