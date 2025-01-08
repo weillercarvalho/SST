@@ -82,3 +82,5 @@ sebastianruder
 emirkaanozdemr
 deepseek-ai
 nfultz
+intel-restricted
+domenic
