@@ -225,3 +225,4 @@ luin
 decoderwhoami
 dirambora
 atian25
+raspberrypi
