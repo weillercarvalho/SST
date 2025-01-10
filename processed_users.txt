@@ -271,3 +271,4 @@ jgilfelt
 madeye
 AlianeAmaral
 gakonst
+open-telemetry
