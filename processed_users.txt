@@ -42,3 +42,4 @@ kevin-powell
 GoogleCloudPlatform
 iconfont-cn
 adamwathan
+nicknochnack
