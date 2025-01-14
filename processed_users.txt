@@ -52,3 +52,4 @@ YunaiV
 datawhalechina
 mustafacagri
 t3dotgg
+shadcn
