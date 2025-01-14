@@ -40,3 +40,5 @@ bradfitz
 twbs
 kevin-powell
 GoogleCloudPlatform
+iconfont-cn
+adamwathan
