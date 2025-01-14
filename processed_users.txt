@@ -46,3 +46,4 @@ nicknochnack
 home-assistant
 ethereum
 jonhoo
+philipplackner
