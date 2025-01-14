@@ -47,3 +47,4 @@ home-assistant
 ethereum
 jonhoo
 philipplackner
+tannerlinsley
