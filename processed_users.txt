@@ -82,3 +82,4 @@ QianMo
 necolas
 zenorocha
 craftzdog
+htr-tech
