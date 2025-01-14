@@ -25,3 +25,4 @@ mattn
 BYVoid
 miguelgrinberg
 vbuterin
+hakimel
