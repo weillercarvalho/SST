@@ -20,3 +20,4 @@ CoreyMSchafer
 developit
 haoel
 btholt
+rust-lang
