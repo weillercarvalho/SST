@@ -21,3 +21,4 @@ developit
 haoel
 btholt
 rust-lang
+mattn
