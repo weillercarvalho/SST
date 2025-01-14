@@ -77,3 +77,4 @@ gitdagray
 jrohitofficial
 samyk
 robpike
+Azure
