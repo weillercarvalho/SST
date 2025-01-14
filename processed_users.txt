@@ -45,3 +45,4 @@ adamwathan
 nicknochnack
 home-assistant
 ethereum
+jonhoo
