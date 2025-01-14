@@ -44,3 +44,4 @@ iconfont-cn
 adamwathan
 nicknochnack
 home-assistant
+ethereum
