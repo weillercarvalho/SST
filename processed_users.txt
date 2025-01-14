@@ -29,3 +29,4 @@ hakimel
 egoist
 Stability-AI
 tomnomnom
+mathiasbynens
