@@ -36,3 +36,4 @@ soumith
 rakyll
 laruence
 ibireme
+bradfitz
