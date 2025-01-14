@@ -27,3 +27,4 @@ miguelgrinberg
 vbuterin
 hakimel
 egoist
+Stability-AI
