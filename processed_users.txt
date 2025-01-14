@@ -31,3 +31,5 @@ Stability-AI
 tomnomnom
 mathiasbynens
 acenelio
+Microsoft-corp
+soumith
