@@ -89,3 +89,4 @@ google-research
 chriscoyier
 Elfocrash
 bojone
+offensive-security
