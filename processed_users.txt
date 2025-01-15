@@ -141,3 +141,4 @@ AllenDowney
 mcollina
 PatrickAlphaC
 matz
+THUDM
