@@ -164,3 +164,4 @@ jaredpalmer
 intel-innersource
 yihui
 dennybritz
+joshlong
