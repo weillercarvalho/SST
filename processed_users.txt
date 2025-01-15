@@ -149,3 +149,4 @@ scroll-tech
 frontend-joe
 typicode
 vjanz
+wizardforcel
