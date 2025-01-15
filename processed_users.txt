@@ -166,3 +166,4 @@ yihui
 dennybritz
 joshlong
 ChristianLempa
+Jack-Cherish
