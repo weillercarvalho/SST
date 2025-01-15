@@ -106,3 +106,5 @@ miloyip
 tjdevries
 aws
 romannurik
+lattner
+sofish
