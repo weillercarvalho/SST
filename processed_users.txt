@@ -93,3 +93,4 @@ offensive-security
 ghost
 amueller
 shahradelahi
+ossu
