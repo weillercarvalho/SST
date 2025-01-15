@@ -104,3 +104,4 @@ open-mmlab
 akitaonrails
 miloyip
 tjdevries
+aws
