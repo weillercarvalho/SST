@@ -165,3 +165,4 @@ intel-innersource
 yihui
 dennybritz
 joshlong
+ChristianLempa
