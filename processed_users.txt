@@ -128,3 +128,4 @@ codecrafters-io
 pytorch
 jvns
 romainguy
+sophiebits
