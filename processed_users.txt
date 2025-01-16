@@ -228,3 +228,4 @@ fatih
 evilsocket
 EbookFoundation
 Rafaelmdcarneiro
+EurekaLabsAI
