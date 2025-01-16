@@ -238,3 +238,4 @@ alineai18
 blocage
 996icu
 drkostas
+hashicorp
