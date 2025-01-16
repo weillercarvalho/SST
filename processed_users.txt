@@ -176,3 +176,4 @@ haileys
 JetBrains
 abhishekkrthakur
 simplesteph
+norvig
