@@ -232,3 +232,4 @@ EurekaLabsAI
 twostraws
 AbdeenM
 Colt
+swisskyrepo
