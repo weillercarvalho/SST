@@ -173,3 +173,4 @@ colah
 arthurspk
 wasabeef
 haileys
+JetBrains
