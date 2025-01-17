@@ -322,3 +322,4 @@ ip681
 LaravelDaily
 safak
 nihui
+tailwindlabs
