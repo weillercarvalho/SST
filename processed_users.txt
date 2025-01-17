@@ -315,3 +315,4 @@ cursoemvideo
 ashishpatel26
 mxcl
 XiaomingX
+langchain-ai
