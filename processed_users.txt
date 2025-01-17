@@ -257,3 +257,4 @@ projectdiscovery
 jhcloos
 jamesmontemagno
 fengmk2
+bytedance
