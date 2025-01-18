@@ -393,3 +393,4 @@ catppuccin
 lemire
 xufei
 campusx-official
+netlify
