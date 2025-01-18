@@ -390,3 +390,4 @@ loveBabbar
 swyxio
 GrahamCampbell
 catppuccin
+lemire
