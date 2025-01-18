@@ -389,3 +389,4 @@ sharkdp
 loveBabbar
 swyxio
 GrahamCampbell
+catppuccin
