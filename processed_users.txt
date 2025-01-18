@@ -341,3 +341,4 @@ ljharb
 mschwarzmueller
 dai-shi
 bluesky-social
+angular
