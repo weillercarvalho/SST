@@ -392,3 +392,4 @@ GrahamCampbell
 catppuccin
 lemire
 xufei
+campusx-official
