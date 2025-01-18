@@ -398,3 +398,4 @@ Nakshatra05
 junyanz
 obsidianmd
 nat
+bitwarden
