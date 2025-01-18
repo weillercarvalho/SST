@@ -345,3 +345,4 @@ angular
 Huxpro
 tangqiaoboy
 rrousselGit
+mjackson
