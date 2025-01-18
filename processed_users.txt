@@ -385,3 +385,4 @@ byt3bl33d3r
 bigtreetech
 steveklabnik
 jdah
+sharkdp
