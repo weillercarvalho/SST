@@ -391,3 +391,4 @@ swyxio
 GrahamCampbell
 catppuccin
 lemire
+xufei
