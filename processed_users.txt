@@ -346,3 +346,4 @@ Huxpro
 tangqiaoboy
 rrousselGit
 mjackson
+seniorvuejsdeveloper
