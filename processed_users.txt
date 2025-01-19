@@ -475,3 +475,4 @@ BrendanEich
 ghostty-org
 deepseek-ai
 mhevery
+EddieHubCommunity
