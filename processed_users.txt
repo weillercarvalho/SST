@@ -474,3 +474,4 @@ HashLips
 BrendanEich
 ghostty-org
 deepseek-ai
+mhevery
