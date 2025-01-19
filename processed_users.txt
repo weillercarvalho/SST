@@ -447,3 +447,4 @@ bagder
 Fernanda-Kipper
 FuelLabs
 rstacruz
+lmstudio-ai
