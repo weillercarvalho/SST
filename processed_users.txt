@@ -476,3 +476,4 @@ ghostty-org
 deepseek-ai
 mhevery
 EddieHubCommunity
+mafintosh
