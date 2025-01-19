@@ -491,3 +491,4 @@ jbogard
 greatfrontend
 petehunt
 teaxyz
+jasontaylordev
