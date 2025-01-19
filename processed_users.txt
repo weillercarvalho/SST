@@ -477,3 +477,4 @@ deepseek-ai
 mhevery
 EddieHubCommunity
 mafintosh
+bitcoin
