@@ -423,3 +423,4 @@ rbgirshick
 MicrosoftDocs
 historicalsource
 nextcloud
+barryvdh
