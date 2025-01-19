@@ -414,3 +414,4 @@ emmabostian
 learnwithsumit
 max-mapper
 ultralytics
+joshwcomeau
