@@ -448,3 +448,4 @@ Fernanda-Kipper
 FuelLabs
 rstacruz
 lmstudio-ai
+rhiever
