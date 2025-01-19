@@ -496,3 +496,4 @@ posva
 Grafikart
 microsoftopensource
 nishant-Tiwari24
+richhickey
