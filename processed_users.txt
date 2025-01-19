@@ -424,3 +424,4 @@ MicrosoftDocs
 historicalsource
 nextcloud
 barryvdh
+actions
