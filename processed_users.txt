@@ -548,3 +548,4 @@ mholt
 jherr
 aptos-labs
 OfficialCodeVoyage
+Magicianred
