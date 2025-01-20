@@ -530,3 +530,4 @@ PaddlePaddle
 cmlsharp
 WZMIAOMIAO
 stephencelis
+TanStack
