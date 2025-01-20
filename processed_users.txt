@@ -565,3 +565,4 @@ fenixsoft
 timneutkens
 steven-tey
 mikepenz
+exercism
