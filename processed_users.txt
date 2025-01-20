@@ -568,3 +568,4 @@ mikepenz
 exercism
 emirkaanozdemr
 lidangzzz
+MichalPaszkiewicz
