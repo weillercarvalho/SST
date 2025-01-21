@@ -650,3 +650,4 @@ researchersource
 creationix
 guo-yu
 Lissy93
+mistralai
