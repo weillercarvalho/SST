@@ -600,3 +600,4 @@ rustdesk
 eriklindernoren
 espressif
 hasinhayder
+hak5darren
