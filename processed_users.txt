@@ -581,3 +581,5 @@ coolsnowwolf
 yanhaijing
 ept
 greenrobot
+intel-restricted
+sebastianruder
