@@ -598,3 +598,4 @@ BaseMax
 mahseema
 rustdesk
 eriklindernoren
+espressif
