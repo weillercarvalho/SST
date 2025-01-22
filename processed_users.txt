@@ -731,3 +731,4 @@ Dreamacro
 luin
 DataTalksClub
 jesseduffield
+LinkedInLearning
