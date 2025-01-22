@@ -708,3 +708,4 @@ alexellis
 kevinsawicki
 antonbabenko
 hardmaru
+raspberrypi
