@@ -803,3 +803,4 @@ awesomekling
 JedWatson
 anthropics
 worldcoin
+standardgalactic
