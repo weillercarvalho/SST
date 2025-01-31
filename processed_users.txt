@@ -809,3 +809,4 @@ brianyu28
 itsKayWat
 OpenBMB
 Homebrew
+QwenLM
