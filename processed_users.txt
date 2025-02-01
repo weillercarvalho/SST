@@ -810,3 +810,4 @@ itsKayWat
 OpenBMB
 Homebrew
 QwenLM
+grafana
