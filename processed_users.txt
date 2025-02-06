@@ -811,3 +811,4 @@ OpenBMB
 Homebrew
 QwenLM
 grafana
+ollama
