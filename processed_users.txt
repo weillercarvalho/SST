@@ -812,3 +812,4 @@ Homebrew
 QwenLM
 grafana
 ollama
+teslamotors
