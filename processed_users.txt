@@ -813,3 +813,4 @@ QwenLM
 grafana
 ollama
 teslamotors
+djvelimir
