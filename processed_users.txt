@@ -814,3 +814,4 @@ grafana
 ollama
 teslamotors
 djvelimir
+solana-labs
