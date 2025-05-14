@@ -850,3 +850,4 @@ spaceandtimefdn
 n8n-io
 schacon
 astral-sh
+AI4Finance-Foundation
