@@ -864,3 +864,4 @@ steipete
 Klerith
 unclebob
 trinhminhtriet
+google-gemini
