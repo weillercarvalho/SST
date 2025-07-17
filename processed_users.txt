@@ -869,3 +869,4 @@ matrix-org
 GrapheneOS
 jackjackbits
 bosch-copilot
+hiyouga
