@@ -868,3 +868,4 @@ google-gemini
 matrix-org
 GrapheneOS
 jackjackbits
+bosch-copilot
