@@ -879,3 +879,4 @@ claude
 seckinyasar
 elder-plinius
 unionlabs
+comfyanonymous
