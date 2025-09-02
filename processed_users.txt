@@ -885,3 +885,4 @@ Kwynto
 0voice
 googleapis
 mlabonne
+pewdiepie-archdaemon
